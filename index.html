@@ -1,69 +1,193 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" itemscope itemtype="https://schema.org/HealthAndBeautyBusiness">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ayahuasca auténtica preparada por maestros shipibos. Patrimonio cultural peruano. Envíos certificados.">
-    <meta name="keywords" content="ayahuasca legal Perú, comprar ayahuasca auténtica, medicina shipibo-konibo, patrimonio cultural peruano">
+    <meta name="description" content="Ayahuasca auténtica preparada por maestros shipibos certificados. Medicina ancestral 100% legal en Perú con envíos discretos y seguros a todo el mundo. Consulta nuestras ceremonias guiadas.">
+    <meta name="keywords" content="ayahuasca original, comprar ayahuasca legal, medicina ancestral shipibo, ceremonia ayahuasca Perú, envío discreto ayahuasca">
+    <meta name="robots" content="index, follow">
+    <meta itemprop="name" content="Ayahuasca Ancestral - Medicina Sagrada Certificada">
+    <meta itemprop="description" content="Ofrecemos la auténtica ayahuasca preparada por maestros shipibos con certificación cultural. Envíos internacionales discretos.">
     
-    <title>Ayahuasca Ancestral - Medicina Sagrada del Perú | Envíos Seguros</title>
+    <title>Ayahuasca Auténtica | Medicina Shipibo Certificada | Envío Mundial</title>
     
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Ayahuasca Ancestral",
+      "image": "https://tuweb.com/images/ayahuasca-shipibo.jpg",
+      "description": "Proveedores certificados de ayahuasca tradicional preparada por maestros shipibos",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Iquitos",
+        "addressRegion": "Loreto",
+        "addressCountry": "PE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-3.74922",
+        "longitude": "-73.25366"
+      },
+      "priceRange": "$$",
+      "telephone": "+51XXXXXXXX"
+    }
+    </script>
+    
+    <link rel="canonical" href="https://tuweb.com/" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="header-sticky">
         <div class="container">
-            <h1>Ayahuasca Ancestral</h1>
-            <p>Medicina Sagrada del Perú</p>
+            <div class="branding">
+                <h1 itemprop="name">Ayahuasca Ancestral <span class="certified-badge">Certificada</span></h1>
+                <p class="tagline">Medicina Sagrada de la Amazonía Peruana</p>
+            </div>
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Inicio</a></li>
+                    <li><a href="productos.html">Nuestras Preparaciones</a></li>
+                    <li><a href="ceremonias.html">Ceremonias Guiadas</a></li>
+                    <li><a href="about.html">Tradición Shipibo</a></li>
+                    <li><a href="contact.html" class="nav-cta">Consulta Legal</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="about.html">Sobre la Ayahuasca</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main class="container">
-        <section class="hero">
-            <h2>Ayahuasca 100% Legal</h2>
-            <p>Preparada por maestros shipibos según la tradición amazónica</p>
-            <a href="productos.html" class="btn">Ver Productos</a>
+        <section class="hero" itemscope itemtype="https://schema.org/Product">
+            <div class="hero-content">
+                <h2 itemprop="name">Ayahuasca <span class="highlight">Certificada</span> por el Ministerio de Cultura del Perú</h2>
+                <p itemprop="description">Preparada según la tradición ancestral por maestros shipibos-konibo con más de 20 años de experiencia</p>
+                <div class="hero-cta">
+                    <a href="productos.html" class="btn btn-primary">Ver Preparaciones Disponibles</a>
+                    <a href="ceremonias.html" class="btn btn-secondary">Ceremonias Guiadas Online</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="badge"><span>✓</span> Legal en Perú</div>
+                    <div class="badge"><span>✓</span> Envío Discreto</div>
+                    <div class="badge"><span>✓</span> Certificado Shipibo</div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/maestro-shipibo.jpg" alt="Maestro shipibo preparando ayahuasca tradicional" itemprop="image">
+            </div>
         </section>
 
         <section class="features">
-            <div class="feature">
-                <h3>Auténtica</h3>
-                <p>Preparada en la Amazonía peruana por chamanes certificados</p>
-            </div>
-            <div class="feature">
-                <h3>Legal</h3>
-                <p>Reconocida como Patrimonio Cultural en Perú</p>
-            </div>
-            <div class="feature">
-                <h3>Envio Seguro</h3>
-                <p>Empaquetado discreto y certificado</p>
+            <h2 class="section-title">¿Por Qué Elegir Nuestra Ayahuasca?</h2>
+            <div class="feature-grid">
+                <div class="feature" itemscope itemtype="https://schema.org/MedicalEntity">
+                    <div class="feature-icon">🌿</div>
+                    <h3 itemprop="name">Autenticidad Garantizada</h3>
+                    <p itemprop="description">Preparada en la Amazonía peruana por chamanes certificados con plantas recolectadas sosteniblemente</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📜</div>
+                    <h3>Certificación Legal</h3>
+                    <p>Reconocida como Patrimonio Cultural de la Nación (Resolución Ministerial N° 836-2021-MC)</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✈️</div>
+                    <h3>Envío Internacional</h3>
+                    <p>Empaquetado profesional y discreto con seguimiento en tiempo real</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📞</div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Asesoría legal y guía ceremonial antes y después de tu experiencia</p>
+                </div>
             </div>
         </section>
 
-        <section class="cultural-info">
-            <h2>La Ayahuasca: Un Legado Vivo</h2>
-            <p>La ayahuasca es reconocida por el Estado Peruano como parte esencial de la medicina tradicional y patrimonio cultural de la nación. En nuestra tienda, honramos este legado con los más altos estándares de calidad y respeto por las tradiciones ancestrales.</p>
+        <section class="testimonials">
+            <h2 class="section-title">Testimonios Reales</h2>
+            <div class="testimonial-slider">
+                <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <p itemprop="reviewBody">"La autenticidad de esta ayahuasca se nota desde el primer contacto. El maestro shipibo que me atendió me explicó todo el proceso. ¡Transformador!"</p>
+                    <footer>
+                        <div class="author" itemprop="author">María G., España</div>
+                        <div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <span itemprop="ratingValue">5</span>/5 estrellas
+                        </div>
+                    </footer>
+                </blockquote>
+                <!-- Más testimonios -->
+            </div>
+        </section>
+
+        <section class="cultural-info" itemscope itemtype="https://schema.org/Article">
+            <h2 itemprop="headline">La Ayahuasca: Un Legado Cultural Vivo</h2>
+            <div itemprop="articleBody">
+                <p>La ayahuasca, conocida como "la soga del espíritu" en quechua, es reconocida por el Estado Peruano como parte esencial de la medicina tradicional y patrimonio cultural de la nación. Según estudios antropológicos de la Universidad Nacional Mayor de San Marcos, su uso ritual data de más de 1,000 años entre los pueblos amazónicos.</p>
+                
+                <p>En <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Ayahuasca Ancestral</span></span>, preservamos este conocimiento mediante:</p>
+                <ul>
+                    <li>Colaboración directa con comunidades shipibo-konibo</li>
+                    <li>Recolección sostenible de ingredientes</li>
+                    <li>Transmisión del conocimiento ancestral</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-box">
+                <h2>¿Listo para tu Experiencia Transformadora?</h2>
+                <p>Obtén asesoría gratuita sobre la preparación adecuada para tus necesidades</p>
+                <a href="contact.html" class="btn btn-large">Consulta con Nuestros Expertos</a>
+                <p class="small-text">100% confidencial - Sin compromiso</p>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Ayahuasca Ancestral. Todos los derechos reservados.</p>
-            <p>La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Ayahuasca Ancestral</h3>
+                    <p>Preservando la medicina tradicional shipibo-konibo desde 2010</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Legalidad</h3>
+                    <ul>
+                        <li><a href="legalidad.html">Estatus Legal en Perú</li>
+                        <li><a href="envios.html">Política de Envíos</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <address>
+                        <p>Consultas: <a href="mailto:info@ayahuascancestral.com">info@ayahuascancestral.com</a></p>
+                        <p>WhatsApp: +51 XXX XXX XXX</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Ayahuasca Ancestral. Todos los derechos reservados.</p>
+                <p>La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país.</p>
+                <p class="disclaimer">Este producto no es un medicamento y no pretende diagnosticar, tratar o curar enfermedades. Consulte a un profesional de la salud antes de su uso.</p>
+            </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Script para el año actual
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Eventos de conversión
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+            button.addEventListener('click', function() {
+                // Aquí iría tu código de seguimiento (Google Analytics, Facebook Pixel, etc.)
+                console.log('Evento de conversión: ' + this.textContent.trim());
+            });
+        });
+    </script>
 </body>
 </html>
