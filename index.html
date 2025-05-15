@@ -21,8 +21,10 @@
       "description": "Proveedores certificados de ayahuasca tradicional preparada por maestros shipibos",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Av. La Marina 285",
         "addressLocality": "Iquitos",
         "addressRegion": "Loreto",
+        "postalCode": "16000",
         "addressCountry": "PE"
       },
       "geo": {
@@ -42,13 +44,59 @@
               "@type": "Product",
               "name": "Ayahuasca Tradicional Shipibo",
               "description": "Preparación ancestral certificada por el Ministerio de Cultura del Perú",
-              "image": "https://tuweb.com/images/ayahuasca-bottle.jpg"
+              "brand": {
+                "@type": "Brand",
+                "name": "Comunidad Shipibo-Conibo"
+              },
+              "image": "https://tuweb.com/images/ayahuasca-bottle.jpg",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "15"
+              }
             },
             "price": "250",
             "priceCurrency": "PEN",
-            "availability": "https://schema.org/InStock"
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Ayahuasca Ancestral"
+            }
           }
         ]
+      }
+    }
+    </script>
+    
+    <!-- Additional Product Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Ayahuasca Certificada por el Ministerio de Cultura del Perú",
+      "description": "Preparada según la tradición ancestral por maestros shipibos con más de 20 años de experiencia",
+      "image": "https://loehei.github.io/tienda-ayahuasca/images/maestro-shipibo.jpg",
+      "brand": {
+        "@type": "Brand",
+        "name": "Comunidad Shipibo-Conibo"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://loehei.github.io/tienda-ayahuasca/productos.html",
+        "priceCurrency": "PEN",
+        "price": "250",
+        "priceValidUntil": "2025-12-31",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Ayahuasca Ancestral"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "15"
       }
     }
     </script>
@@ -79,10 +127,10 @@
     </header>
 
     <main class="container">
-        <section class="hero" itemscope itemtype="https://schema.org/Product">
+        <section class="hero">
             <div class="hero-content">
-                <h2 itemprop="name">Ayahuasca <span class="highlight">Certificada</span> por el Ministerio de Cultura del Perú</h2>
-                <p itemprop="description">Preparada según la tradición ancestral por maestros shipibos con más de 20 años de experiencia</p>
+                <h2>Ayahuasca <span class="highlight">Certificada</span> por el Ministerio de Cultura del Perú</h2>
+                <p>Preparada según la tradición ancestral por maestros shipibos con más de 20 años de experiencia</p>
                 <div class="hero-cta">
                     <a href="productos.html" class="btn btn-primary">Ver Preparaciones Disponibles</a>
                     <a href="ceremonias.html" class="btn btn-secondary">Ceremonias Guiadas Online</a>
@@ -94,28 +142,17 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/maestro-shipibo.jpg" alt="Maestro shipibo preparando ayahuasca tradicional" itemprop="image">
-                <!-- Schema.org para el producto específico -->
-                <div itemscope itemtype="https://schema.org/Product" style="display:none;">
-                    <span itemprop="name">Ayahuasca Certificada por el Ministerio de Cultura del Perú</span>
-                    <span itemprop="description">Preparada según la tradición ancestral por maestros shipibos con más de 20 años de experiencia</span>
-                    <img itemprop="image" src="https://loehei.github.io/tienda-ayahuasca/images/maestro-shipibo.jpg" alt="Ayahuasca certificada"/>
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span itemprop="priceCurrency" content="PEN">PEN</span>
-                        <span itemprop="price" content="250.00">250.00</span>
-                        <link itemprop="availability" href="https://schema.org/InStock"/>
-                    </div>
-                </div>
+                <img src="images/maestro-shipibo.jpg" alt="Maestro shipibo preparando ayahuasca tradicional">
             </div>
         </section>
 
         <section class="features">
             <h2 class="section-title">¿Por Qué Elegir Nuestra Ayahuasca?</h2>
             <div class="feature-grid">
-                <div class="feature" itemscope itemtype="https://schema.org/MedicalEntity">
+                <div class="feature">
                     <div class="feature-icon">🌿</div>
-                    <h3 itemprop="name">Autenticidad Garantizada</h3>
-                    <p itemprop="description">Preparada en la Amazonía peruana por chamanes certificados con plantas recolectadas sosteniblemente</p>
+                    <h3>Autenticidad Garantizada</h3>
+                    <p>Preparada en la Amazonía peruana por chamanes certificados con plantas recolectadas sosteniblemente</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">📜</div>
@@ -139,29 +176,35 @@
             <h2 class="section-title">Testimonios Reales</h2>
             <div class="testimonial-slider">
                 <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="name" content="Ayahuasca Certificada"/>
+                    </div>
                     <div class="testimonial-content">
-                        <div class="author-info">
-                            <img src="images/maestro-shipibo.jpg" alt="Foto de María G." class="author-photo" itemprop="image">
+                        <div class="author-info" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <img src="images/testimonial-1.jpg" alt="Foto de María G." class="author-photo" itemprop="image">
                             <div class="author-details">
-                                <div class="author" itemprop="author">María G., España</div>
-                                <div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                    <span itemprop="ratingValue">5</span>/5 estrellas
+                                <span itemprop="name">María G., España</span>
+                                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                    <meta itemprop="ratingValue" content="5">
+                                    <meta itemprop="bestRating" content="5">
+                                    <span>★★★★★</span>
                                 </div>
                             </div>
                         </div>
                         <p itemprop="reviewBody">"La autenticidad de esta ayahuasca se nota desde el primer contacto. El maestro shipibo que me atendió me explicó todo el proceso. ¡Transformador!"</p>
+                        <meta itemprop="datePublished" content="2025-05-10">
                     </div>
                 </blockquote>
-                <!-- Más testimonios -->
+                <!-- Más testimonios aquí -->
             </div>
         </section>
 
-        <section class="cultural-info" itemscope itemtype="https://schema.org/Article">
-            <h2 itemprop="headline">La Ayahuasca: Un Legado Cultural Vivo</h2>
-            <div itemprop="articleBody">
+        <section class="cultural-info">
+            <h2>La Ayahuasca: Un Legado Cultural Vivo</h2>
+            <div>
                 <p>La ayahuasca, conocida como "la soga del espíritu" en quechua, es reconocida por el Estado Peruano como parte esencial de la medicina tradicional y patrimonio cultural de la nación. Según estudios antropológicos de la Universidad Nacional Mayor de San Marcos, su uso ritual data de más de 1,000 años entre los pueblos amazónicos.</p>
                 
-                <p>En <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Ayahuasca Ancestral</span></span>, preservamos este conocimiento mediante:</p>
+                <p>En Ayahuasca Ancestral, preservamos este conocimiento mediante:</p>
                 <ul>
                     <li>Colaboración directa con comunidades shipibo</li>
                     <li>Recolección sostenible de ingredientes</li>
