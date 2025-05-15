@@ -31,7 +31,25 @@
         "longitude": "-73.25366"
       },
       "priceRange": "$$",
-      "telephone": "+51903051441"
+      "telephone": "+51903051441",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Preparaciones de Ayahuasca",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Ayahuasca Tradicional Shipibo",
+              "description": "Preparación ancestral certificada por el Ministerio de Cultura del Perú",
+              "image": "https://tuweb.com/images/ayahuasca-bottle.jpg"
+            },
+            "price": "250",
+            "priceCurrency": "PEN",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      }
     }
     </script>
     
@@ -77,6 +95,17 @@
             </div>
             <div class="hero-image">
                 <img src="images/maestro-shipibo.jpg" alt="Maestro shipibo preparando ayahuasca tradicional" itemprop="image">
+                <!-- Schema.org para el producto específico -->
+                <div itemscope itemtype="https://schema.org/Product" style="display:none;">
+                    <span itemprop="name">Ayahuasca Certificada por el Ministerio de Cultura del Perú</span>
+                    <span itemprop="description">Preparada según la tradición ancestral por maestros shipibos con más de 20 años de experiencia</span>
+                    <img itemprop="image" src="https://loehei.github.io/tienda-ayahuasca/images/maestro-shipibo.jpg" alt="Ayahuasca certificada"/>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="PEN">PEN</span>
+                        <span itemprop="price" content="250.00">250.00</span>
+                        <link itemprop="availability" href="https://schema.org/InStock"/>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -107,25 +136,25 @@
         </section>
 
         <section class="testimonials">
-    <h2 class="section-title">Testimonios Reales</h2>
-    <div class="testimonial-slider">
-        <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
-            <div class="testimonial-content">
-                <div class="author-info">
-                    <img src="images/maestro-shipibo.jpg" alt="Foto de María G." class="author-photo" itemprop="image">
-                    <div class="author-details">
-                        <div class="author" itemprop="author">María G., España</div>
-                        <div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                            <span itemprop="ratingValue">5</span>/5 estrellas
+            <h2 class="section-title">Testimonios Reales</h2>
+            <div class="testimonial-slider">
+                <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <div class="testimonial-content">
+                        <div class="author-info">
+                            <img src="images/maestro-shipibo.jpg" alt="Foto de María G." class="author-photo" itemprop="image">
+                            <div class="author-details">
+                                <div class="author" itemprop="author">María G., España</div>
+                                <div class="rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                    <span itemprop="ratingValue">5</span>/5 estrellas
+                                </div>
+                            </div>
                         </div>
+                        <p itemprop="reviewBody">"La autenticidad de esta ayahuasca se nota desde el primer contacto. El maestro shipibo que me atendió me explicó todo el proceso. ¡Transformador!"</p>
                     </div>
-                </div>
-                <p itemprop="reviewBody">"La autenticidad de esta ayahuasca se nota desde el primer contacto. El maestro shipibo que me atendió me explicó todo el proceso. ¡Transformador!"</p>
+                </blockquote>
+                <!-- Más testimonios -->
             </div>
-        </blockquote>
-        <!-- Más testimonios -->
-    </div>
-</section>
+        </section>
 
         <section class="cultural-info" itemscope itemtype="https://schema.org/Article">
             <h2 itemprop="headline">La Ayahuasca: Un Legado Cultural Vivo</h2>
@@ -160,10 +189,10 @@
                 </div>
                 <div class="footer-col">
                     <h3>Legalidad</h3>
-<ul>
-    <li><a href="legalidad.html">Estatus Legal en Perú</a></li> <!-- Corregido -->
-    <li><a href="envios.html">Política de Envíos</a></li> <!-- Corregido -->
-</ul>
+                    <ul>
+                        <li><a href="legalidad.html">Estatus Legal en Perú</a></li>
+                        <li><a href="envios.html">Política de Envíos</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Contacto</h3>
