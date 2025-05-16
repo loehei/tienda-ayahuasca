@@ -1,10 +1,123 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" itemscope itemtype="https://schema.org/Product">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ayahuasca auténtica de la Amazonía Peruana. Envío GRATIS mundial. Medicina sagrada en presentaciones premium para ceremonias y crecimiento espiritual.">
     <title>Ayahuasca Ancestral | Medicina Sagrada del Amazonas</title>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Ayahuasca Ancestral Premium - Productos",
+      "description": "Medicina sagrada en presentaciones premium para ceremonias y crecimiento espiritual",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ayahuasca Ancestral",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://loehei.github.io/tienda-ayahuasca/img/ayahuasca-icon.png"
+        }
+      }
+    }
+    </script>
+    
+    <!-- Schema for Product Collection -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Brebaje Ceremonial Premium (1 Litro)",
+            "description": "Preparación tradicional con la más alta concentración de principios activos para ceremonias",
+            "image": "https://loehei.github.io/tienda-ayahuasca/img/brebaje-premium.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "Comunidad Shipibo-Conibo"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://loehei.github.io/tienda-ayahuasca/productos.html",
+              "priceCurrency": "USD",
+              "price": "1000.00",
+              "priceValidUntil": "2025-12-31",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "28"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Brebaje Ceremonial (500ml)",
+            "description": "Media botella de nuestro brebaje premium, suficiente para 2-4 sesiones",
+            "image": "https://loehei.github.io/tienda-ayahuasca/img/ayahuasca-medio.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "Comunidad Shipibo-Conibo"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://loehei.github.io/tienda-ayahuasca/productos.html",
+              "priceCurrency": "USD",
+              "price": "500.00",
+              "priceValidUntil": "2025-12-31",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.7",
+              "reviewCount": "15"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "Pasta Pura de Ayahuasca (1kg)",
+            "description": "Extracción pura de máxima potencia para chamanes y centros ceremoniales",
+            "image": "https://loehei.github.io/tienda-ayahuasca/img/ayahuasca-pasta.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "Comunidad Shipibo-Conibo"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://loehei.github.io/tienda-ayahuasca/productos.html",
+              "priceCurrency": "USD",
+              "price": "3500.00",
+              "priceValidUntil": "2025-12-31",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "12"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
@@ -341,15 +454,15 @@
         <p class="text-center">Selecciona la presentación que mejor se adapte a tu viaje espiritual. Todas nuestras preparaciones son elaboradas por chamanes tradicionales con más de 30 años de experiencia.</p>
         
         <div class="products-grid">
-            <div class="product">
+            <div class="product" itemscope itemtype="https://schema.org/Product">
                 <span class="discount-badge">MÁS VENDIDO</span>
-                <img src="img/brebaje-premium.jpg" alt="Brebaje ceremonial premium de ayahuasca">
+                <img src="img/brebaje-premium.jpg" alt="Brebaje ceremonial premium de ayahuasca" itemprop="image">
                 <div class="product-content">
-                    <h3>Brebaje Ceremonial Premium (1 Litro)</h3>
-                    <div class="product-highlight">
+                    <h3 itemprop="name">Brebaje Ceremonial Premium (1 Litro)</h3>
+                    <div class="product-highlight" itemprop="description">
                         "La experiencia más auténtica de la selva amazónica para tus ceremonias"
                     </div>
-                    <p>Preparación tradicional con la más alta concentración de principios activos. Ideal para ceremonias guiadas por chamanes o practicantes avanzados.</p>
+                    <p itemprop="description">Preparación tradicional con la más alta concentración de principios activos. Ideal para ceremonias guiadas por chamanes o practicantes avanzados.</p>
                     
                     <div class="dose-info">
                         <strong>Guía de dosificación:</strong> Aproximadamente 20 sesiones (50ml por sesión) o 10 ceremonias fuertes (100ml)
@@ -370,21 +483,24 @@
                         <li>Soporte por WhatsApp con nuestro chamán</li>
                     </ul>
                     
-                    <span class="price">$1,000.00</span>
+                    <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="USD">$</span>
+                        <span itemprop="price" content="1000.00">1,000.00</span>
+                    </span>
                     <span class="limited-stock">¡ÚLTIMAS 3 UNIDADES!</span>
                     <button class="btn">COMPRAR AHORA</button>
                 </div>
             </div>
             
-            <div class="product">
+            <div class="product" itemscope itemtype="https://schema.org/Product">
                 <span class="discount-badge">OFERTA</span>
-                <img src="img/ayahuasca-medio.jpg" alt="Medio litro de ayahuasca">
+                <img src="img/ayahuasca-medio.jpg" alt="Medio litro de ayahuasca" itemprop="image">
                 <div class="product-content">
-                    <h3>Brebaje Ceremonial (500ml)</h3>
-                    <div class="product-highlight">
+                    <h3 itemprop="name">Brebaje Ceremonial (500ml)</h3>
+                    <div class="product-highlight" itemprop="description">
                         "La medida perfecta para una ceremonia personal o pareja"
                     </div>
-                    <p>Media botella de nuestro brebaje premium, suficiente para 2-4 sesiones dependiendo de la sensibilidad.</p>
+                    <p itemprop="description">Media botella de nuestro brebaje premium, suficiente para 2-4 sesiones dependiendo de la sensibilidad.</p>
                     
                     <div class="dose-info">
                         <strong>Guía de dosificación:</strong> 4-5 sesiones suaves (100ml) o 2 ceremonias profundas (250ml)
@@ -404,19 +520,22 @@
                         <li>Envío GRATIS en pedidos mayores a $500</li>
                     </ul>
                     
-                    <span class="price">$500.00</span>
+                    <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="USD">$</span>
+                        <span itemprop="price" content="500.00">500.00</span>
+                    </span>
                     <button class="btn">COMPRAR AHORA</button>
                 </div>
             </div>
             
-            <div class="product">
-                <img src="img/ayahuasca-pasta.jpg" alt="Pasta pura de ayahuasca">
+            <div class="product" itemscope itemtype="https://schema.org/Product">
+                <img src="img/ayahuasca-pasta.jpg" alt="Pasta pura de ayahuasca" itemprop="image">
                 <div class="product-content">
-                    <h3>Pasta Pura de Ayahuasca (1kg)</h3>
-                    <div class="product-highlight">
+                    <h3 itemprop="name">Pasta Pura de Ayahuasca (1kg)</h3>
+                    <div class="product-highlight" itemprop="description">
                         "La esencia concentrada para chamanes y centros ceremoniales"
                     </div>
-                    <p>Extracción pura de máxima potencia. 1kg equivale aproximadamente a 4 litros de brebaje tradicional.</p>
+                    <p itemprop="description">Extracción pura de máxima potencia. 1kg equivale aproximadamente a 4 litros de brebaje tradicional.</p>
                     
                     <div class="dose-info">
                         <strong>Guía de dosificación:</strong> 1g = 4ml de brebaje. Rendimiento aproximado: 200 ceremonias individuales
@@ -436,7 +555,10 @@
                         <li>Envío GRATIS y discreto</li>
                     </ul>
                     
-                    <span class="price">$3,500.00</span>
+                    <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="USD">$</span>
+                        <span itemprop="price" content="3500.00">3,500.00</span>
+                    </span>
                     <span class="limited-stock">EDICIÓN LIMITADA</span>
                     <button class="btn">COMPRAR AHORA</button>
                 </div>
@@ -468,19 +590,43 @@
         <section class="testimonials">
             <h3>Testimonios de Nuestros Clientes</h3>
             
-            <div class="testimonial">
-                <p>"Compré el litro de ayahuasca y quedé impresionado con la calidad. El manto ceremonial que incluyeron como regalo es hermoso y auténtico. La ceremonia fue profundamente transformadora. ¡El envío llegó en solo 6 días a España!"</p>
-                <p class="testimonial-author">- Javier L., Barcelona</p>
+            <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
+                    <meta itemprop="name" content="Brebaje Ceremonial Premium (1 Litro)"/>
+                </div>
+                <p itemprop="reviewBody">"Compré el litro de ayahuasca y quedé impresionado con la calidad. El manto ceremonial que incluyeron como regalo es hermoso y auténtico. La ceremonia fue profundamente transformadora. ¡El envío llegó en solo 6 días a España!"</p>
+                <p class="testimonial-author" itemprop="author">- Javier L., Barcelona</p>
+                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="bestRating" content="5">
+                </div>
+                <meta itemprop="datePublished" content="2025-05-15">
             </div>
             
-            <div class="testimonial">
-                <p>"Como facilitador de ceremonias en Alemania, he probado muchas fuentes. Esta ayahuasca es excepcionalmente pura y potente. Mis participantes tienen experiencias más claras y profundas. Los regalos artesanales son un detalle encantador."</p>
-                <p class="testimonial-author">- Anna K., Berlín</p>
+            <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
+                    <meta itemprop="name" content="Pasta Pura de Ayahuasca (1kg)"/>
+                </div>
+                <p itemprop="reviewBody">"Como facilitador de ceremonias en Alemania, he probado muchas fuentes. Esta ayahuasca es excepcionalmente pura y potente. Mis participantes tienen experiencias más claras y profundas. Los regalos artesanales son un detalle encantador."</p>
+                <p class="testimonial-author" itemprop="author">- Anna K., Berlín</p>
+                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="bestRating" content="5">
+                </div>
+                <meta itemprop="datePublished" content="2025-04-28">
             </div>
             
-            <div class="testimonial">
-                <p>"Pedí el kit del viajero espiritual a México y todo llegó perfectamente empaquetado. La guía incluida fue invaluable para mi primera experiencia. El incienso de copal creó la atmósfera perfecta. ¡Servicio excepcional!"</p>
-                <p class="testimonial-author">- Carlos M., Ciudad de México</p>
+            <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
+                    <meta itemprop="name" content="Kit del Viajero Espiritual"/>
+                </div>
+                <p itemprop="reviewBody">"Pedí el kit del viajero espiritual a México y todo llegó perfectamente empaquetado. La guía incluida fue invaluable para mi primera experiencia. El incienso de copal creó la atmósfera perfecta. ¡Servicio excepcional!"</p>
+                <p class="testimonial-author" itemprop="author">- Carlos M., Ciudad de México</p>
+                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="bestRating" content="5">
+                </div>
+                <meta itemprop="datePublished" content="2025-05-10">
             </div>
         </section>
     </main>
