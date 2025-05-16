@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://loehei.github.io/tienda-ayahuasca/sitemap.xml
