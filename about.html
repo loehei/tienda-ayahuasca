@@ -1,226 +1,1329 @@
 <!DOCTYPE html>
-<html lang="es" itemscope itemtype="https://schema.org/AboutPage">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="¿Qué es la Ayahuasca? Descubre su significado, efectos, componentes como el DMT, legalidad internacional y cómo funciona esta medicina ancestral. Todo sobre ceremonias, retiros y experiencias con ayahuasca.">
-    <meta name="keywords" content="what is ayahuasca, ayahuasca meaning, ayahuasca drug, ayahuasca dmt, ayahuasca effects, ayahuasca ceremony, ayahuasca retreat, is ayahuasca legal, ayahuasca tea, ayahuasca experience, ayahuasca plant, ayahuasca benefits">
+    <title>Ayahuasca Ancestral - Medicina Sagrada Shipibo | Envíos Mundiales</title>
+    <meta name="description" content="Ayahuasca auténtica preparada por maestros shipibos. Envíos discretos a todo el mundo. Ceremonias guiadas y retiros espirituales. Medicina ancestral certificada.">
     
-    <title>¿Qué es la Ayahuasca? Significado, Efectos y Todo lo que Necesitas Saber</title>
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Schema.org markup for Google -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Schema.org markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "Todo sobre la Ayahuasca",
-      "description": "Información completa sobre qué es la ayahuasca, su composición con DMT, efectos espirituales y legales en el mundo",
-      "image": "https://example.com/images/ayahuasca-about.jpg",
-      "mainEntity": {
-        "@type": "Question",
-        "name": "¿Qué es la ayahuasca y cómo funciona?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "La ayahuasca es una preparación ancestral que contiene DMT, utilizada tradicionalmente para ceremonias espirituales y de sanación en la Amazonía."
-        }
-      }
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Ayahuasca Ancestral",
+      "image": "https://example.com/images/hero-mobile.jpg",
+      "description": "Proveedores certificados de ayahuasca tradicional shipibo con envío internacional",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PE"
+      },
+      "priceRange": "$$$",
+      "openingHours": "Mo-Fr 09:00-18:00"
     }
     </script>
     
-    <link rel="canonical" href="https://example.com/about-ayahuasca" />
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Variables y reset */
+        :root {
+            --primary: #1a3a1f;
+            --primary-light: #2d5d34;
+            --secondary: #d4af37;
+            --secondary-dark: #b79326;
+            --light: #f8f8f8;
+            --dark: #121212;
+            --text: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --overlay: rgba(0, 0, 0, 0.6);
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+            --radius: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 20px;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Utilidades */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--radius-xl);
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--dark);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            background: linear-gradient(to right, #f5d742, var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo-text p {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+        
+        /* Menú móvil */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 0.5rem;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background-color: var(--secondary);
+            color: var(--dark) !important;
+            font-weight: 600 !important;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: var(--radius-xl);
+            transition: var(--transition);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(var(--overlay), var(--overlay)), url('images/hero-desktop.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 10rem 0 6rem;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .badge span {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        /* Features */
+        .features {
+            background-color: var(--white);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Products */
+        .products {
+            background-color: var(--light);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.3rem 1rem;
+            border-radius: var(--radius-xl);
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .product-description {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .product-rating {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+        }
+        
+        .product-cta {
+            display: block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .product-cta:hover {
+            background-color: var(--primary-light);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--white);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -1.5rem;
+            left: 0;
+            color: rgba(0, 0, 0, 0.05);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .about-features {
+            margin-top: 2rem;
+        }
+        
+        .about-feature {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-feature i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .cta-box {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .small-text {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 1.5rem;
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 58, 31, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 100%;
+            padding: 1rem;
+            font-weight: 600;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-light);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .footer-col li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+        
+        .footer-col a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--primary);
+                padding: 5rem 2rem 2rem;
+                transition: var(--transition);
+                z-index: 1000;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .close-menu {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .hero {
+                padding: 8rem 0 4rem;
+                min-height: auto;
+                background-image: url('images/hero-mobile.jpg');
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            .feature-grid,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-text h2 {
+                font-size: 1.6rem;
+            }
+            
+            .cta-box h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="header-sticky">
-        <div class="container">
-            <div class="branding">
-                <h1 itemprop="name">Todo sobre la <span class="highlight">Ayahuasca</span></h1>
-                <p class="tagline">Descubre el significado, efectos y toda la información sobre esta medicina ancestral</p>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Ayahuasca Ancestral" class="logo-img">
+                <div class="logo-text">
+                    <h1>Ayahuasca Ancestral</h1>
+                    <p>Medicina Sagrada Shipibo</p>
+                </div>
             </div>
-            <nav aria-label="Navegación secundaria">
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul>
-                    <li><a href="#que-es">¿Qué es?</a></li>
-                    <li><a href="#significado">Significado</a></li>
-                    <li><a href="#efectos">Efectos</a></li>
-                    <li><a href="#dmt">Componente DMT</a></li>
-                    <li><a href="#legalidad">Legalidad</a></li>
+                    <li><a href="#home" class="active">Inicio</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#about">Sobre la Ayahuasca</a></li>
+                    <li><a href="#testimonials">Testimonios</a></li>
+                    <li><a href="#contact" class="nav-cta">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <article class="about-content">
-            <section id="que-es" itemscope itemtype="https://schema.org/Question">
-                <h2 itemprop="name">¿Qué es la Ayahuasca? <span class="subtitle">Definición completa</span></h2>
-                <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                    <p itemprop="text">La <strong>ayahuasca</strong> (palabra quechua que significa "soga de los espíritus") es una <strong>infusión psicodélica</strong> tradicional preparada con la <strong>liana Banisteriopsis caapi</strong> y otras plantas como la <strong>Psychotria viridis</strong> (que contiene DMT).</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Descubre el Poder Transformador de la Auténtica Ayahuasca Shipibo</h2>
+                <p>Medicina ancestral certificada, preparada por maestros con más de 20 años de experiencia en la Amazonía peruana</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn btn-primary">Ver Productos</a>
+                    <a href="#contact" class="btn btn-secondary">Consulta Gratis</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="badge"><span>✓</span> Envíos Discretos</div>
+                    <div class="badge"><span>✓</span> Certificado Shipibo</div>
+                    <div class="badge"><span>✓</span> Soporte 24/7</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="section-title">Nuestra Medicina Ancestral</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Origen Auténtico</h3>
+                    <p>Preparada en la Amazonía peruana por chamanes shipibos certificados con plantas recolectadas sosteniblemente</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Certificación Legal</h3>
+                    <p>Reconocida como Patrimonio Cultural de la Nación (Resolución Ministerial N° 836-2021-MC)</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>Envío Mundial</h3>
+                    <p>Empaquetado profesional y discreto con seguimiento en tiempo real a todo el mundo</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Soporte Integral</h3>
+                    <p>Asesoría legal y guía ceremonial antes, durante y después de tu experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section products" id="products">
+        <div class="container">
+            <h2 class="section-title">Nuestras Preparaciones</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-badge">Más Popular</div>
+                    <div class="product-image">
+                        <img src="images/product1.jpg" alt="Ayahuasca Tradicional" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ayahuasca Tradicional</h3>
+                        <p class="product-description">Preparación clásica con Banisteriopsis caapi y Psychotria viridis, según receta ancestral shipibo.</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(48)</span>
+                        </div>
+                        <div class="product-price">$120 USD</div>
+                        <a href="#contact" class="product-cta">Consultar Disponibilidad</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">Nueva</div>
+                    <div class="product-image">
+                        <img src="images/product2.jpg" alt="Kit Ceremonial Completo" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kit Ceremonial Completo</h3>
+                        <p class="product-description">Incluye ayahuasca, rapé sagrado, mapacho y guía ceremonial digital.</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(23)</span>
+                        </div>
+                        <div class="product-price">$199 USD</div>
+                        <a href="#contact" class="product-cta">Consultar Disponibilidad</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/product3.jpg" alt="Retiro Virtual Guiado" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Retiro Virtual Guiado</h3>
+                        <p class="product-description">Experiencia completa con maestro shipibo via Zoom, incluye preparación e integración.</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(65)</span>
+                        </div>
+                        <div class="product-price">$350 USD</div>
+                        <a href="#contact" class="product-cta">Consultar Disponibilidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Transformaciones Reales</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Después de años de depresión, la ayahuasca me ayudó a encontrar claridad y propósito. La preparación de Ayahuasca Ancestral fue increíblemente potente y auténtica. El soporte post-ceremonia fue fundamental para mi proceso de integración.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="images/testimonial1.jpg" alt="María G." loading="lazy">
+                        </div>
+                        <div class="author-info">
+                            <h4>María G.</h4>
+                            <p>Barcelona, España</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>La Ayahuasca: Medicina del Espíritu</h2>
+                    <p>La ayahuasca, conocida como "la soga del espíritu" en quechua, es una preparación ancestral que ha sido utilizada por los pueblos indígenas de la Amazonía durante siglos como medicina sagrada y herramienta de crecimiento espiritual.</p>
+                    <p>Nuestras preparaciones son realizadas exclusivamente por maestros shipibos certificados, preservando las recetas tradicionales y el sagrado conocimiento icaro.</p>
                     
-                    <div class="feature-box">
-                        <div class="feature">
-                            <h3>Origen ancestral</h3>
-                            <p>Utilizada por pueblos indígenas de la Amazonía desde hace más de 1,000 años en ceremonias espirituales y de sanación.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Origen Certificado</h3>
+                                <p>Directamente de comunidades shipibo en Ucayali, Perú</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <h3>Composición</h3>
-                            <p>Mezcla de plantas que contienen alcaloides como harmalina y DMT (dimetiltriptamina).</p>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Preparación Tradicional</h3>
+                                <p>Cocción de 12+ horas siguiendo métodos ancestrales</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Energía Sagrada</h3>
+                                <p>Cantado con icaros (cantos medicinales) durante la preparación</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="Maestro shipibo preparando ayahuasca" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>¿Listo para tu Viaje de Transformación?</h2>
+                <p>Obtén asesoría personalizada sobre la preparación adecuada para tus necesidades</p>
+                <a href="#contact" class="btn btn-primary btn-large">Contactar a un Experto</a>
+                <p class="small-text">Consultas confidenciales - Sin compromiso</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Estamos aquí para guiarte</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Iquitos, Perú<br>Centro de Medicina Ancestral</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@ayahuascancestral.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>+51 900 123 456</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <img src="images/ayahuasca-preparation.jpg" alt="Preparación tradicional de ayahuasca" loading="lazy" class="content-image">
-                </div>
-            </section>
-
-            <section id="significado">
-                <h2>Significado espiritual de la Ayahuasca</h2>
-                <p>La ayahuasca no es simplemente una sustancia, sino una <strong>medicina sagrada</strong> en las culturas amazónicas con múltiples dimensiones:</p>
-                
-                <div class="meaning-grid">
-                    <div class="meaning-card">
-                        <h3>Medicina ancestral</h3>
-                        <p>Usada tradicionalmente para tratar tanto dolencias físicas como espirituales.</p>
-                    </div>
-                    <div class="meaning-card">
-                        <h3>Puente espiritual</h3>
-                        <p>Considerada un vehículo para conectar con dimensiones superiores de conciencia.</p>
-                    </div>
-                    <div class="meaning-card">
-                        <h3>Herramienta de autoconocimiento</h3>
-                        <p>Facilita introspección profunda y resolución de traumas emocionales.</p>
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
-                <blockquote class="cultural-quote">
-                    <p>"La ayahuasca es el televisor de la selva. Te muestra lo que necesitas ver, no siempre lo que quieres ver."</p>
-                    <cite>- Sabio indígena amazónico</cite>
-                </blockquote>
-            </section>
-
-            <section id="efectos" itemscope itemtype="https://schema.org/Question">
-                <h2 itemprop="name">Efectos de la Ayahuasca <span class="subtitle">¿Qué se siente?</span></h2>
-                <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                    <p itemprop="text">La experiencia con ayahuasca varía según la persona, el contexto y la dosis, pero generalmente incluye:</p>
-                    
-                    <div class="effects-timeline">
-                        <div class="timeline-phase">
-                            <h3>Fase inicial (30-60 min)</h3>
-                            <ul>
-                                <li>Sensación de calor o frío</li>
-                                <li>Náuseas o posibles vómitos (efecto purgativo)</li>
-                                <li>Cambios en la percepción visual</li>
-                            </ul>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                        <div class="timeline-phase">
-                            <h3>Fase principal (2-4 horas)</h3>
-                            <ul>
-                                <li>Visiones complejas con ojos cerrados</li>
-                                <li>Introspección profunda</li>
-                                <li>Posible sensación de conexión universal</li>
-                                <li>Revisión de memorias personales</li>
-                            </ul>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                        <div class="timeline-phase">
-                            <h3>Fase final (1-2 horas)</h3>
-                            <ul>
-                                <li>Sensación de claridad mental</li>
-                                <li>Reflexiones sobre la experiencia</li>
-                                <li>Posible fatiga física</li>
-                            </ul>
+                        <div class="form-group">
+                            <label for="country">País</label>
+                            <select id="country" name="country" required>
+                                <option value="">Selecciona tu país</option>
+                                <option value="US">Estados Unidos</option>
+                                <option value="ES">España</option>
+                                <option value="MX">México</option>
+                                <option value="CO">Colombia</option>
+                                <option value="AR">Argentina</option>
+                                <option value="CL">Chile</option>
+                                <option value="PE">Perú</option>
+                                <option value="other">Otro</option>
+                            </select>
                         </div>
-                    </div>
-                    
-                    <div class="warning-box">
-                        <h4>Consideraciones importantes:</h4>
-                        <p>Los efectos pueden ser impredecibles y varían según el estado físico, mental y emocional de cada persona. Siempre debe tomarse bajo supervisión de expertos.</p>
-                    </div>
+                        <div class="form-group">
+                            <label for="interest">Interés Principal</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="product">Productos de Ayahuasca</option>
+                                <option value="ceremony">Ceremonias Guiadas</option>
+                                <option value="retreat">Retiro Espiritual</option>
+                                <option value="question">Consulta General</option>
+                                <option value="legal">Consulta Legal</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Consulta</button>
+                    </form>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <section id="dmt">
-                <h2>El DMT en la Ayahuasca <span class="subtitle">Componente clave</span></h2>
-                <p>La <strong>dimetiltriptamina (DMT)</strong> es el principal compuesto psicoactivo en la ayahuasca:</p>
-                
-                <div class="dmt-facts">
-                    <div class="fact-card">
-                        <h3>Molécula espiritual</h3>
-                        <p>El DMT es conocido como "la molécula del espíritu" por sus intensos efectos visionarios.</p>
-                    </div>
-                    <div class="fact-card">
-                        <h3>Presente en la naturaleza</h3>
-                        <p>Se encuentra en muchas plantas y hasta en el cerebro humano en pequeñas cantidades.</p>
-                    </div>
-                    <div class="fact-card">
-                        <h3>Activación oral</h3>
-                        <p>Normalmente el DMT no es activo por vía oral, pero los IMAOs en la ayahuasca permiten su efecto.</p>
-                    </div>
-                </div>
-                
-                <div class="chemical-structure">
-                    <img src="images/dmt-structure.png" alt="Estructura química del DMT" loading="lazy">
-                    <p>Estructura molecular de la dimetiltriptamina (DMT)</p>
-                </div>
-            </section>
-
-            <section id="legalidad">
-                <h2>Estatus legal de la Ayahuasca <span class="subtitle">Situación global</span></h2>
-                <p>La legalidad de la ayahuasca varía significativamente entre países:</p>
-                
-                <div class="legal-grid">
-                    <div class="legal-status">
-                        <h3>Legal en su origen</h3>
-                        <p>En Perú, Brasil y otros países amazónicos es legal como medicina tradicional.</p>
-                    </div>
-                    <div class="legal-status">
-                        <h3>Zona gris legal</h3>
-                        <p>En muchos países no está específicamente regulada pero sus componentes pueden ser ilegales.</p>
-                    </div>
-                    <div class="legal-status">
-                        <h3>Prohibida</h3>
-                        <p>En algunas naciones está explícitamente prohibida junto con otras sustancias psicodélicas.</p>
-                    </div>
-                </div>
-                
-                <div class="disclaimer-box">
-                    <p><strong>Importante:</strong> Este sitio no aboga por el uso ilegal de sustancias. Recomendamos investigar las leyes específicas de tu país antes de considerar cualquier uso de ayahuasca.</p>
-                </div>
-            </section>
-
-            <section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
-                <h2>Preguntas frecuentes sobre Ayahuasca</h2>
-                
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">¿La ayahuasca es adictiva?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">No se han reportado casos de adicción física a la ayahuasca. Al contrario, muchos usuarios reportan disminución en el consumo de otras sustancias después de experiencias con ayahuasca.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">¿Cuánto dura el efecto de la ayahuasca?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Generalmente entre 4-6 horas, aunque la experiencia completa (incluyendo integración) puede extenderse por días o semanas.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">¿Es peligrosa la ayahuasca?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Puede ser riesgosa para personas con condiciones cardíacas, psiquiátricas o que combinan con ciertos medicamentos. Siempre debe usarse bajo supervisión calificada.</p>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </main>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-about">
-                <p>Este sitio provee información educativa sobre la ayahuasca basada en investigación científica y tradición ancestral. No promovemos el uso ilegal de sustancias.</p>
-                <p>© 2023 Información sobre Ayahuasca. Todos los derechos reservados.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Ayahuasca Ancestral</h3>
+                    <p>Preservando y compartiendo la medicina tradicional shipibo desde el corazón de la Amazonía peruana.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#about">Sobre la Ayahuasca</a></li>
+                        <li><a href="#testimonials">Testimonios</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Envíos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir información sobre ceremonias, nuevos productos y contenido educativo.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Ayahuasca Ancestral. Todos los derechos reservados.</p>
+                <p>La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país.</p>
+                <p class="disclaimer">Este producto no es un medicamento y no pretende diagnosticar, tratar o curar enfermedades. Consulte a un profesional de la salud antes de su uso.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        // Menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const closeMenu = document.getElementById('closeMenu');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Año actual en el footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Formulario de contacto
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Aquí iría el código para enviar el formulario
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling para todos los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Cambiar header al hacer scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
 </body>
 </html>
