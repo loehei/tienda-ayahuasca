@@ -3,224 +3,521 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="¿Qué es la Ayahuasca? Descubre su significado, efectos, componentes como el DMT, legalidad internacional y cómo funciona esta medicina ancestral. Todo sobre ceremonias, retiros y experiencias con ayahuasca.">
-    <meta name="keywords" content="what is ayahuasca, ayahuasca meaning, ayahuasca drug, ayahuasca dmt, ayahuasca effects, ayahuasca ceremony, ayahuasca retreat, is ayahuasca legal, ayahuasca tea, ayahuasca experience, ayahuasca plant, ayahuasca benefits">
-    
-    <title>¿Qué es la Ayahuasca? Significado, Efectos y Todo lo que Necesitas Saber</title>
+    <meta name="description" content="Descubre la auténtica tradición Shipibo-Conibo: cultura, sabiduría ancestral y conexión espiritual con la ayahuasca. Conoce a nuestros maestros chamanes y su legado milenario.">
+    <meta name="keywords" content="tradición shipibo, cultura shipibo-conibo, chamanes shipibo, sabiduría ancestral, medicina tradicional amazónica, historia shipibo, cosmovisión shipibo, arte shipibo, cantos icaros, ayahuasca shipibo">
+    <meta name="robots" content="index, follow">
+    <title>Tradición Shipibo-Conibo | Sabiduría Ancestral y Medicina Sagrada</title>
     
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "name": "Todo sobre la Ayahuasca",
-      "description": "Información completa sobre qué es la ayahuasca, su composición con DMT, efectos espirituales y legales en el mundo",
-      "image": "https://example.com/images/ayahuasca-about.jpg",
+      "name": "Tradición Shipibo-Conibo y Medicina Ancestral",
+      "description": "Explora la cultura y sabiduría de los Shipibo-Conibo, guardianes de la ayahuasca en la Amazonía peruana",
+      "image": "https://tu-sitio.com/images/shipibo-culture.jpg",
       "mainEntity": {
         "@type": "Question",
-        "name": "¿Qué es la ayahuasca y cómo funciona?",
+        "name": "¿Quiénes son los Shipibo-Conibo y cuál es su relación con la ayahuasca?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La ayahuasca es una preparación ancestral que contiene DMT, utilizada tradicionalmente para ceremonias espirituales y de sanación en la Amazonía."
+          "text": "Los Shipibo-Conibo son un pueblo indígena amazónico con una profunda tradición chamánica. Por siglos han preservado el conocimiento de la ayahuasca como medicina espiritual, usando iconografías sagradas (kené) y cantos curativos (ícaros) en ceremonias de sanación."
         }
       }
     }
     </script>
     
-    <link rel="canonical" href="https://example.com/about-ayahuasca" />
+    <link rel="canonical" href="https://tu-sitio.com/about" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --primary-light: #4CAF50;
+            --accent: #FFC107;
+            --text: #333333;
+            --text-light: #666666;
+            --light: #F1F8E9;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --dark-gray: #E0E0E0;
+            --brown: #5E2C04;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .branding {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .branding h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        .tagline {
+            color: var(--brown);
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a[aria-current="page"] {
+            color: var(--primary);
+        }
+        
+        nav a[aria-current="page"]:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .nav-cta {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+            color: var(--white) !important;
+        }
+        
+        /* Hero Section */
+        .culture-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/shipibo-village.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .culture-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .culture-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* Content Sections */
+        .culture-section {
+            margin-bottom: 60px;
+        }
+        
+        .culture-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .culture-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .culture-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .culture-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .culture-card-content {
+            padding: 20px;
+        }
+        
+        .culture-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            margin-top: 0;
+        }
+        
+        /* Kené Pattern */
+        .kene-pattern {
+            background-image: url('images/kene-pattern.png');
+            background-repeat: repeat;
+            height: 30px;
+            margin: 40px 0;
+            opacity: 0.3;
+        }
+        
+        /* Testimonials */
+        .testimonial-section {
+            background-color: var(--light);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        
+        .testimonial {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: var(--accent);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .branding {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .culture-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .culture-hero p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+            
+            .culture-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 <body>
     <header class="header-sticky">
-        <div class="container">
+        <div class="container header-content">
             <div class="branding">
-                <h1 itemprop="name">Todo sobre la <span class="highlight">Ayahuasca</span></h1>
-                <p class="tagline">Descubre el significado, efectos y toda la información sobre esta medicina ancestral</p>
+                <h1 itemprop="name">Ayahuasca Ancestral</h1>
+                <p class="tagline">Medicina Sagrada de la Amazonía Peruana</p>
             </div>
-            <nav aria-label="Navegación secundaria">
+            
+            <nav aria-label="Navegación principal">
                 <ul>
-                    <li><a href="#que-es">¿Qué es?</a></li>
-                    <li><a href="#significado">Significado</a></li>
-                    <li><a href="#efectos">Efectos</a></li>
-                    <li><a href="#dmt">Componente DMT</a></li>
-                    <li><a href="#legalidad">Legalidad</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="ceremonias.html">Ceremonias</a></li>
+                    <li><a href="about.html" aria-current="page">Tradición</a></li>
+                    <li><a href="contact.html" class="nav-cta">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <section class="culture-hero">
+        <div class="container">
+            <h1>La Sabiduría Ancestral de los Shipibo-Conibo</h1>
+            <p>Guardianes milenarios de la ayahuasca y su poder transformador</p>
+        </div>
+    </section>
+
     <main class="container">
-        <article class="about-content">
-            <section id="que-es" itemscope itemtype="https://schema.org/Question">
-                <h2 itemprop="name">¿Qué es la Ayahuasca? <span class="subtitle">Definición completa</span></h2>
-                <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                    <p itemprop="text">La <strong>ayahuasca</strong> (palabra quechua que significa "soga de los espíritus") es una <strong>infusión psicodélica</strong> tradicional preparada con la <strong>liana Banisteriopsis caapi</strong> y otras plantas como la <strong>Psychotria viridis</strong> (que contiene DMT).</p>
+        <section class="culture-section" itemscope itemtype="https://schema.org/Article">
+            <h2 itemprop="headline">Nuestras Raíces Culturales</h2>
+            <p itemprop="description">Los Shipibo-Conibo son un pueblo indígena de la Amazonía peruana con una tradición chamánica que se remonta a más de 1,000 años. Su profunda conexión con la ayahuasca (que ellos llaman <em>"oni"</em>) los ha posicionado como los guardianes de este conocimiento sagrado.</p>
+            
+            <div class="kene-pattern"></div>
+            
+            <div class="culture-grid">
+                <div class="culture-card" itemscope itemtype="https://schema.org/ListItem">
+                    <img src="images/shipibo-art.jpg" alt="Arte Shipibo Kené" itemprop="image">
+                    <div class="culture-card-content">
+                        <h3 itemprop="name">El Arte del Kené</h3>
+                        <p itemprop="description">Patrones geométricos que representan visiones de ayahuasca y la cosmovisión Shipibo. Cada diseño cuenta una historia y posee energía curativa.</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card" itemscope itemtype="https://schema.org/ListItem">
+                    <img src="images/shipibo-ceremony.jpg" alt="Ceremonia Shipibo" itemprop="image">
+                    <div class="culture-card-content">
+                        <h3 itemprop="name">Ícaros: Cantos Sagrados</h3>
+                        <p itemprop="description">Melodías aprendidas durante ceremonias que guían la energía curativa. Cada maestro tiene sus propios ícaros transmitidos por generaciones.</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card" itemscope itemtype="https://schema.org/ListItem">
+                    <img src="images/shipibo-chaman.jpg" alt="Chamán Shipibo" itemprop="image">
+                    <div class="culture-card-content">
+                        <h3 itemprop="name">El Camino del Chamán</h3>
+                        <p itemprop="description">20+ años de preparación para dominar la medicina ancestral. Nuestros maestros tienen décadas de experiencia en ceremonias de sanación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="culture-section">
+            <h2>La Ayahuasca en la Cultura Shipibo</h2>
+            <p>Para los Shipibo-Conibo, la ayahuasca no es simplemente una planta, sino un ser maestro que enseña y cura:</p>
+            
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li style="margin-bottom: 10px;"><strong>Medicina espiritual:</strong> Usada para diagnóstico y tratamiento de enfermedades físicas y espirituales</li>
+                <li style="margin-bottom: 10px;"><strong>Iniciación chamánica:</strong> Rito de paso para aprender a "ver" en el mundo espiritual</li>
+                <li style="margin-bottom: 10px;"><strong>Conexión cósmica:</strong> Puente entre el mundo físico y espiritual según su cosmovisión</li>
+                <li style="margin-bottom: 10px;"><strong>Transmisión cultural:</strong> Vehículo para preservar su conocimiento ancestral</li>
+            </ul>
+            
+            <div style="background-color: var(--light); padding: 20px; border-radius: 10px; margin: 30px 0;">
+                <p style="font-style: italic; margin: 0;">"El verdadero poder de la ayahuasca no está en la planta, sino en el conocimiento que los Shipibo hemos acumulado por siglos para usarla correctamente."</p>
+                <p style="text-align: right; margin: 10px 0 0; font-weight: bold;">- Maestro Shipibo, Comunidad de San Francisco</p>
+            </div>
+        </section>
+        
+        <section class="testimonial-section">
+            <div class="container">
+                <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 40px;">Voces de Nuestra Comunidad</h2>
+                
+                <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <p itemprop="reviewBody">"Crecí viendo a mi abuela curar con las plantas. A los 14 años tomé ayahuasca por primera vez y vi los patrones del kené flotando alrededor de ella. Ese día supe que seguiría este camino. Hoy, después de 30 años como chamán, sigo aprendiendo de la medicina."</p>
                     
-                    <div class="feature-box">
-                        <div class="feature">
-                            <h3>Origen ancestral</h3>
-                            <p>Utilizada por pueblos indígenas de la Amazonía desde hace más de 1,000 años en ceremonias espirituales y de sanación.</p>
-                        </div>
-                        <div class="feature">
-                            <h3>Composición</h3>
-                            <p>Mezcla de plantas que contienen alcaloides como harmalina y DMT (dimetiltriptamina).</p>
+                    <div class="testimonial-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="images/shipibo-elder.jpg" alt="Rosa, anciana Shipibo" itemprop="image">
+                        <div>
+                            <span itemprop="name">Rosa Mahua</span>
+                            <div style="color: var(--accent); font-size: 0.9rem;">Curandera Shipibo, 62 años</div>
                         </div>
                     </div>
-                    
-                    <img src="images/ayahuasca-preparation.jpg" alt="Preparación tradicional de ayahuasca" loading="lazy" class="content-image">
                 </div>
-            </section>
-
-            <section id="significado">
-                <h2>Significado espiritual de la Ayahuasca</h2>
-                <p>La ayahuasca no es simplemente una sustancia, sino una <strong>medicina sagrada</strong> en las culturas amazónicas con múltiples dimensiones:</p>
-                
-                <div class="meaning-grid">
-                    <div class="meaning-card">
-                        <h3>Medicina ancestral</h3>
-                        <p>Usada tradicionalmente para tratar tanto dolencias físicas como espirituales.</p>
-                    </div>
-                    <div class="meaning-card">
-                        <h3>Puente espiritual</h3>
-                        <p>Considerada un vehículo para conectar con dimensiones superiores de conciencia.</p>
-                    </div>
-                    <div class="meaning-card">
-                        <h3>Herramienta de autoconocimiento</h3>
-                        <p>Facilita introspección profunda y resolución de traumas emocionales.</p>
-                    </div>
+            </div>
+        </section>
+        
+        <section class="culture-section">
+            <h2>Preservando la Tradición</h2>
+            <p>En Ayahuasca Ancestral trabajamos directamente con comunidades Shipibo-Conibo para:</p>
+            
+            <div class="culture-grid">
+                <div style="background-color: var(--light); padding: 20px; border-radius: 10px;">
+                    <h3 style="color: var(--primary-dark);">Comercio Justo</h3>
+                    <p>El 30% de cada venta se reinvierte en proyectos educativos y médicos en las comunidades</p>
                 </div>
                 
-                <blockquote class="cultural-quote">
-                    <p>"La ayahuasca es el televisor de la selva. Te muestra lo que necesitas ver, no siempre lo que quieres ver."</p>
-                    <cite>- Sabio indígena amazónico</cite>
-                </blockquote>
-            </section>
-
-            <section id="efectos" itemscope itemtype="https://schema.org/Question">
-                <h2 itemprop="name">Efectos de la Ayahuasca <span class="subtitle">¿Qué se siente?</span></h2>
-                <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                    <p itemprop="text">La experiencia con ayahuasca varía según la persona, el contexto y la dosis, pero generalmente incluye:</p>
-                    
-                    <div class="effects-timeline">
-                        <div class="timeline-phase">
-                            <h3>Fase inicial (30-60 min)</h3>
-                            <ul>
-                                <li>Sensación de calor o frío</li>
-                                <li>Náuseas o posibles vómitos (efecto purgativo)</li>
-                                <li>Cambios en la percepción visual</li>
-                            </ul>
-                        </div>
-                        <div class="timeline-phase">
-                            <h3>Fase principal (2-4 horas)</h3>
-                            <ul>
-                                <li>Visiones complejas con ojos cerrados</li>
-                                <li>Introspección profunda</li>
-                                <li>Posible sensación de conexión universal</li>
-                                <li>Revisión de memorias personales</li>
-                            </ul>
-                        </div>
-                        <div class="timeline-phase">
-                            <h3>Fase final (1-2 horas)</h3>
-                            <ul>
-                                <li>Sensación de claridad mental</li>
-                                <li>Reflexiones sobre la experiencia</li>
-                                <li>Posible fatiga física</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="warning-box">
-                        <h4>Consideraciones importantes:</h4>
-                        <p>Los efectos pueden ser impredecibles y varían según el estado físico, mental y emocional de cada persona. Siempre debe tomarse bajo supervisión de expertos.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="dmt">
-                <h2>El DMT en la Ayahuasca <span class="subtitle">Componente clave</span></h2>
-                <p>La <strong>dimetiltriptamina (DMT)</strong> es el principal compuesto psicoactivo en la ayahuasca:</p>
-                
-                <div class="dmt-facts">
-                    <div class="fact-card">
-                        <h3>Molécula espiritual</h3>
-                        <p>El DMT es conocido como "la molécula del espíritu" por sus intensos efectos visionarios.</p>
-                    </div>
-                    <div class="fact-card">
-                        <h3>Presente en la naturaleza</h3>
-                        <p>Se encuentra en muchas plantas y hasta en el cerebro humano en pequeñas cantidades.</p>
-                    </div>
-                    <div class="fact-card">
-                        <h3>Activación oral</h3>
-                        <p>Normalmente el DMT no es activo por vía oral, pero los IMAOs en la ayahuasca permiten su efecto.</p>
-                    </div>
+                <div style="background-color: var(--light); padding: 20px; border-radius: 10px;">
+                    <h3 style="color: var(--primary-dark);">Transmisión del Conocimiento</h3>
+                    <p>Grabamos y documentamos ícaros y ceremonias para preservarlas para futuras generaciones</p>
                 </div>
                 
-                <div class="chemical-structure">
-                    <img src="images/dmt-structure.png" alt="Estructura química del DMT" loading="lazy">
-                    <p>Estructura molecular de la dimetiltriptamina (DMT)</p>
+                <div style="background-color: var(--light); padding: 20px; border-radius: 10px;">
+                    <h3 style="color: var(--primary-dark);">Cosecha Sostenible</h3>
+                    <p>Plantamos 3 árboles por cada uno usado en nuestras preparaciones</p>
                 </div>
-            </section>
-
-            <section id="legalidad">
-                <h2>Estatus legal de la Ayahuasca <span class="subtitle">Situación global</span></h2>
-                <p>La legalidad de la ayahuasca varía significativamente entre países:</p>
-                
-                <div class="legal-grid">
-                    <div class="legal-status">
-                        <h3>Legal en su origen</h3>
-                        <p>En Perú, Brasil y otros países amazónicos es legal como medicina tradicional.</p>
-                    </div>
-                    <div class="legal-status">
-                        <h3>Zona gris legal</h3>
-                        <p>En muchos países no está específicamente regulada pero sus componentes pueden ser ilegales.</p>
-                    </div>
-                    <div class="legal-status">
-                        <h3>Prohibida</h3>
-                        <p>En algunas naciones está explícitamente prohibida junto con otras sustancias psicodélicas.</p>
-                    </div>
-                </div>
-                
-                <div class="disclaimer-box">
-                    <p><strong>Importante:</strong> Este sitio no aboga por el uso ilegal de sustancias. Recomendamos investigar las leyes específicas de tu país antes de considerar cualquier uso de ayahuasca.</p>
-                </div>
-            </section>
-
-            <section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
-                <h2>Preguntas frecuentes sobre Ayahuasca</h2>
-                
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">¿La ayahuasca es adictiva?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">No se han reportado casos de adicción física a la ayahuasca. Al contrario, muchos usuarios reportan disminución en el consumo de otras sustancias después de experiencias con ayahuasca.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">¿Cuánto dura el efecto de la ayahuasca?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Generalmente entre 4-6 horas, aunque la experiencia completa (incluyendo integración) puede extenderse por días o semanas.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">¿Es peligrosa la ayahuasca?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Puede ser riesgosa para personas con condiciones cardíacas, psiquiátricas o que combinan con ciertos medicamentos. Siempre debe usarse bajo supervisión calificada.</p>
-                    </div>
-                </div>
-            </section>
-        </article>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <section class="cta-section">
         <div class="container">
-            <div class="footer-about">
-                <p>Este sitio provee información educativa sobre la ayahuasca basada en investigación científica y tradición ancestral. No promovemos el uso ilegal de sustancias.</p>
-                <p>© 2023 Información sobre Ayahuasca. Todos los derechos reservados.</p>
-            </div>
+            <h2>¿Listo para Experimentar la Auténtica Medicina Shipibo?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Conecta con esta tradición milenario a través de nuestras ceremonias guiadas o preparaciones tradicionales</p>
+            <a href="productos.html" class="btn" style="display: inline-block; background-color: var(--accent); color: var(--text); padding: 15px 40px; border-radius: 30px; font-weight: bold; text-decoration: none; font-size: 1.1rem;">Ver Productos</a>
+        </div>
+    </section>
+
+    <footer style="background-color: var(--primary-dark); color: white; text-align: center; padding: 30px 0;">
+        <div class="container">
+            <p>&copy; 2025 Ayahuasca Ancestral. Todos los derechos reservados.</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/51903051441" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle (si decides añadirlo después)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animaciones al hacer scroll
+            const fadeElems = document.querySelectorAll('.culture-card');
+            fadeElems.forEach((elem, index) => {
+                elem.style.opacity = '0';
+                elem.style.transform = 'translateY(20px)';
+                elem.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            });
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElems.forEach(elem => {
+                observer.observe(elem);
+            });
+        });
+    </script>
 </body>
 </html>
