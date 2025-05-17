@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ayahuasca auténtica de la Amazonía Peruana. Envío GRATIS mundial. Medicina sagrada en presentaciones premium para ceremonias y crecimiento espiritual.">
-    <title>Ayahuasca Ancestral | Medicina Sagrada del Amazonas</title>
+    <title>Productos | Ayahuasca Ancestral - Medicina Sagrada del Amazonas</title>
     
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
@@ -18,201 +18,131 @@
         "name": "Ayahuasca Ancestral",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://loehei.github.io/tienda-ayahuasca/img/ayahuasca-icon.png"
+          "url": "https://example.com/images/logo.png"
         }
       }
     }
     </script>
     
-    <!-- Schema for Product Collection -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "Product",
-            "name": "Brebaje Ceremonial Premium (1 Litro)",
-            "description": "Preparación tradicional con la más alta concentración de principios activos para ceremonias",
-            "image": "https://loehei.github.io/tienda-ayahuasca/img/brebaje-premium.jpg",
-            "brand": {
-              "@type": "Brand",
-              "name": "Comunidad Shipibo-Conibo"
-            },
-            "offers": {
-              "@type": "Offer",
-              "url": "https://loehei.github.io/tienda-ayahuasca/productos.html",
-              "priceCurrency": "USD",
-              "price": "1000.00",
-              "priceValidUntil": "2025-12-31",
-              "availability": "https://schema.org/InStock",
-              "itemCondition": "https://schema.org/NewCondition"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "28"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Product",
-            "name": "Brebaje Ceremonial (500ml)",
-            "description": "Media botella de nuestro brebaje premium, suficiente para 2-4 sesiones",
-            "image": "https://loehei.github.io/tienda-ayahuasca/img/ayahuasca-medio.jpg",
-            "brand": {
-              "@type": "Brand",
-              "name": "Comunidad Shipibo-Conibo"
-            },
-            "offers": {
-              "@type": "Offer",
-              "url": "https://loehei.github.io/tienda-ayahuasca/productos.html",
-              "priceCurrency": "USD",
-              "price": "500.00",
-              "priceValidUntil": "2025-12-31",
-              "availability": "https://schema.org/InStock",
-              "itemCondition": "https://schema.org/NewCondition"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.7",
-              "reviewCount": "15"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@type": "Product",
-            "name": "Pasta Pura de Ayahuasca (1kg)",
-            "description": "Extracción pura de máxima potencia para chamanes y centros ceremoniales",
-            "image": "https://loehei.github.io/tienda-ayahuasca/img/ayahuasca-pasta.jpg",
-            "brand": {
-              "@type": "Brand",
-              "name": "Comunidad Shipibo-Conibo"
-            },
-            "offers": {
-              "@type": "Offer",
-              "url": "https://loehei.github.io/tienda-ayahuasca/productos.html",
-              "priceCurrency": "USD",
-              "price": "3500.00",
-              "priceValidUntil": "2025-12-31",
-              "availability": "https://schema.org/InStock",
-              "itemCondition": "https://schema.org/NewCondition"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "12"
-            }
-          }
-        }
-      ]
-    }
-    </script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2E7D32;
-            --secondary: #4CAF50;
+            --primary-dark: #1B5E20;
+            --primary-light: #4CAF50;
             --accent: #FFC107;
-            --dark: #1B5E20;
+            --text: #333333;
+            --text-light: #666666;
             --light: #F1F8E9;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --dark-gray: #E0E0E0;
+            --brown: #5E2C04;
         }
         
+        /* Estilos consistentes con index.html */
         body {
-            background-color: #f9f9f9;
-            font-family: 'Arial', sans-serif;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--dark), var(--primary));
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header-icon {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            width: 60px;
-            opacity: 0.8;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
         }
         
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        h1, h2, h3 {
-            font-family: 'Georgia', serif;
+        /* Header Styles */
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
         }
         
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        h2 {
-            color: var(--dark);
-            font-size: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            position: relative;
+        .branding {
+            display: flex;
+            flex-direction: column;
         }
         
-        h2:after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: var(--accent);
-            margin: 10px auto;
+        .branding h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
         }
         
-        nav {
-            background-color: var(--dark);
-            padding: 1rem 0;
+        .tagline {
+            color: var(--brown);
+            font-size: 0.9rem;
         }
         
+        /* Navigation */
         nav ul {
             display: flex;
-            justify-content: center;
             list-style: none;
-            padding: 0;
-            margin: 0;
         }
         
         nav li {
-            margin: 0 15px;
+            margin-left: 25px;
         }
         
         nav a {
-            color: white;
             text-decoration: none;
-            font-weight: bold;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            position: relative;
         }
         
         nav a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
         
+        nav a[aria-current="page"] {
+            color: var(--primary);
+        }
+        
+        nav a[aria-current="page"]:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .nav-cta {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+            color: var(--white) !important;
+        }
+        
+        /* Product Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -245,9 +175,10 @@
         }
         
         .product h3 {
-            color: var(--dark);
+            color: var(--primary-dark);
             margin-top: 0;
             font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
         }
         
         .price {
@@ -256,13 +187,6 @@
             color: var(--primary);
             font-weight: bold;
             margin: 15px 0;
-        }
-        
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.2rem;
-            margin-right: 10px;
         }
         
         .discount-badge {
@@ -290,10 +214,12 @@
             letter-spacing: 1px;
             transition: background-color 0.3s;
             width: 100%;
+            text-align: center;
+            text-decoration: none;
         }
         
         .btn:hover {
-            background-color: var(--dark);
+            background-color: var(--primary-dark);
         }
         
         .product-highlight {
@@ -323,77 +249,6 @@
             font-weight: bold;
         }
         
-        .shipping-info {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .testimonials {
-            margin: 50px 0;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: var(--dark);
-            margin-top: 10px;
-            text-align: right;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-        
-        .urgency-banner {
-            background-color: #E53935;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 0.8; }
-            50% { opacity: 1; }
-            100% { opacity: 0.8; }
-        }
-        
-        .limited-stock {
-            color: #E53935;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        
-        .package-deal {
-            border: 2px dashed var(--accent);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: center;
-            background-color: #FFFDE7;
-        }
-        
-        .package-deal h4 {
-            color: var(--dark);
-            margin-top: 0;
-        }
-        
         .dose-info {
             background-color: #FFF9C4;
             padding: 10px;
@@ -416,47 +271,240 @@
             margin-right: 10px;
         }
         
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+        .limited-stock {
+            color: #E53935;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
         }
         
-        .payment-methods img {
-            height: 30px;
+        /* Package Deal */
+        .package-deal {
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            background-color: #FFFDE7;
+        }
+        
+        .package-deal h4 {
+            color: var(--primary-dark);
+            margin-top: 0;
+        }
+        
+        /* Shipping Info */
+        .shipping-info {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            margin: 50px 0;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-top: 10px;
+            text-align: right;
+        }
+        
+        /* Urgency Banner */
+        .urgency-banner {
+            background-color: #E53935;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .branding {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
+    <!-- Urgency Banner -->
     <div class="urgency-banner">
-        ⚠️ OFERTA EXCLUSIVA: ¡ENVÍO GRATIS A TODO EL MUNDO! | Solo quedan 3 unidades del lote actual
+        ⚡ ÚLTIMAS UNIDADES DISPONIBLES - ENVÍO GRATIS A TODO EL MUNDO ⚡
     </div>
     
-    <header>
-        <img src="img/ayahuasca-icon.png" alt="Icono de Ayahuasca" class="header-icon">
-        <div class="container">
-            <h1>Ayahuasca Ancestral Premium</h1>
-            <p>Medicina Sagrada del Amazonas Peruano - Envíos Internacionales Discretos</p>
+    <header class="header-sticky">
+        <div class="container header-content">
+            <div class="branding">
+                <h1 itemprop="name">Ayahuasca Ancestral</h1>
+                <p class="tagline">Medicina Sagrada de la Amazonía Peruana</p>
+            </div>
+            
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html" aria-current="page">Productos</a></li>
+                    <li><a href="ceremonias.html">Ceremonias</a></li>
+                    <li><a href="about.html">Tradición</a></li>
+                    <li><a href="contact.html" class="nav-cta">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="about.html">Sobre la Ayahuasca</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main class="container">
-        <h2>Nuestras Presentaciones Exclusivas</h2>
-        <p class="text-center">Selecciona la presentación que mejor se adapte a tu viaje espiritual. Todas nuestras preparaciones son elaboradas por chamanes tradicionales con más de 30 años de experiencia.</p>
+        <h1 style="text-align: center; margin: 40px 0; font-family: 'Playfair Display', serif; color: var(--primary-dark);">Nuestras Preparaciones Sagradas</h1>
         
         <div class="products-grid">
+            <!-- Producto 1 - 250ml -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
-                <span class="discount-badge">MÁS VENDIDO</span>
-                <img src="img/brebaje-premium.jpg" alt="Brebaje ceremonial premium de ayahuasca" itemprop="image">
+                <span class="discount-badge">MÁS POPULAR</span>
+                <img src="images/ayahuasca-250ml.jpg" alt="Botella de Ayahuasca 250ml" itemprop="image">
+                <div class="product-content">
+                    <h3 itemprop="name">Brebaje Ceremonial (250ml)</h3>
+                    <div class="product-highlight" itemprop="description">
+                        "La dosis perfecta para tu primera experiencia sagrada"
+                    </div>
+                    <p itemprop="description">Preparación tradicional con la concentración ideal para 5 sesiones ceremoniales. Ideal para iniciar tu camino espiritual.</p>
+                    
+                    <div class="dose-info">
+                        <strong>Guía de dosificación:</strong> 50ml por sesión (5 ceremonias completas)
+                    </div>
+                    
+                    <div class="free-gift">
+                        <img src="images/incienso.png" alt="Incienso artesanal">
+                        <div>
+                            <strong>¡REGALO!</strong> Lleva <em>Incienso sagrado de copal</em> (valorado en $20) con tu compra
+                        </div>
+                    </div>
+                    
+                    <ul class="benefits-list">
+                        <li>Plantas cosechadas en luna llena</li>
+                        <li>Proceso de fermentación de 2 meses</li>
+                        <li>Envase de vidrio oscuro protector</li>
+                        <li>Incluye guía ceremonial digital</li>
+                        <li>Soporte por WhatsApp con nuestro chamán</li>
+                    </ul>
+                    
+                    <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="USD">$</span>
+                        <span itemprop="price" content="300">300.00</span>
+                    </span>
+                    <span class="limited-stock">¡SOLO 5 UNIDADES DISPONIBLES!</span>
+                    <a href="#" class="btn">COMPRAR AHORA</a>
+                </div>
+            </div>
+            
+            <!-- Producto 2 - 500ml -->
+            <div class="product" itemscope itemtype="https://schema.org/Product">
+                <span class="discount-badge">OFERTA</span>
+                <img src="images/ayahuasca-500ml.jpg" alt="Botella de Ayahuasca 500ml" itemprop="image">
+                <div class="product-content">
+                    <h3 itemprop="name">Brebaje Ceremonial (500ml)</h3>
+                    <div class="product-highlight" itemprop="description">
+                        "La medida perfecta para una ceremonia personal o pareja"
+                    </div>
+                    <p itemprop="description">Media botella de nuestro brebaje premium, suficiente para 10 sesiones ceremoniales (50ml por sesión).</p>
+                    
+                    <div class="dose-info">
+                        <strong>Guía de dosificación:</strong> 50ml por sesión (10 ceremonias completas)
+                    </div>
+                    
+                    <div class="free-gift">
+                        <img src="images/manto-pequeno.jpg" alt="Manto ceremonial pequeño">
+                        <div>
+                            <strong>¡REGALO EXCLUSIVO!</strong> Manto ceremonial de algodón (valorado en $50)
+                        </div>
+                    </div>
+                    
+                    <ul class="benefits-list">
+                        <li>Misma calidad que nuestra presentación de 1L</li>
+                        <li>Envase de vidrio oscuro con protección UV</li>
+                        <li>Incluye dosificador de cerámica artesanal</li>
+                        <li>Guía de preparación ceremonial</li>
+                        <li>Envío prioritario GRATIS</li>
+                    </ul>
+                    
+                    <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="USD">$</span>
+                        <span itemprop="price" content="500">500.00</span>
+                    </span>
+                    <a href="#" class="btn">COMPRAR AHORA</a>
+                </div>
+            </div>
+            
+            <!-- Producto 3 - 1 Litro -->
+            <div class="product" itemscope itemtype="https://schema.org/Product">
+                <img src="images/ayahuasca-1litro.jpg" alt="Botella de Ayahuasca 1 litro" itemprop="image">
                 <div class="product-content">
                     <h3 itemprop="name">Brebaje Ceremonial Premium (1 Litro)</h3>
                     <div class="product-highlight" itemprop="description">
@@ -465,130 +513,174 @@
                     <p itemprop="description">Preparación tradicional con la más alta concentración de principios activos. Ideal para ceremonias guiadas por chamanes o practicantes avanzados.</p>
                     
                     <div class="dose-info">
-                        <strong>Guía de dosificación:</strong> Aproximadamente 20 sesiones (50ml por sesión) o 10 ceremonias fuertes (100ml)
+                        <strong>Guía de dosificación:</strong> 20 sesiones (50ml por sesión) o 10 ceremonias fuertes (100ml)
                     </div>
                     
                     <div class="free-gift">
-                        <img src="img/regalo-artesanal.png" alt="Regalo artesanal">
+                        <img src="images/manto-grande.jpg" alt="Manto ceremonial grande">
                         <div>
-                            <strong>¡REGALO EXCLUSIVO!</strong> Con cada litro lleva un <em>Manto ceremonial de Cusco</em> (valorado en $80) para tu ritual
+                            <strong>¡REGALO PREMIUM!</strong> Manto ceremonial de Cusco (valorado en $80) para tu ritual
                         </div>
                     </div>
                     
                     <ul class="benefits-list">
                         <li>Plantas cosechadas de forma sostenible</li>
                         <li>Proceso de fermentación de 3 meses</li>
-                        <li>Incluye guía ceremonial digital</li>
-                        <li>Envío GRATIS a todo el mundo</li>
-                        <li>Soporte por WhatsApp con nuestro chamán</li>
+                        <li>Incluye guía ceremonial completa</li>
+                        <li>Soporte chamánico VIP por 1 mes</li>
+                        <li>Envío EXPRESS GRATIS</li>
                     </ul>
                     
                     <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                         <span itemprop="priceCurrency" content="USD">$</span>
-                        <span itemprop="price" content="1000.00">1,000.00</span>
+                        <span itemprop="price" content="1000">1,000.00</span>
                     </span>
-                    <span class="limited-stock">¡ÚLTIMAS 3 UNIDADES!</span>
-                    <button class="btn">COMPRAR AHORA</button>
+                    <span class="limited-stock">EDICIÓN LIMITADA</span>
+                    <a href="#" class="btn">COMPRAR AHORA</a>
                 </div>
             </div>
             
+            <!-- Producto 4 - Pasta 500g -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
-                <span class="discount-badge">OFERTA</span>
-                <img src="img/ayahuasca-medio.jpg" alt="Medio litro de ayahuasca" itemprop="image">
+                <span class="discount-badge">NUEVO</span>
+                <img src="images/pasta-500g.jpg" alt="Pasta de Ayahuasca 500 gramos" itemprop="image">
                 <div class="product-content">
-                    <h3 itemprop="name">Brebaje Ceremonial (500ml)</h3>
+                    <h3 itemprop="name">Pasta Pura de Ayahuasca (500g)</h3>
                     <div class="product-highlight" itemprop="description">
-                        "La medida perfecta para una ceremonia personal o pareja"
+                        "La esencia concentrada para tus ceremonias personales"
                     </div>
-                    <p itemprop="description">Media botella de nuestro brebaje premium, suficiente para 2-4 sesiones dependiendo de la sensibilidad.</p>
+                    <p itemprop="description">Extracción pura de máxima potencia. 500g equivale aproximadamente a 1 litro de brebaje tradicional.</p>
                     
                     <div class="dose-info">
-                        <strong>Guía de dosificación:</strong> 4-5 sesiones suaves (100ml) o 2 ceremonias profundas (250ml)
+                        <strong>Guía de dosificación:</strong> 10g = 100ml de brebaje (50 ceremonias individuales)
                     </div>
                     
                     <div class="free-gift">
-                        <img src="img/incienso.png" alt="Incienso artesanal">
+                        <img src="images/vasija-pequena.jpg" alt="Vasija ceremonial pequeña">
                         <div>
-                            <strong>¡REGALO!</strong> Lleva <em>Incienso sagrado de copal</em> (valorado en $20) con tu compra
+                            <strong>¡REGALO!</strong> Vasija ceremonial de arcilla (valorada en $60)
                         </div>
                     </div>
                     
                     <ul class="benefits-list">
-                        <li>Misma calidad que nuestra presentación de 1L</li>
-                        <li>Envase de vidrio oscuro protector</li>
-                        <li>Incluye dosificador de cerámica</li>
-                        <li>Envío GRATIS en pedidos mayores a $500</li>
-                    </ul>
-                    
-                    <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span itemprop="priceCurrency" content="USD">$</span>
-                        <span itemprop="price" content="500.00">500.00</span>
-                    </span>
-                    <button class="btn">COMPRAR AHORA</button>
-                </div>
-            </div>
-            
-            <div class="product" itemscope itemtype="https://schema.org/Product">
-                <img src="img/ayahuasca-pasta.jpg" alt="Pasta pura de ayahuasca" itemprop="image">
-                <div class="product-content">
-                    <h3 itemprop="name">Pasta Pura de Ayahuasca (1kg)</h3>
-                    <div class="product-highlight" itemprop="description">
-                        "La esencia concentrada para chamanes y centros ceremoniales"
-                    </div>
-                    <p itemprop="description">Extracción pura de máxima potencia. 1kg equivale aproximadamente a 4 litros de brebaje tradicional.</p>
-                    
-                    <div class="dose-info">
-                        <strong>Guía de dosificación:</strong> 1g = 4ml de brebaje. Rendimiento aproximado: 200 ceremonias individuales
-                    </div>
-                    
-                    <div class="free-gift">
-                        <img src="img/vasija.png" alt="Vasija ceremonial">
-                        <div>
-                            <strong>¡REGALO PREMIUM!</strong> Vasija ceremonial de arcilla (valorada en $120) para preparación tradicional
-                        </div>
-                    </div>
-                    
-                    <ul class="benefits-list">
-                        <li>Concentración 4:1 respecto al brebaje líquido</li>
+                        <li>Concentración 2:1 respecto al brebaje líquido</li>
                         <li>Vida útil de 2 años en refrigeración</li>
-                        <li>Certificado de autenticidad con firma del chamán</li>
+                        <li>Incluye certificado de autenticidad</li>
                         <li>Envío GRATIS y discreto</li>
                     </ul>
                     
                     <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                         <span itemprop="priceCurrency" content="USD">$</span>
-                        <span itemprop="price" content="3500.00">3,500.00</span>
+                        <span itemprop="price" content="1000">1,000.00</span>
                     </span>
-                    <span class="limited-stock">EDICIÓN LIMITADA</span>
-                    <button class="btn">COMPRAR AHORA</button>
+                    <a href="#" class="btn">COMPRAR AHORA</a>
+                </div>
+            </div>
+            
+            <!-- Producto 5 - Pasta 1kg -->
+            <div class="product" itemscope itemtype="https://schema.org/Product">
+                <span class="discount-badge">PARA CHAMANES</span>
+                <img src="images/pasta-1kg.jpg" alt="Pasta de Ayahuasca 1 kilo" itemprop="image">
+                <div class="product-content">
+                    <h3 itemprop="name">Pasta Pura de Ayahuasca (1kg)</h3>
+                    <div class="product-highlight" itemprop="description">
+                        "La máxima potencia para centros ceremoniales y chamanes"
+                    </div>
+                    <p itemprop="description">Extracción pura de máxima potencia. 1kg equivale aproximadamente a 2 litros de brebaje tradicional.</p>
+                    
+                    <div class="dose-info">
+                        <strong>Guía de dosificación:</strong> 10g = 100ml de brebaje (100 ceremonias individuales)
+                    </div>
+                    
+                    <div class="free-gift">
+                        <img src="images/vasija-grande.jpg" alt="Vasija ceremonial grande">
+                        <div>
+                            <strong>¡REGALO PREMIUM!</strong> Vasija ceremonial de arcilla (valorada en $120) + Manto sagrado
+                        </div>
+                    </div>
+                    
+                    <ul class="benefits-list">
+                        <li>Concentración 2:1 respecto al brebaje líquido</li>
+                        <li>Vida útil de 2 años en refrigeración</li>
+                        <li>Certificado con firma del chamán</li>
+                        <li>Soporte ceremonial personalizado</li>
+                        <li>Envío EXPRESS GRATIS</li>
+                    </ul>
+                    
+                    <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="USD">$</span>
+                        <span itemprop="price" content="2000">2,000.00</span>
+                    </span>
+                    <span class="limited-stock">¡ÚLTIMAS 2 UNIDADES!</span>
+                    <a href="#" class="btn">COMPRAR AHORA</a>
+                </div>
+            </div>
+            
+            <!-- Producto 6 - Kit Completo -->
+            <div class="product" itemscope itemtype="https://schema.org/Product">
+                <span class="discount-badge">RECOMENDADO</span>
+                <img src="images/kit-completo.jpg" alt="Kit completo de Ayahuasca" itemprop="image">
+                <div class="product-content">
+                    <h3 itemprop="name">Kit del Viajero Espiritual</h3>
+                    <div class="product-highlight" itemprop="description">
+                        "Todo lo necesario para una experiencia sagrada completa"
+                    </div>
+                    <p itemprop="description">Paquete especial que incluye todo lo necesario para realizar ceremonias en casa con seguridad y respeto a la tradición.</p>
+                    
+                    <div class="dose-info">
+                        <strong>Contenido:</strong> 250ml de ayahuasca + 50g de pasta + accesorios ceremoniales
+                    </div>
+                    
+                    <div class="free-gift">
+                        <img src="images/kit-regalos.jpg" alt="Regalos del kit">
+                        <div>
+                            <strong>¡REGALOS EXCLUSIVOS!</strong> Incienso, manto, vasija y guía completa
+                        </div>
+                    </div>
+                    
+                    <ul class="benefits-list">
+                        <li>250ml de brebaje ceremonial (5 sesiones)</li>
+                        <li>50g de pasta pura (5 sesiones adicionales)</li>
+                        <li>Manto ceremonial de algodón</li>
+                        <li>Vasija de preparación tradicional</li>
+                        <li>Guía completa paso a paso</li>
+                        <li>Soporte chamánico por 2 meses</li>
+                    </ul>
+                    
+                    <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="USD">$</span>
+                        <span itemprop="price" content="600">600.00</span>
+                    </span>
+                    <a href="#" class="btn">COMPRAR AHORA</a>
                 </div>
             </div>
         </div>
         
         <div class="package-deal">
-            <h4>✨ OFERTA ESPECIAL: KIT DEL VIAJERO ESPIRITUAL ✨</h4>
-            <p>1L de Brebaje Premium + 250ml + Manto ceremonial + Incienso sagrado + Guía Digital + Soporte chamánico VIP</p>
-            <p><strong>Precio normal: $1,300.00 → <span style="color: #E53935; font-weight: bold;">Precio especial: $1,150.00</span> (Ahorras $150)</strong></p>
+            <h4>✨ OFERTA ESPECIAL: KIT DEL CHAMÁN ✨</h4>
+            <p>1kg de Pasta + 1L de Brebaje + Manto ceremonial grande + Vasija sagrada + Guía Digital + Soporte chamánico VIP por 3 meses</p>
+            <p><strong>Precio normal: $3,000.00 → <span style="color: #E53935; font-weight: bold;">Precio especial: $2,500.00</span> (Ahorras $500)</strong></p>
             <p><span style="background-color: var(--accent); padding: 5px 10px; border-radius: 20px;">+ ENVÍO EXPRESS GRATIS</span></p>
-            <button class="btn" style="max-width: 300px; margin: 20px auto 0;">OBTENER OFERTA ESPECIAL</button>
+            <a href="#" class="btn" style="max-width: 300px; margin: 20px auto 0; display: block;">OBTENER OFERTA ESPECIAL</a>
         </div>
         
         <section class="shipping-info">
             <h3>Envíos Internacionales Discretos</h3>
-            <p>🚀 <strong>ENVÍO GRATIS</strong> en todos los pedidos superiores a $500 (entrega en 5-7 días hábiles)</p>
+            <p>🚀 <strong>ENVÍO GRATIS</strong> en todos los pedidos (entrega en 5-7 días hábiles)</p>
             <p>🔒 <strong>Embalaje neutro y seguro</strong> - total privacidad garantizada</p>
             <p>🌎 <strong>Enviamos a todo el mundo</strong> con seguimiento en línea</p>
+            <p>📦 <strong>Garantía de entrega</strong> o te devolvemos tu dinero</p>
             
-            <div class="payment-methods">
-                <img src="img/visa.png" alt="Visa">
-                <img src="img/mastercard.png" alt="Mastercard">
-                <img src="img/western-union.png" alt="Western Union">
-                <img src="img/diners.png" alt="Diners Club">
+            <div class="payment-methods" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" style="height: 30px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height: 30px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Western_Union_logo.svg" alt="Western Union" style="height: 30px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Bitcoin_logo_2013.svg" alt="Bitcoin" style="height: 30px;">
             </div>
         </section>
         
         <section class="testimonials">
-            <h3>Testimonios de Nuestros Clientes</h3>
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 30px;">Testimonios de Nuestros Clientes</h2>
             
             <div class="testimonial" itemscope itemtype="https://schema.org/Review">
                 <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
@@ -631,12 +723,46 @@
         </section>
     </main>
 
-    <footer>
+    <footer style="background-color: var(--primary-dark); color: white; text-align: center; padding: 30px 0; margin-top: 50px;">
         <div class="container">
-            <p>&copy; 2023 Ayahuasca Ancestral Premium. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Ayahuasca Ancestral Premium. Todos los derechos reservados.</p>
             <p>🌱 Producto 100% natural | 🏆 Calidad certificada por maestros chamanes | 📦 Envíos a todo el mundo</p>
-            <p><small>La ayahuasca es legal en Perú para uso tradicional y ceremonial bajo la ley N° 30681. El comprador es responsable de verificar las regulaciones de su país.</small></p>
+            <p style="font-size: 0.8rem; opacity: 0.7;">La ayahuasca es legal en Perú para uso tradicional y ceremonial bajo la ley N° 30681. El comprador es responsable de verificar las regulaciones de su país.</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/51903051441" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle (si decides añadirlo después)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aquí puedes añadir funcionalidad JavaScript si necesitas
+            console.log('Página de productos cargada');
+            
+            // Ejemplo: Animación al hacer scroll
+            const fadeElems = document.querySelectorAll('.product');
+            fadeElems.forEach((elem, index) => {
+                elem.style.opacity = '0';
+                elem.style.transform = 'translateY(20px)';
+                elem.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            });
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElems.forEach(elem => {
+                observer.observe(elem);
+            });
+        });
+    </script>
 </body>
 </html>
