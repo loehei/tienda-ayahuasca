@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="https://schema.org/Event">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ceremonias de Ayahuasca guiadas por maestros Shipibo en la Amazonía Peruana. Vive una experiencia auténtica de sanación espiritual en nuestro centro sagrado.">
+    <meta name="keywords" content="ceremonia ayahuasca Perú, retiro espiritual Amazonas, sanación con ayahuasca, maestro shipibo, experiencia chamánica, medicina ancestral, ritual ayahuasca, retiro Perú">
+    
+    <title>Ceremonias de Ayahuasca Guiadas | Centro de Sanación Ancestral Shipibo</title>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Ceremonia de Ayahuasca con Maestros Shipibo",
+      "description": "Experiencia transformadora guiada por chamanes con más de 25 años de experiencia en la Amazonía peruana",
+      "image": "https://tu-sitio.com/images/ceremonia-hero.jpg",
+      "startDate": "2025-06-15T20:00",
+      "endDate": "2025-06-20T12:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Centro de Sanación Ancestral Shipibo",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Camino a la Selva Km 12",
+          "addressLocality": "Iquitos",
+          "addressRegion": "Loreto",
+          "postalCode": "16000",
+          "addressCountry": "PE"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://tu-sitio.com/ceremonias",
+        "price": "1200",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/LimitedAvailability",
+        "validFrom": "2025-01-01"
+      },
+      "performer": {
+        "@type": "PerformingGroup",
+        "name": "Maestros Chamanes Shipibo-Conibo"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --primary-light: #4CAF50;
+            --accent: #FFC107;
+            --text: #333333;
+            --text-light: #666666;
+            --light: #F1F8E9;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --dark-gray: #E0E0E0;
+            --brown: #5E2C04;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .branding {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .branding h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        .tagline {
+            color: var(--brown);
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a[aria-current="page"] {
+            color: var(--primary);
+        }
+        
+        nav a[aria-current="page"]:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .nav-cta {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+            color: var(--white) !important;
+        }
+        
+        /* Hero Section */
+        .ceremony-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/ceremonia-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ceremony-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/kene-pattern.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .ceremony-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        .ceremony-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Ceremony Info */
+        .ceremony-intro {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .ceremony-intro h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .ceremony-intro p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Ceremony Grid */
+        .ceremony-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .ceremony-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .ceremony-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .ceremony-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .ceremony-card-content {
+            padding: 25px;
+        }
+        
+        .ceremony-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .ceremony-price {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .ceremony-features {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .ceremony-features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .ceremony-features li:before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .limited-spots {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #E53935;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        /* Video Section */
+        .video-section {
+            background-color: var(--light);
+            padding: 60px 0;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Testimonials */
+        .testimonial-section {
+            margin: 60px 0;
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial {
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+        }
+        
+        .testimonial-content {
+            position: relative;
+        }
+        
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .author-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-details {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .author-details span {
+            font-weight: 600;
+        }
+        
+        .author-details span:last-child {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        /* Preparation Section */
+        .preparation-section {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        
+        .preparation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .preparation-card {
+            background-color: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .preparation-card h3 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .branding {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .ceremony-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .ceremony-hero p {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn, .btn-secondary {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-sticky">
+        <div class="container header-content">
+            <div class="branding">
+                <h1 itemprop="name">Ayahuasca Ancestral</h1>
+                <p class="tagline">Medicina Sagrada de la Amazonía Peruana</p>
+            </div>
+            
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="ceremonias.html" aria-current="page">Ceremonias</a></li>
+                    <li><a href="about.html">Tradición</a></li>
+                    <li><a href="contact.html" class="nav-cta">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="ceremony-hero">
+        <div class="container">
+            <div class="hero-badge">PRÓXIMA CEREMONIA: 15 DE JUNIO - ÚLTIMOS 3 CUPOS</div>
+            <h1>Ceremonia de Ayahuasca en el Corazón de la Amazonía</h1>
+            <p>Vive una experiencia transformadora guiada por maestros Shipibo con más de 25 años de práctica chamánica</p>
+            <a href="#reservar" class="btn" style="max-width: 300px; margin: 0 auto;">Reservar Mi Cupo</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="ceremony-intro">
+            <h2>Una Experiencia que Trasciende</h2>
+            <p>En nuestro <strong>Centro de Sanación Ancestral</strong> cerca de Iquitos, ofrecemos ceremonias auténticas que siguen los protocolos sagrados de los Shipibo-Conibo. Cada sesión es guiada personalmente por nuestro maestro principal <strong>Ricardo Mahua</strong> y su equipo de chamanes.</p>
+            <p style="font-style: italic; color: var(--primary);">"No vendemos ayahuasca, compartimos un legado espiritual"</p>
+        </section>
+        
+        <section class="ceremony-grid">
+            <div class="ceremony-card">
+                <span class="limited-spots">SOLO 5 CUPOS</span>
+                <img src="images/ceremonia-iniciacion.jpg" alt="Ceremonia de Iniciación">
+                <div class="ceremony-card-content">
+                    <h3>Ceremonia de Iniciación</h3>
+                    <p>Ideal para tu primera experiencia con la medicina sagrada. Incluye evaluación espiritual previa y sesión de integración.</p>
+                    
+                    <ul class="ceremony-features">
+                        <li>1 noche de ceremonia</li>
+                        <li>Evaluación espiritual previa</li>
+                        <li>Sesión de integración al día siguiente</li>
+                        <li>Dieta guiada por 3 días antes</li>
+                        <li>Alojamiento básico incluido</li>
+                    </ul>
+                    
+                    <span class="ceremony-price">$400 USD</span>
+                    <a href="#reservar" class="btn">Quiero Esta Experiencia</a>
+                </div>
+            </div>
+            
+            <div class="ceremony-card">
+                <span class="limited-spots">MÁS POPULAR</span>
+                <img src="images/retiro-3dias.jpg" alt="Retiro de 3 Días">
+                <div class="ceremony-card-content">
+                    <h3>Retiro de Transformación (3 Días)</h3>
+                    <p>Experiencia profunda con 2 ceremonias nocturnas y terapias complementarias de sanación.</p>
+                    
+                    <ul class="ceremony-features">
+                        <li>2 ceremonias de ayahuasca</li>
+                        <li>Terapia con plantas maestras</li>
+                        <li>Baños de florecimiento</li>
+                        <li>Alimentación dieta incluida</li>
+                        <li>Sesión de ícaros personalizados</li>
+                    </ul>
+                    
+                    <span class="ceremony-price">$900 USD</span>
+                    <a href="#reservar" class="btn">Reservar Ahora</a>
+                </div>
+            </div>
+            
+            <div class="ceremony-card">
+                <img src="images/retiro-7dias.jpg" alt="Retiro de 7 Días">
+                <div class="ceremony-card-content">
+                    <h3>Retiro Chamánico (7 Días)</h3>
+                    <p>Inmersión completa en la medicina ancestral con 4 ceremonias y seguimiento personalizado.</p>
+                    
+                    <ul class="ceremony-features">
+                        <li>4 ceremonias de ayahuasca</li>
+                        <li>Dieta con plantas maestras</li>
+                        <li>Sesión de sanación con vapores</li>
+                        <li>Taller de kené (arte shipibo)</li>
+                        <li>Cabaña privada incluida</li>
+                        <li>Seguimiento por 1 mes después</li>
+                    </ul>
+                    
+                    <span class="ceremony-price">$1,800 USD</span>
+                    <a href="#reservar" class="btn">Transformación Completa</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="video-section">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-dark);">Vive la Experiencia Antes de Venir</h2>
+            <p>Conoce nuestro centro y a los maestros chamanes que guiarán tu proceso</p>
+            
+            <div class="video-container">
+                <!-- Video de placeholder - reemplazar con tu video real -->
+                <iframe src="https://www.youtube.com/embed/ejemplo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <p style="max-width: 700px; margin: 20px auto; font-style: italic;">"Cada ceremonia en nuestro centro es un renacer espiritual. Los cantos ícaros que escucharás han sido transmitidos por generaciones en mi familia." - Maestro Ricardo Mahua</p>
+        </section>
+        
+        <section class="testimonial-section">
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 40px;">Historias de Transformación</h2>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="author-info">
+                            <img src="images/testimonio1.jpg" alt="Ana - España" class="author-photo">
+                            <div class="author-details">
+                                <span>Ana, 34 años</span>
+                                <span>Barcelona, España</span>
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <p>"El retiro de 7 días cambió mi vida. El maestro Mahua detectó en la primera ceremonia bloqueos que ni siquiera yo sabía que tenía. Hoy, 6 meses después, sigo aplicando las enseñanzas recibidas."</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="author-info">
+                            <img src="images/testimonio2.jpg" alt="Carlos - México" class="author-photo">
+                            <div class="author-details">
+                                <span>Carlos, 42 años</span>
+                                <span>Ciudad de México</span>
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <p>"Comparado con otros centros, aquí sentí la autenticidad de verdad. No es turismo espiritual, es medicina ancestral con toda su potencia. Volveré el próximo año."</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="author-info">
+                            <img src="images/testimonio3.jpg" alt="Sophie - Francia" class="author-photo">
+                            <div class="author-details">
+                                <span>Sophie, 29 años</span>
+                                <span>Lyon, Francia</span>
+                                <span>★★★★☆</span>
+                            </div>
+                        </div>
+                        <p>"Mi ceremonia de iniciación fue intensa pero el equipo estuvo pendiente en todo momento. Me encantó que realmente siguen la tradición shipibo, no es un show para turistas."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="preparation-section">
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: white; margin-bottom: 40px;">Preparación para tu Ceremonia</h2>
+            
+            <div class="preparation-grid">
+                <div class="preparation-card">
+                    <h3>Antes de Venir</h3>
+                    <p>Sigue la dieta recomendada por 3 días antes (sin alcohol, azúcar, carnes rojas o relaciones sexuales). Te enviaremos una guía completa al reservar.</p>
+                </div>
+                
+                <div class="preparation-card">
+                    <h3>Qué Traer</h3>
+                    <p>Ropa cómoda, repelente natural, linterna, cuaderno para notas, toalla y una manta ligera. Evita objetos electrónicos.</p>
+                </div>
+                
+                <div class="preparation-card">
+                    <h3>Seguridad</h3>
+                    <p>Contamos con asistente médico permanente, áreas designadas para descanso y protocolos de emergencia. La seguridad es nuestra prioridad.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="reservar" class="cta-section">
+            <h2>¿Listo para tu Viaje Espiritual?</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px;">Completa este breve formulario y nos contactaremos contigo en menos de 24 horas para confirmar tu participación y guiarte en los preparativos.</p>
+            
+            <form style="max-width: 500px; margin: 0 auto;">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Nombre Completo" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <input type="email" placeholder="Correo Electrónico" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <select style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Selecciona tu retiro</option>
+                        <option value="iniciacion">Ceremonia de Iniciación ($400)</option>
+                        <option value="3dias">Retiro de 3 Días ($900)</option>
+                        <option value="7dias">Retiro de 7 Días ($1,800)</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Fecha preferida" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <button type="submit" class="btn" style="max-width: 300px; margin: 0 auto;">Solicitar Reserva</button>
+            </form>
+            
+            <div style="margin-top: 40px; background-color: var(--light); padding: 20px; border-radius: 10px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <p style="text-align: center; margin: 0;"><strong>¿No puedes viajar a Perú?</strong> También ofrecemos <a href="productos.html" style="color: var(--primary); font-weight: bold;">kits ceremoniales</a> para experiencias guiadas a distancia con nuestro maestro chamán.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: var(--primary-dark); color: white; text-align: center; padding: 40px 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
+                <div style="text-align: left; max-width: 300px;">
+                    <h3 style="font-family: 'Playfair Display', serif;">Ayahuasca Ancestral</h3>
+                    <p>Preservando la medicina tradicional Shipibo-Conibo desde 2012</p>
+                </div>
+                
+                <div style="text-align: left; max-width: 250px;">
+                    <h3 style="font-family: 'Playfair Display', serif;">Contacto</h3>
+                    <p>WhatsApp: +51 903 051 441<br>
+                    Email: info@ayahuascancestral.com</p>
+                </div>
+                
+                <div style="text-align: left; max-width: 250px;">
+                    <h3 style="font-family: 'Playfair Display', serif;">Centro de Sanación</h3>
+                    <p>Camino a la Selva Km 12<br>
+                    Iquitos, Perú</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país.</p>
+            <p style="font-size: 0.8rem; opacity: 0.7;">© 2025 Ayahuasca Ancestral. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/51903051441?text=Hola,%20estoy%20interesado%20en%20las%20ceremonias%20de%20ayahuasca" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Simular disponibilidad limitada
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contador de cupos disponibles
+            const cuposElement = document.querySelector('.hero-badge');
+            let cupos = 3;
+            
+            // Actualizar cada 30 segundos para crear urgencia
+            setInterval(() => {
+                if(cupos > 0 && Math.random() > 0.7) {
+                    cupos--;
+                    cuposElement.textContent = `PRÓXIMA CEREMONIA: 15 DE JUNIO - ÚLTIMOS ${cupos} CUPOS`;
+                    
+                    if(cupos === 0) {
+                        cuposElement.textContent = "CEREMONIA COMPLETA - CONSULTA POR NUEVAS FECHAS";
+                        cuposElement.style.backgroundColor = "#E53935";
+                    }
+                }
+            }, 30000);
+            
+            // Animación para los testimonios
+            const testimonios = document.querySelectorAll('.testimonial');
+            testimonios.forEach((testimonio, index) => {
+                testimonio.style.opacity = '0';
+                testimonio.style.transform = 'translateY(20px)';
+                testimonio.style.transition = `opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s`;
+            });
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            testimonios.forEach(testimonio => {
+                observer.observe(testimonio);
+            });
+            
+            // Form submission
+            const form = document.querySelector('#reservar form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Gracias por tu interés. Nos contactaremos contigo en menos de 24 horas para confirmar disponibilidad y guiarte en el proceso.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
