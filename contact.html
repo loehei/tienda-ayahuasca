@@ -3,82 +3,788 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contacta con nosotros para más información sobre nuestros productos de ayahuasca.">
-    <title>Contacto | Ayahuasca Ancestral</title>
+    <meta name="description" content="Contacta con nuestros expertos en Ayahuasca Ancestral. Resolvemos tus dudas sobre ceremonias, envíos y uso tradicional de la medicina sagrada.">
+    <title>Contacto | Ayahuasca Ancestral - Asesoría Especializada</title>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contacto - Ayahuasca Ancestral",
+      "description": "Página de contacto para consultas sobre medicina tradicional shipibo",
+      "url": "https://tu-sitio.com/contacto",
+      "telephone": "+51903051441",
+      "email": "info@ayahuascancestral.com",
+      "openingHours": "Mo-Fr 09:00-18:00"
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --primary-light: #4CAF50;
+            --accent: #FFC107;
+            --text: #333333;
+            --text-light: #666666;
+            --light: #F1F8E9;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --dark-gray: #E0E0E0;
+            --brown: #5E2C04;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .branding {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .branding h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        .tagline {
+            color: var(--brown);
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a[aria-current="page"] {
+            color: var(--primary);
+        }
+        
+        nav a[aria-current="page"]:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .nav-cta {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+            color: var(--white) !important;
+        }
+        
+        /* Hero Section */
+        .contact-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/contact-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .contact-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--dark-gray);
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-method i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            width: 350px;
+            max-width: 90%;
+            transition: all 0.3s;
+        }
+        
+        .chatbot-toggle {
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-left: auto;
+            transition: all 0.3s;
+        }
+        
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-box {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: none;
+            height: 500px;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        
+        .chatbot-header {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .chatbot-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .bot-message {
+            background-color: white;
+            border: 1px solid #eee;
+            border-top-left-radius: 5px;
+            margin-right: auto;
+        }
+        
+        .user-message {
+            background-color: var(--primary-light);
+            color: white;
+            margin-left: auto;
+            border-top-right-radius: 5px;
+        }
+        
+        .chatbot-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .option-btn {
+            background-color: white;
+            border: 1px solid var(--primary-light);
+            color: var(--primary-dark);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            text-align: left;
+        }
+        
+        .option-btn:hover {
+            background-color: var(--primary-light);
+            color: white;
+        }
+        
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            background-color: white;
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .send-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin: 60px 0;
+        }
+        
+        .faq-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: var(--light);
+            padding: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 300px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .branding {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .chatbot-container {
+                right: 15px;
+                bottom: 15px;
+                width: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Ayahuasca Ancestral</h1>
-            <p>Medicina Sagrada del Perú</p>
+    <header class="header-sticky">
+        <div class="container header-content">
+            <div class="branding">
+                <h1 itemprop="name">Ayahuasca Ancestral</h1>
+                <p class="tagline">Medicina Sagrada de la Amazonía Peruana</p>
+            </div>
+            
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="ceremonias.html">Ceremonias</a></li>
+                    <li><a href="about.html">Tradición</a></li>
+                    <li><a href="contact.html" aria-current="page">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="about.html">Sobre la Ayahuasca</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contacta con Nuestros Expertos</h1>
+            <p>Resuelve tus dudas sobre ceremonias, preparaciones y envíos discretos</p>
+        </div>
+    </section>
+
     <main class="container">
-        <h2>Contacto</h2>
-        
-        <div class="contact-container">
-            <section class="contact-form">
-                <h3>Envíanos un mensaje</h3>
-                <form action="#" method="POST">
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h2>Envíanos un Mensaje</h2>
+                <form id="contactForm">
                     <div class="form-group">
-                        <label for="name">Nombre:</label>
+                        <label for="name">Nombre Completo</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Email:</label>
+                        <label for="email">Correo Electrónico</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="subject">Asunto:</label>
-                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Asunto</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="productos">Consulta sobre productos</option>
+                            <option value="ceremonias">Información sobre ceremonias</option>
+                            <option value="envios">Dudas sobre envíos</option>
+                            <option value="legal">Consultas legales</option>
+                            <option value="otro">Otro</option>
+                        </select>
                     </div>
                     
                     <div class="form-group">
-                        <label for="message">Mensaje:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Tu Mensaje</label>
+                        <textarea id="message" name="message" required></textarea>
                     </div>
                     
-                    <button type="submit" class="btn">Enviar Mensaje</button>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
                 </form>
-            </section>
+            </div>
             
-            <section class="contact-info">
-                <h3>Información de Contacto</h3>
-                <address>
-                    <p><strong>Dirección:</strong> Calle Ayahuasca 123, Iquitos, Perú</p>
-                    <p><strong>Teléfono:</strong> +51 123 456 789</p>
-                    <p><strong>Email:</strong> info@ayahuascaancestral.com</p>
-                    <p><strong>Horario:</strong> Lunes a Viernes, 9am - 5pm</p>
-                </address>
+            <div class="contact-info">
+                <h2>Información de Contacto</h2>
                 
-                <div class="social-media">
-                    <h4>Síguenos</h4>
-                    <a href="#" class="social-icon">Facebook</a>
-                    <a href="#" class="social-icon">Instagram</a>
+                <div class="contact-method">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Dirección</h3>
+                        <p>Av. La Marina 285, Iquitos, Perú</p>
+                    </div>
                 </div>
-            </section>
+                
+                <div class="contact-method">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h3>Teléfono/WhatsApp</h3>
+                        <p>+51 903 051 441</p>
+                        <small>Lunes a Viernes: 9am - 6pm (GMT-5)</small>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Correo Electrónico</h3>
+                        <p>info@ayahuascancestral.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Horario de Atención</h3>
+                        <p>Lunes a Sábado: 9:00 - 18:00</p>
+                        <p>Cerrado los domingos</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <section class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cómo realizan los envíos internacionales?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Todos nuestros envíos son discretos y se realizan como "Té de Hierbas Amazónicas - Artesanía Cultural". Usamos servicios postales confiables con seguimiento en línea. El tiempo de entrega varía entre 10-25 días hábiles según el destino.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Es legal comprar ayahuasca en mi país?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>La ayahuasca es legal en Perú para uso tradicional. Sin embargo, las regulaciones varían por país. Te recomendamos investigar las leyes locales antes de realizar cualquier pedido. Nosotros no nos hacemos responsables por regulaciones aduaneras en tu país.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Puedo programar una ceremonia guiada?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, ofrecemos ceremonias guiadas online con maestros shipibo. Al comprar cualquiera de nuestros kits ceremoniales, recibirás instrucciones para agendar tu sesión personalizada.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Qué métodos de pago aceptan?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Aceptamos transferencias bancarias, Western Union, MoneyGram y criptomonedas (Bitcoin, Ethereum). Próximamente aceptaremos tarjetas de crédito.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+        <div class="chatbot-box" id="chatbotBox">
+            <div class="chatbot-header">
+                <img src="images/chamán-avatar.jpg" alt="Asistente Virtual">
+                <div>
+                    <h3>Asistente Shipibo</h3>
+                    <small>En línea</small>
+                </div>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
+                <button class="send-btn" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </div>
+
+    <footer style="background-color: var(--primary-dark); color: white; text-align: center; padding: 30px 0;">
         <div class="container">
-            <p>&copy; 2023 Ayahuasca Ancestral. Todos los derechos reservados.</p>
-            <p>La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país.</p>
+            <p>&copy; 2025 Ayahuasca Ancestral. Todos los derechos reservados.</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país.</p>
         </div>
     </footer>
-    
-    <script src="js/main.js"></script>
+
+    <script>
+        // Chatbot Logic
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotBox = document.getElementById('chatbotBox');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+        
+        // Bot responses
+        const botResponses = {
+            "inicio": {
+                message: "¡Hola! Soy el asistente virtual de Ayahuasca Ancestral. ¿En qué puedo ayudarte hoy?",
+                options: [
+                    { text: "Quiero comprar ayahuasca", value: "compra" },
+                    { text: "Dudas sobre envíos", value: "envios" },
+                    { text: "Consultar precios", value: "precios" },
+                    { text: "Hablar con un chamán", value: "chaman" }
+                ]
+            },
+            "compra": {
+                message: "Tenemos estas opciones disponibles:",
+                options: [
+                    { text: "Brebaje 250ml ($300)", value: "producto_250" },
+                    { text: "Brebaje 500ml ($500)", value: "producto_500" },
+                    { text: "Pasta 500g ($1000)", value: "producto_pasta" },
+                    { text: "Volver al inicio", value: "inicio" }
+                ]
+            },
+            "envios": {
+                message: "Todos nuestros envíos son discretos y GRATIS. Tiempo de entrega: 10-25 días hábiles internacionalmente. ¿Qué más deseas saber?",
+                options: [
+                    { text: "¿Cómo se empaqueta?", value: "empaque" },
+                    { text: "¿Es seguro?", value: "seguridad" },
+                    { text: "Volver al inicio", value: "inicio" }
+                ]
+            },
+            "precios": {
+                message: "Nuestros precios incluyen envío gratis y regalos ceremoniales:",
+                options: [
+                    { text: "Ver 250ml ($300)", value: "producto_250" },
+                    { text: "Ver 500ml ($500)", value: "producto_500" },
+                    { text: "Ver ofertas", value: "ofertas" },
+                    { text: "Volver al inicio", value: "inicio" }
+                ]
+            },
+            "producto_250": {
+                message: "Brebaje Ceremonial 250ml ($300):\n- Para 5 ceremonias (50ml c/u)\n- Incluye incienso sagrado\n- Guía digital paso a paso\n\n¿Deseas comprar ahora?",
+                options: [
+                    { text: "Sí, comprar", value: "comprar_250" },
+                    { text: "Ver otros productos", value: "compra" },
+                    { text: "Volver al inicio", value: "inicio" }
+                ]
+            },
+            "comprar_250": {
+                message: "Excelente elección. Por favor envía un mensaje directo a nuestro WhatsApp +51903051441 con el texto 'Quiero el brebaje 250ml' y te guiaremos en el proceso.",
+                options: [
+                    { text: "Abrir WhatsApp", value: "whatsapp" },
+                    { text: "Volver al inicio", value: "inicio" }
+                ]
+            },
+            "whatsapp": {
+                message: "Redirigiendo a WhatsApp... Si no funciona, contáctanos manualmente al +51903051441",
+                options: [
+                    { text: "Volver al inicio", value: "inicio" }
+                ]
+            }
+        };
+        
+        // Toggle chatbot visibility
+        chatbotToggle.addEventListener('click', () => {
+            chatbotBox.style.display = chatbotBox.style.display === 'flex' ? 'none' : 'flex';
+            if (chatbotBox.style.display === 'flex' && chatbotMessages.children.length === 0) {
+                showBotMessage(botResponses["inicio"]);
+            }
+        });
+        
+        // Send message function
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, 'user-message', 'user');
+                userInput.value = '';
+                
+                // Simple AI response (in a real scenario, use more complex logic)
+                setTimeout(() => {
+                    addMessage("Gracias por tu mensaje. Para consultas específicas, por favor contáctanos directamente por WhatsApp al +51903051441", 'bot-message', 'bot');
+                }, 1000);
+            }
+        }
+        
+        // Send button click
+        sendBtn.addEventListener('click', sendMessage);
+        
+        // Enter key press
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Add message to chat
+        function addMessage(text, className, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', className);
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+        
+        // Show bot message with options
+        function showBotMessage(response) {
+            addMessage(response.message, 'bot-message', 'bot');
+            
+            const optionsDiv = document.createElement('div');
+            optionsDiv.classList.add('chatbot-options');
+            
+            response.options.forEach(option => {
+                const optionBtn = document.createElement('div');
+                optionBtn.classList.add('option-btn');
+                optionBtn.textContent = option.text;
+                optionBtn.addEventListener('click', () => {
+                    addMessage(option.text, 'user-message', 'user');
+                    setTimeout(() => {
+                        showBotMessage(botResponses[option.value] || botResponses["inicio"]);
+                    }, 500);
+                });
+                optionsDiv.appendChild(optionBtn);
+            });
+            
+            chatbotMessages.appendChild(optionsDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const icon = question.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo en menos de 24 horas.');
+            contactForm.reset();
+        });
+    </script>
 </body>
 </html>
