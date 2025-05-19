@@ -15,3 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Mobile Menu
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('mobile-menu');
+    const nav = document.getElementById('main-nav');
+    
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+
+    // Lazy loading para imágenes
+    if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+            img.loading = 'lazy';
+        });
+    }
+});
