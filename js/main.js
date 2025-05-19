@@ -1,34 +1,54 @@
-// Funcionalidad básica del carrito
-document.addEventListener('DOMContentLoaded', function() {
-    // Aquí puedes añadir funcionalidad para el carrito de compras
-    console.log('Tienda de Ayahuasca cargada');
-    
-    // Ejemplo: Añadir producto al carrito
-    const addToCartButtons = document.querySelectorAll('.product .btn');
-    
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const product = this.closest('.product');
-            const productName = product.querySelector('h3').textContent;
-            alert(`Has añadido ${productName} a tu carrito`);
-            // Aquí iría la lógica real para añadir al carrito
-        });
-    });
-});
-// Mobile Menu
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('mobile-menu');
-    const nav = document.getElementById('main-nav');
-    
+document.addEventListener('DOMContentLoaded', function () {
+  // Menú móvil
+  const menuToggle = document.getElementById('mobile-menu');
+  const nav = document.getElementById('main-nav');
+  if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
+      nav.classList.toggle('active');
     });
+  }
 
-    // Lazy loading para imágenes
-    if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            img.loading = 'lazy';
-        });
-    }
+  // Lazy loading manual fallback (para navegadores antiguos)
+  if ('loading' in HTMLImageElement.prototype) {
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      img.loading = 'lazy';
+    });
+  }
+
+  // Scroll suave
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Carrito de compras (productos.html)
+  if (document.querySelector('.products-grid')) {
+    const cart = [];
+
+    document.querySelectorAll('.product .btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const product = this.closest('.product');
+        const name = product.querySelector('h3')?.textContent.trim();
+        alert(`Has añadido ${name} a tu carrito`);
+        cart.push(name);
+        localStorage.setItem('carrito', JSON.stringify(cart));
+      });
+    });
+  }
+
+  // Animaciones con IntersectionObserver
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-observe').forEach(el => observer.observe(el));
 });
