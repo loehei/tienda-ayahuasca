@@ -13,15 +13,16 @@
       "@type": "ContactPage",
       "name": "Contacto - Ayahuasca Ancestral",
       "description": "Página de contacto para consultas sobre medicina tradicional shipibo",
-      "url": "https://tu-sitio.com/contacto",
+      "url": "https://loehei.github.io/tienda-ayahuasca/contact.html",
       "telephone": "+51903051441",
       "email": "info@ayahuascancestral.com",
       "openingHours": "Mo-Fr 09:00-18:00"
     }
     </script>
     
+    <link rel="canonical" href="https://loehei.github.io/tienda-ayahuasca/contact.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/tienda-ayahuasca/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -139,7 +140,7 @@
         
         /* Hero Section */
         .contact-hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/contact-bg.jpg');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/tienda-ayahuasca/images/contact-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -466,11 +467,11 @@
             
             <nav aria-label="Navegación principal">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="ceremonias.html">Ceremonias</a></li>
-                    <li><a href="about.html">Tradición</a></li>
-                    <li><a href="contact.html" aria-current="page">Contacto</a></li>
+                    <li><a href="/tienda-ayahuasca/">Inicio</a></li>
+                    <li><a href="/tienda-ayahuasca/productos.html">Productos</a></li>
+                    <li><a href="/tienda-ayahuasca/ceremonias.html">Ceremonias</a></li>
+                    <li><a href="/tienda-ayahuasca/about.html">Tradición</a></li>
+                    <li><a href="/tienda-ayahuasca/contact.html" aria-current="page">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -607,7 +608,7 @@
     <div class="chatbot-container">
         <div class="chatbot-box" id="chatbotBox">
             <div class="chatbot-header">
-                <img src="images/chamán-avatar.jpg" alt="Asistente Virtual">
+                <img src="/tienda-ayahuasca/images/chamán-avatar.jpg" alt="Asistente Virtual">
                 <div>
                     <h3>Asistente Shipibo</h3>
                     <small>En línea</small>
@@ -634,81 +635,102 @@
     </footer>
 
     <script>
-        // Chatbot Logic
+        // Chatbot Logic - Improved Version
         const chatbotToggle = document.getElementById('chatbotToggle');
         const chatbotBox = document.getElementById('chatbotBox');
         const chatbotMessages = document.getElementById('chatbotMessages');
         const userInput = document.getElementById('userInput');
         const sendBtn = document.getElementById('sendBtn');
         
-        // Bot responses
-        const botResponses = {
-            "inicio": {
-                message: "¡Hola! Soy el asistente virtual de Ayahuasca Ancestral. ¿En qué puedo ayudarte hoy?",
+        // Knowledge base for the chatbot
+        const knowledgeBase = {
+            "saludo": {
+                patterns: ["hola", "buenos días", "buenas tardes", "buenas noches"],
+                response: "¡Hola! Soy el asistente virtual de Ayahuasca Ancestral. ¿En qué puedo ayudarte hoy?",
                 options: [
-                    { text: "Quiero comprar ayahuasca", value: "compra" },
+                    { text: "Productos disponibles", value: "productos" },
+                    { text: "Información sobre ceremonias", value: "ceremonias" },
                     { text: "Dudas sobre envíos", value: "envios" },
-                    { text: "Consultar precios", value: "precios" },
                     { text: "Hablar con un chamán", value: "chaman" }
                 ]
             },
-            "compra": {
-                message: "Tenemos estas opciones disponibles:",
+            "productos": {
+                patterns: ["productos", "qué ofrecen", "qué venden", "medicina"],
+                response: "Ofrecemos preparaciones tradicionales Shipibo de la más alta calidad:",
                 options: [
-                    { text: "Brebaje 250ml ($300)", value: "producto_250" },
-                    { text: "Brebaje 500ml ($500)", value: "producto_500" },
-                    { text: "Pasta 500g ($1000)", value: "producto_pasta" },
-                    { text: "Volver al inicio", value: "inicio" }
-                ]
-            },
-            "envios": {
-                message: "Todos nuestros envíos son discretos y GRATIS. Tiempo de entrega: 10-25 días hábiles internacionalmente. ¿Qué más deseas saber?",
-                options: [
-                    { text: "¿Cómo se empaqueta?", value: "empaque" },
-                    { text: "¿Es seguro?", value: "seguridad" },
-                    { text: "Volver al inicio", value: "inicio" }
-                ]
-            },
-            "precios": {
-                message: "Nuestros precios incluyen envío gratis y regalos ceremoniales:",
-                options: [
-                    { text: "Ver 250ml ($300)", value: "producto_250" },
-                    { text: "Ver 500ml ($500)", value: "producto_500" },
-                    { text: "Ver ofertas", value: "ofertas" },
-                    { text: "Volver al inicio", value: "inicio" }
+                    { text: "Brebaje ceremonial 250ml ($300)", value: "producto_250" },
+                    { text: "Brebaje ceremonial 500ml ($500)", value: "producto_500" },
+                    { text: "Pasta de ayahuasca 500g ($1000)", value: "producto_pasta" },
+                    { text: "Kit ceremonial completo", value: "kit_ceremonial" }
                 ]
             },
             "producto_250": {
-                message: "Brebaje Ceremonial 250ml ($300):\n- Para 5 ceremonias (50ml c/u)\n- Incluye incienso sagrado\n- Guía digital paso a paso\n\n¿Deseas comprar ahora?",
+                patterns: ["250ml", "brebaje pequeño"],
+                response: "Brebaje Ceremonial 250ml ($300):\n- Para 5 ceremonias (50ml c/u)\n- Incluye incienso sagrado\n- Guía digital paso a paso\n- Manual de seguridad\n\n¿Te gustaría más información o deseas comprar?",
                 options: [
-                    { text: "Sí, comprar", value: "comprar_250" },
-                    { text: "Ver otros productos", value: "compra" },
-                    { text: "Volver al inicio", value: "inicio" }
+                    { text: "Comprar ahora", value: "comprar_250" },
+                    { text: "Ver otros productos", value: "productos" },
+                    { text: "Volver al inicio", value: "saludo" }
                 ]
             },
-            "comprar_250": {
-                message: "Excelente elección. Por favor envía un mensaje directo a nuestro WhatsApp +51903051441 con el texto 'Quiero el brebaje 250ml' y te guiaremos en el proceso.",
+            "envios": {
+                patterns: ["envíos", "entrega", "cuánto tarda", "envío internacional"],
+                response: "📦 Información sobre envíos:\n\n• Envíos discretos y seguros a todo el mundo\n• Tiempo de entrega: 10-25 días hábiles internacionalmente\n• Empaquetado como 'Té de Hierbas Amazónicas'\n• Seguimiento en línea incluido\n• Envío GRATIS en todos los pedidos\n\n¿Qué más deseas saber?",
+                options: [
+                    { text: "¿Es seguro el envío?", value: "seguridad_envios" },
+                    { text: "Métodos de pago", value: "pagos" },
+                    { text: "Volver al inicio", value: "saludo" }
+                ]
+            },
+            "seguridad_envios": {
+                patterns: ["seguro", "legal", "aduanas", "problemas"],
+                response: "🔒 Seguridad en envíos:\n\n• Usamos empaquetado discreto y profesional\n• Documentación como producto artesanal\n• 98% de éxito en entregas internacionales\n• En caso de retención, reenviamos sin costo\n\nRecomendamos verificar las leyes de tu país antes de ordenar.",
+                options: [
+                    { text: "Ver productos", value: "productos" },
+                    { text: "Hablar con chamán", value: "chaman" },
+                    { text: "Volver al inicio", value: "saludo" }
+                ]
+            },
+            "ceremonias": {
+                patterns: ["ceremonia", "ritual", "cómo tomar", "guía"],
+                response: "🌿 Ceremonias guiadas:\n\n1. Online con maestros Shipibo (incluye con compra)\n2. Presenciales en Iquitos (consultar disponibilidad)\n3. Manual completo de preparación y seguridad\n\n¿Necesitas ayuda para elegir la mejor opción?",
+                options: [
+                    { text: "Ceremonias online", value: "ceremonias_online" },
+                    { text: "Retiros en Perú", value: "retiros" },
+                    { text: "Volver al inicio", value: "saludo" }
+                ]
+            },
+            "chaman": {
+                patterns: ["chamán", "maestro", "experto", "consultar"],
+                response: "Para hablar directamente con nuestros maestros Shipibo, por favor contáctanos por WhatsApp al +51903051441 o escribe a info@ayahuascancestral.com\n\nEllos pueden orientarte personalmente sobre:\n\n• Uso ceremonial\n• Dosificación\n• Interpretación de experiencias\n• Sanación espiritual",
                 options: [
                     { text: "Abrir WhatsApp", value: "whatsapp" },
-                    { text: "Volver al inicio", value: "inicio" }
+                    { text: "Ver productos", value: "productos" },
+                    { text: "Volver al inicio", value: "saludo" }
                 ]
             },
             "whatsapp": {
-                message: "Redirigiendo a WhatsApp... Si no funciona, contáctanos manualmente al +51903051441",
+                patterns: ["whatsapp", "contactar", "hablar"],
+                response: "Puedes contactarnos directamente por WhatsApp haciendo clic en este enlace: <a href='https://wa.me/51903051441' style='color: #25D366; text-decoration: underline;'>Chat WhatsApp</a>\n\nO escríbenos al +51903051441",
                 options: [
-                    { text: "Volver al inicio", value: "inicio" }
+                    { text: "Volver al inicio", value: "saludo" }
                 ]
+            },
+            "despedida": {
+                patterns: ["gracias", "adiós", "hasta luego", "chao"],
+                response: "Gracias por contactar con Ayahuasca Ancestral. Que la medicina sagrada te guíe en tu camino. ¡Hasta pronto! 🙏",
+                options: []
             }
         };
-        
+
         // Toggle chatbot visibility
         chatbotToggle.addEventListener('click', () => {
             chatbotBox.style.display = chatbotBox.style.display === 'flex' ? 'none' : 'flex';
             if (chatbotBox.style.display === 'flex' && chatbotMessages.children.length === 0) {
-                showBotMessage(botResponses["inicio"]);
+                showBotResponse(knowledgeBase["saludo"]);
             }
         });
-        
+
         // Send message function
         function sendMessage() {
             const message = userInput.value.trim();
@@ -716,56 +738,99 @@
                 addMessage(message, 'user-message', 'user');
                 userInput.value = '';
                 
-                // Simple AI response (in a real scenario, use more complex logic)
+                // Process user message and find best response
                 setTimeout(() => {
-                    addMessage("Gracias por tu mensaje. Para consultas específicas, por favor contáctanos directamente por WhatsApp al +51903051441", 'bot-message', 'bot');
-                }, 1000);
+                    const response = findBestResponse(message.toLowerCase());
+                    showBotResponse(response);
+                }, 800);
             }
         }
-        
+
         // Send button click
         sendBtn.addEventListener('click', sendMessage);
-        
+
         // Enter key press
         userInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 sendMessage();
             }
         });
-        
+
         // Add message to chat
         function addMessage(text, className, sender) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', className);
-            messageDiv.textContent = text;
+            
+            // Check if text contains HTML (like links)
+            if (/<[a-z][\s\S]*>/i.test(text)) {
+                messageDiv.innerHTML = text;
+            } else {
+                messageDiv.textContent = text;
+            }
+            
             chatbotMessages.appendChild(messageDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
-        
-        // Show bot message with options
-        function showBotMessage(response) {
-            addMessage(response.message, 'bot-message', 'bot');
+
+        // Find the best response based on user input
+        function findBestResponse(userMessage) {
+            // Check for exact matches first
+            for (const [key, item] of Object.entries(knowledgeBase)) {
+                if (item.patterns.some(pattern => 
+                    userMessage.includes(pattern) || 
+                    item.patterns.some(p => p.includes(userMessage))
+                )) {
+                    return item;
+                }
+            }
             
-            const optionsDiv = document.createElement('div');
-            optionsDiv.classList.add('chatbot-options');
+            // Check for partial matches
+            for (const [key, item] of Object.entries(knowledgeBase)) {
+                if (item.patterns.some(pattern => 
+                    userMessage.split(' ').some(word => pattern.includes(word))
+                )) {
+                    return item;
+                }
+            }
             
-            response.options.forEach(option => {
-                const optionBtn = document.createElement('div');
-                optionBtn.classList.add('option-btn');
-                optionBtn.textContent = option.text;
-                optionBtn.addEventListener('click', () => {
-                    addMessage(option.text, 'user-message', 'user');
-                    setTimeout(() => {
-                        showBotMessage(botResponses[option.value] || botResponses["inicio"]);
-                    }, 500);
-                });
-                optionsDiv.appendChild(optionBtn);
-            });
-            
-            chatbotMessages.appendChild(optionsDiv);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            // Default response if no match found
+            return {
+                response: "No estoy seguro de entender. Por favor selecciona una opción o escribe tu pregunta de otra manera. También puedes contactarnos directamente por WhatsApp al +51903051441 para ayuda personalizada.",
+                options: [
+                    { text: "Ver productos", value: "productos" },
+                    { text: "Hablar con chamán", value: "chaman" },
+                    { text: "Volver al inicio", value: "saludo" }
+                ]
+            };
         }
-        
+
+        // Show bot response with options
+        function showBotResponse(responseItem) {
+            addMessage(responseItem.response, 'bot-message', 'bot');
+            
+            if (responseItem.options && responseItem.options.length > 0) {
+                const optionsDiv = document.createElement('div');
+                optionsDiv.classList.add('chatbot-options');
+                
+                responseItem.options.forEach(option => {
+                    const optionBtn = document.createElement('div');
+                    optionBtn.classList.add('option-btn');
+                    optionBtn.textContent = option.text;
+                    optionBtn.addEventListener('click', () => {
+                        addMessage(option.text, 'user-message', 'user');
+                        setTimeout(() => {
+                            const nextResponse = knowledgeBase[option.value] || knowledgeBase["saludo"];
+                            showBotResponse(nextResponse);
+                        }, 500);
+                    });
+                    optionsDiv.appendChild(optionBtn);
+                });
+                
+                chatbotMessages.appendChild(optionsDiv);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+        }
+
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
