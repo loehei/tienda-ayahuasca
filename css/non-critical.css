@@ -1,0 +1,218 @@
+/* non-critical.css - Estilos que no bloquean el renderizado inicial */
+
+/* Features Section */
+.features {
+  padding: 80px 0;
+  background-color: var(--gray);
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 15px auto;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 80px 0;
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonial {
+  min-width: 300px;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  scroll-snap-align: start;
+}
+
+.testimonial-content {
+  position: relative;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.author-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-dark);
+  color: white;
+  padding: 60px 0 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Estilos para móvil (no críticos) */
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonial {
+    min-width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .btn, .btn-secondary {
+    width: 100%;
+  }
+}
+/* Estilos para precios duales */
+.price-container {
+  margin: 15px 0;
+}
+
+.price {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.price-sol, .price-usd {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.price-sol {
+  color: #0455BF; /* Azul para soles */
+}
+
+.price-usd {
+  color: #4CAF50; /* Verde para dólares */
+}
+
+.price-note {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.currency-toggle {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background: var(--light);
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+}

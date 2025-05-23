@@ -6,9 +6,6 @@
     <meta name="description" content="Ayahuasca auténtica de la Amazonía Peruana. Envío GRATIS mundial. Medicina sagrada en presentaciones premium para ceremonias y crecimiento espiritual.">
     <title>Productos | Ayahuasca Ancestral - Medicina Sagrada del Amazonas</title>
     
-    <!-- Etiqueta canonical para evitar duplicados -->
-    <link rel="canonical" href="https://loehei.github.io/tienda-ayahuasca/productos.html" />
-    
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
@@ -24,22 +21,34 @@
           "@type": "ImageObject",
           "url": "https://loehei.github.io/tienda-ayahuasca/images/logo.png"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "47",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
     </script>
     
+    <link rel="canonical" href="https://loehei.github.io/tienda-ayahuasca/productos.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/tienda-ayahuasca/css/style.css">
+    <link rel="stylesheet" href="/tienda-ayahuasca/css/non-critical.css" media="print" onload="this.media='all'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Configuración de monedas -->
+    <script>
+        // Valores iniciales (pueden ser actualizados)
+        const configMoneda = {
+            tipoCambio: 3.7,
+            simboloSol: 'S/',
+            simboloDolar: '$',
+            monedaPrincipal: 'sol' // 'sol' o 'dolar'
+        };
+        
+        // Guardar configuración en localStorage
+        if (!localStorage.getItem('configMoneda')) {
+            localStorage.setItem('configMoneda', JSON.stringify(configMoneda));
+        }
+    </script>
+    
     <style>
         :root {
             --primary: #2E7D32;
@@ -55,105 +64,7 @@
             --brown: #5E2C04;
         }
         
-        /* Estilos consistentes con index.html */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        .header-sticky {
-            position: sticky;
-            top: 0;
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 15px 0;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .branding {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .branding h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary-dark);
-            margin-bottom: 5px;
-        }
-        
-        .tagline {
-            color: var(--brown);
-            font-size: 0.9rem;
-        }
-        
-        /* Navigation */
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav li {
-            margin-left: 25px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: var(--primary);
-        }
-        
-        nav a[aria-current="page"] {
-            color: var(--primary);
-        }
-        
-        nav a[aria-current="page"]:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--primary);
-        }
-        
-        .nav-cta {
-            background-color: var(--primary);
-            color: var(--white) !important;
-            padding: 8px 15px;
-            border-radius: 25px;
-            transition: background-color 0.3s;
-        }
-        
-        .nav-cta:hover {
-            background-color: var(--primary-dark);
-            color: var(--white) !important;
-        }
-        
-        /* Product Grid */
+        /* Estilos específicos para productos */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -192,12 +103,60 @@
             font-family: 'Playfair Display', serif;
         }
         
-        .price {
-            display: block;
-            font-size: 1.8rem;
-            color: var(--primary);
-            font-weight: bold;
+        /* Estilos para precios duales */
+        .price-container {
             margin: 15px 0;
+        }
+        
+        .price {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .price-sol, .price-usd {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .price-sol {
+            color: #0455BF; /* Azul para soles */
+        }
+        
+        .price-usd {
+            color: #4CAF50; /* Verde para dólares */
+        }
+        
+        .price-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .currency-toggle-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .currency-toggle {
+            display: inline-flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 8px 15px;
+            background: var(--light);
+            border-radius: 20px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s;
+        }
+        
+        .currency-toggle:hover {
+            background: var(--dark-gray);
+        }
+        
+        .currency-toggle i {
+            margin-right: 8px;
         }
         
         .discount-badge {
@@ -227,59 +186,11 @@
             width: 100%;
             text-align: center;
             text-decoration: none;
+            font-size: 0.9rem;
         }
         
         .btn:hover {
             background-color: var(--primary-dark);
-        }
-        
-        .product-highlight {
-            background-color: var(--light);
-            border-left: 5px solid var(--accent);
-            padding: 15px;
-            margin: 15px 0;
-            font-style: italic;
-        }
-        
-        .benefits-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .benefits-list li {
-            padding: 8px 0;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .benefits-list li:before {
-            content: "✓";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .dose-info {
-            background-color: #FFF9C4;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 15px 0;
-            font-size: 0.9rem;
-        }
-        
-        .free-gift {
-            display: flex;
-            align-items: center;
-            background-color: #E8F5E9;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-        
-        .free-gift img {
-            width: 50px;
-            margin-right: 10px;
         }
         
         .limited-stock {
@@ -290,87 +201,8 @@
             margin-bottom: 10px;
         }
         
-        /* Package Deal */
-        .package-deal {
-            border: 2px dashed var(--accent);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: center;
-            background-color: #FFFDE7;
-        }
-        
-        .package-deal h4 {
-            color: var(--primary-dark);
-            margin-top: 0;
-        }
-        
-        /* Shipping Info */
-        .shipping-info {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            margin: 50px 0;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: var(--primary-dark);
-            margin-top: 10px;
-            text-align: right;
-        }
-        
-        /* Urgency Banner */
-        .urgency-banner {
-            background-color: #E53935;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 0.8; }
-            50% { opacity: 1; }
-            100% { opacity: 0.8; }
-        }
-        
-        /* Responsive Styles */
+        /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .branding {
-                margin-bottom: 15px;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav li {
-                margin: 10px 0;
-            }
-            
             .products-grid {
                 grid-template-columns: 1fr;
             }
@@ -379,31 +211,6 @@
                 max-width: 350px;
                 margin: 0 auto;
             }
-        }
-        
-        /* WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
     </style>
 </head>
@@ -435,11 +242,19 @@
     <main class="container">
         <h1 style="text-align: center; margin: 40px 0; font-family: 'Playfair Display', serif; color: var(--primary-dark);">Nuestras Preparaciones Sagradas</h1>
         
+        <!-- Selector de moneda -->
+        <div class="currency-toggle-container">
+            <div class="currency-toggle" id="toggleCurrency">
+                <i class="fas fa-exchange-alt"></i>
+                <span id="currentCurrency">Mostrar en Soles (S/)</span>
+            </div>
+        </div>
+        
         <div class="products-grid">
             <!-- Producto 1 - 250ml -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
                 <span class="discount-badge">MÁS POPULAR</span>
-                <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 250ml" itemprop="image">
+                <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 250ml" itemprop="image" width="300" height="250" loading="lazy">
                 <div class="product-content">
                     <h3 itemprop="name">Brebaje Ceremonial (250ml)</h3>
                     <div class="product-highlight" itemprop="description">
@@ -447,35 +262,14 @@
                     </div>
                     <p itemprop="description">Preparación tradicional con la concentración ideal para 5 sesiones ceremoniales. Ideal para iniciar tu camino espiritual.</p>
                     
-                    <div class="dose-info">
-                        <strong>Guía de dosificación:</strong> 50ml por sesión (5 ceremonias completas)
-                    </div>
-                    
-                    <div class="free-gift">
-                        <img src="/tienda-ayahuasca/images/copal.webp" alt="Incienso artesanal">
-                        <div>
-                            <strong>¡REGALO!</strong> Lleva <em>Incienso sagrado de copal</em> (valorado en $20) con tu compra
+                    <div class="price-container">
+                        <div class="price" data-price-usd="300">
+                            <span class="price-sol">S/ 1,110.00</span>
+                            <span class="price-usd">$ 300.00</span>
                         </div>
+                        <div class="price-note">*Precio en dólares convertido a soles (Tipo de cambio: 3.7)</div>
                     </div>
                     
-                    <ul class="benefits-list">
-                        <li>Plantas cosechadas en luna llena</li>
-                        <li>Proceso de fermentación de 2 meses</li>
-                        <li>Envase de vidrio oscuro protector</li>
-                        <li>Incluye guía ceremonial digital</li>
-                        <li>Soporte por WhatsApp con nuestro chamán</li>
-                    </ul>
-                    
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$</span>
-                            <span itemprop="price" content="300">300.00</span>
-                        </span>
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto1">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
-                    </div>
                     <span class="limited-stock">¡SOLO 5 UNIDADES DISPONIBLES!</span>
                     <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
                 </div>
@@ -484,7 +278,7 @@
             <!-- Producto 2 - 500ml -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
                 <span class="discount-badge">OFERTA</span>
-                <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 500ml" itemprop="image">
+                <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 500ml" itemprop="image" width="300" height="250" loading="lazy">
                 <div class="product-content">
                     <h3 itemprop="name">Brebaje Ceremonial (500ml)</h3>
                     <div class="product-highlight" itemprop="description">
@@ -492,42 +286,21 @@
                     </div>
                     <p itemprop="description">Media botella de nuestro brebaje premium, suficiente para 10 sesiones ceremoniales (50ml por sesión).</p>
                     
-                    <div class="dose-info">
-                        <strong>Guía de dosificación:</strong> 50ml por sesión (10 ceremonias completas)
-                    </div>
-                    
-                    <div class="free-gift">
-                        <img src="/tienda-ayahuasca/images/manta.webp" alt="Manto ceremonial pequeño">
-                        <div>
-                            <strong>¡REGALO EXCLUSIVO!</strong> Manto ceremonial de algodón (valorado en $50)
+                    <div class="price-container">
+                        <div class="price" data-price-usd="500">
+                            <span class="price-sol">S/ 1,850.00</span>
+                            <span class="price-usd">$ 500.00</span>
                         </div>
+                        <div class="price-note">*Precio en dólares convertido a soles (Tipo de cambio: 3.7)</div>
                     </div>
                     
-                    <ul class="benefits-list">
-                        <li>Misma calidad que nuestra presentación de 1L</li>
-                        <li>Envase de vidrio oscuro con protección UV</li>
-                        <li>Incluye dosificador de cerámica artesanal</li>
-                        <li>Guía de preparación ceremonial</li>
-                        <li>Envío prioritario GRATIS</li>
-                    </ul>
-                    
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$</span>
-                            <span itemprop="price" content="500">500.00</span>
-                        </span>
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/InStock">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto2">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
-                    </div>
                     <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
                 </div>
             </div>
             
             <!-- Producto 3 - 1 Litro -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
-                <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 1 litro" itemprop="image">
+                <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 1 litro" itemprop="image" width="300" height="250" loading="lazy">
                 <div class="product-content">
                     <h3 itemprop="name">Brebaje Ceremonial Premium (1 Litro)</h3>
                     <div class="product-highlight" itemprop="description">
@@ -535,35 +308,14 @@
                     </div>
                     <p itemprop="description">Preparación tradicional con la más alta concentración de principios activos. Ideal para ceremonias guiadas por chamanes o practicantes avanzados.</p>
                     
-                    <div class="dose-info">
-                        <strong>Guía de dosificación:</strong> 20 sesiones (50ml por sesión) o 10 ceremonias fuertes (100ml)
-                    </div>
-                    
-                    <div class="free-gift">
-                        <img src="/tienda-ayahuasca/images/manta-grande.webp" alt="Manto ceremonial grande">
-                        <div>
-                            <strong>¡REGALO PREMIUM!</strong> Manto ceremonial de Cusco (valorado en $80) para tu ritual
+                    <div class="price-container">
+                        <div class="price" data-price-usd="1000">
+                            <span class="price-sol">S/ 3,700.00</span>
+                            <span class="price-usd">$ 1,000.00</span>
                         </div>
+                        <div class="price-note">*Precio en dólares convertido a soles (Tipo de cambio: 3.7)</div>
                     </div>
                     
-                    <ul class="benefits-list">
-                        <li>Plantas cosechadas de forma sostenible</li>
-                        <li>Proceso de fermentación de 3 meses</li>
-                        <li>Incluye guía ceremonial completa</li>
-                        <li>Soporte chamánico VIP por 1 mes</li>
-                        <li>Envío EXPRESS GRATIS</li>
-                    </ul>
-                    
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$</span>
-                            <span itemprop="price" content="1000">1,000.00</span>
-                        </span>
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto3">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
-                    </div>
                     <span class="limited-stock">EDICIÓN LIMITADA</span>
                     <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
                 </div>
@@ -572,7 +324,7 @@
             <!-- Producto 4 - Pasta 500g -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
                 <span class="discount-badge">NUEVO</span>
-                <img src="/tienda-ayahuasca/images/ayahuasca-pasta.webp" alt="Pasta de Ayahuasca 500 gramos" itemprop="image">
+                <img src="/tienda-ayahuasca/images/ayahuasca-pasta.webp" alt="Pasta de Ayahuasca 500 gramos" itemprop="image" width="300" height="250" loading="lazy">
                 <div class="product-content">
                     <h3 itemprop="name">Pasta Pura de Ayahuasca (500g)</h3>
                     <div class="product-highlight" itemprop="description">
@@ -580,34 +332,14 @@
                     </div>
                     <p itemprop="description">Extracción pura de máxima potencia. 500g equivale aproximadamente a 1 litro de brebaje tradicional.</p>
                     
-                    <div class="dose-info">
-                        <strong>Guía de dosificación:</strong> 10g = 100ml de brebaje (50 ceremonias individuales)
-                    </div>
-                    
-                    <div class="free-gift">
-                        <img src="/tienda-ayahuasca/images/vasija.webp" alt="Vasija ceremonial pequeña">
-                        <div>
-                            <strong>¡REGALO!</strong> Vasija ceremonial de arcilla (valorada en $60)
+                    <div class="price-container">
+                        <div class="price" data-price-usd="1000">
+                            <span class="price-sol">S/ 3,700.00</span>
+                            <span class="price-usd">$ 1,000.00</span>
                         </div>
+                        <div class="price-note">*Precio en dólares convertido a soles (Tipo de cambio: 3.7)</div>
                     </div>
                     
-                    <ul class="benefits-list">
-                        <li>Concentración 2:1 respecto al brebaje líquido</li>
-                        <li>Vida útil de 2 años en refrigeración</li>
-                        <li>Incluye certificado de autenticidad</li>
-                        <li>Envío GRATIS y discreto</li>
-                    </ul>
-                    
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$</span>
-                            <span itemprop="price" content="1000">1,000.00</span>
-                        </span>
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/InStock">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto4">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
-                    </div>
                     <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
                 </div>
             </div>
@@ -615,7 +347,7 @@
             <!-- Producto 5 - Pasta 1kg -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
                 <span class="discount-badge">PARA CHAMANES</span>
-                <img src="/tienda-ayahuasca/images/ayahuasca-pasta.webp" alt="Pasta de Ayahuasca 1 kilo" itemprop="image">
+                <img src="/tienda-ayahuasca/images/ayahuasca-pasta.webp" alt="Pasta de Ayahuasca 1 kilo" itemprop="image" width="300" height="250" loading="lazy">
                 <div class="product-content">
                     <h3 itemprop="name">Pasta Pura de Ayahuasca (1kg)</h3>
                     <div class="product-highlight" itemprop="description">
@@ -623,35 +355,14 @@
                     </div>
                     <p itemprop="description">Extracción pura de máxima potencia. 1kg equivale aproximadamente a 2 litros de brebaje tradicional.</p>
                     
-                    <div class="dose-info">
-                        <strong>Guía de dosificación:</strong> 10g = 100ml de brebaje (100 ceremonias individuales)
-                    </div>
-                    
-                    <div class="free-gift">
-                        <img src="/tienda-ayahuasca/images/vasija-grande.webp" alt="Vasija ceremonial grande">
-                        <div>
-                            <strong>¡REGALO PREMIUM!</strong> Vasija ceremonial de arcilla (valorada en $120) + Manto sagrado
+                    <div class="price-container">
+                        <div class="price" data-price-usd="2000">
+                            <span class="price-sol">S/ 7,400.00</span>
+                            <span class="price-usd">$ 2,000.00</span>
                         </div>
+                        <div class="price-note">*Precio en dólares convertido a soles (Tipo de cambio: 3.7)</div>
                     </div>
                     
-                    <ul class="benefits-list">
-                        <li>Concentración 2:1 respecto al brebaje líquido</li>
-                        <li>Vida útil de 2 años en refrigeración</li>
-                        <li>Certificado con firma del chamán</li>
-                        <li>Soporte ceremonial personalizado</li>
-                        <li>Envío EXPRESS GRATIS</li>
-                    </ul>
-                    
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$</span>
-                            <span itemprop="price" content="2000">2,000.00</span>
-                        </span>
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto5">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
-                    </div>
                     <span class="limited-stock">¡ÚLTIMAS 2 UNIDADES!</span>
                     <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
                 </div>
@@ -660,7 +371,7 @@
             <!-- Producto 6 - Kit Completo -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
                 <span class="discount-badge">RECOMENDADO</span>
-                <img src="/tienda-ayahuasca/images/combo.webp" alt="Kit completo de Ayahuasca" itemprop="image">
+                <img src="/tienda-ayahuasca/images/combo.webp" alt="Kit completo de Ayahuasca" itemprop="image" width="300" height="250" loading="lazy">
                 <div class="product-content">
                     <h3 itemprop="name">Kit del Viajero Espiritual</h3>
                     <div class="product-highlight" itemprop="description">
@@ -668,41 +379,20 @@
                     </div>
                     <p itemprop="description">Paquete especial que incluye todo lo necesario para realizar ceremonias en casa con seguridad y respeto a la tradición.</p>
                     
-                    <div class="dose-info">
-                        <strong>Contenido:</strong> 250ml de ayahuasca + 50g de pasta + accesorios ceremoniales
-                    </div>
-                    
-                    <div class="free-gift">
-                        <img src="/tienda-ayahuasca/images/combo.webp" alt="Regalos del kit">
-                        <div>
-                            <strong>¡REGALOS EXCLUSIVOS!</strong> Incienso, manto, vasija y guía completa
+                    <div class="price-container">
+                        <div class="price" data-price-usd="600">
+                            <span class="price-sol">S/ 2,220.00</span>
+                            <span class="price-usd">$ 600.00</span>
                         </div>
+                        <div class="price-note">*Precio en dólares convertido a soles (Tipo de cambio: 3.7)</div>
                     </div>
                     
-                    <ul class="benefits-list">
-                        <li>250ml de brebaje ceremonial (5 sesiones)</li>
-                        <li>50g de pasta pura (5 sesiones adicionales)</li>
-                        <li>Manto ceremonial de algodón</li>
-                        <li>Vasija de preparación tradicional</li>
-                        <li>Guía completa paso a paso</li>
-                        <li>Soporte chamánico por 2 meses</li>
-                    </ul>
-                    
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$</span>
-                            <span itemprop="price" content="600">600.00</span>
-                        </span>
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/InStock">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto6">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
-                    </div>
                     <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
                 </div>
             </div>
         </div>
         
+        <!-- Package Deal -->
         <div class="package-deal">
             <h4>✨ OFERTA ESPECIAL: KIT DEL CHAMÁN ✨</h4>
             <p>1kg de Pasta + 1L de Brebaje + Manto ceremonial grande + Vasija sagrada + Guía Digital + Soporte chamánico VIP por 3 meses</p>
@@ -711,6 +401,7 @@
             <a href="#" class="btn" style="max-width: 300px; margin: 20px auto 0; display: block;">OBTENER OFERTA ESPECIAL</a>
         </div>
         
+        <!-- Sección de envíos -->
         <section class="shipping-info">
             <h3>Envíos Internacionales Discretos</h3>
             <p>🚀 <strong>ENVÍO GRATIS</strong> en todos los pedidos (entrega en 10-25 días hábiles)</p>
@@ -719,13 +410,14 @@
             <p>📦 <strong>Garantía de entrega</strong> o te devolvemos tu dinero</p>
             
             <div class="payment-methods" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" style="height: 30px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height: 30px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Western_Union_logo.svg" alt="Western Union" style="height: 30px;">
-                <img src="https://brandlogos.net/wp-content/uploads/2021/04/bitcoin-logo.svg" alt="Bitcoin" style="height: 30px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" width="50" height="30" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" width="50" height="30" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Western_Union_logo.svg" alt="Western Union" width="50" height="30" loading="lazy">
+                <img src="https://brandlogos.net/wp-content/uploads/2021/04/bitcoin-logo.svg" alt="Bitcoin" width="50" height="30" loading="lazy">
             </div>
         </section>
         
+        <!-- Testimonios -->
         <section class="testimonials">
             <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 30px;">Testimonios de Nuestros Clientes</h2>
             
@@ -754,19 +446,6 @@
                 </div>
                 <meta itemprop="datePublished" content="2025-04-28">
             </div>
-            
-            <div class="testimonial" itemscope itemtype="https://schema.org/Review">
-                <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
-                    <meta itemprop="name" content="Kit del Viajero Espiritual"/>
-                </div>
-                <p itemprop="reviewBody">"Pedí el kit del viajero espiritual a México y todo llegó perfectamente empaquetado. La guía incluida fue invaluable para mi primera experiencia. El incienso de copal creó la atmósfera perfecta. ¡Servicio excepcional!"</p>
-                <p class="testimonial-author" itemprop="author">- Carlos M., Ciudad de México</p>
-                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                    <meta itemprop="ratingValue" content="5">
-                    <meta itemprop="bestRating" content="5">
-                </div>
-                <meta itemprop="datePublished" content="2025-05-10">
-            </div>
         </section>
     </main>
 
@@ -779,36 +458,102 @@
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/51903051441" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/51903051441" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- JavaScript para manejo de precios -->
     <script>
-        // Mobile Menu Toggle (si decides añadirlo después)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Aquí puedes añadir funcionalidad JavaScript si necesitas
-            console.log('Página de productos cargada');
+        // Función para formatear precios
+        function formatCurrency(amount, currency) {
+            if (currency === 'sol') {
+                return new Intl.NumberFormat('es-PE', {
+                    style: 'currency',
+                    currency: 'PEN',
+                    minimumFractionDigits: 2
+                }).format(amount).replace('PEN', 'S/');
+            } else {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 2
+                }).format(amount).replace('USD', '$');
+            }
+        }
+
+        // Función para actualizar todos los precios
+        function updateAllPrices() {
+            const config = JSON.parse(localStorage.getItem('configMoneda')) || {
+                tipoCambio: 3.7,
+                monedaPrincipal: 'sol'
+            };
             
-            // Ejemplo: Animación al hacer scroll
-            const fadeElems = document.querySelectorAll('.product');
-            fadeElems.forEach((elem, index) => {
-                elem.style.opacity = '0';
-                elem.style.transform = 'translateY(20px)';
-                elem.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            document.querySelectorAll('.price[data-price-usd]').forEach(priceEl => {
+                const priceUSD = parseFloat(priceEl.dataset.priceUsd);
+                const priceSOL = priceUSD * config.tipoCambio;
+                
+                const priceSolEl = priceEl.querySelector('.price-sol');
+                const priceUsdEl = priceEl.querySelector('.price-usd');
+                const noteEl = priceEl.closest('.price-container').querySelector('.price-note');
+                
+                if (priceSolEl) priceSolEl.textContent = formatCurrency(priceSOL, 'sol');
+                if (priceUsdEl) priceUsdEl.textContent = formatCurrency(priceUSD, 'dolar');
+                if (noteEl) noteEl.textContent = `*Precio en dólares convertido a soles (Tipo de cambio: ${config.tipoCambio})`;
+                
+                // Mostrar/ocultar según moneda principal
+                if (config.monedaPrincipal === 'sol') {
+                    if (priceSolEl) priceSolEl.style.display = 'inline-block';
+                    if (priceUsdEl) priceUsdEl.style.display = 'none';
+                } else {
+                    if (priceSolEl) priceSolEl.style.display = 'none';
+                    if (priceUsdEl) priceUsdEl.style.display = 'inline-block';
+                }
             });
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
+            // Actualizar texto del botón toggle
+            const toggleText = document.getElementById('currentCurrency');
+            if (toggleText) {
+                toggleText.textContent = config.monedaPrincipal === 'sol' ? 
+                    'Mostrar en Dólares ($)' : 'Mostrar en Soles (S/)';
+            }
+        }
+
+        // Función para cambiar el tipo de cambio
+        function updateExchangeRate(newRate) {
+            const config = JSON.parse(localStorage.getItem('configMoneda')) || {
+                tipoCambio: 3.7,
+                monedaPrincipal: 'sol'
+            };
+            config.tipoCambio = parseFloat(newRate);
+            localStorage.setItem('configMoneda', JSON.stringify(config));
+            updateAllPrices();
+            alert(`Tipo de cambio actualizado a: ${newRate}`);
+        }
+
+        // Toggle entre monedas
+        function setupCurrencyToggle() {
+            const toggleBtn = document.getElementById('toggleCurrency');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function() {
+                    const config = JSON.parse(localStorage.getItem('configMoneda')) || {
+                        tipoCambio: 3.7,
+                        monedaPrincipal: 'sol'
+                    };
+                    
+                    config.monedaPrincipal = config.monedaPrincipal === 'sol' ? 'dolar' : 'sol';
+                    localStorage.setItem('configMoneda', JSON.stringify(config));
+                    updateAllPrices();
                 });
-            }, { threshold: 0.1 });
+            }
+        }
+
+        // Inicializar al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            updateAllPrices();
+            setupCurrencyToggle();
             
-            fadeElems.forEach(elem => {
-                observer.observe(elem);
-            });
+            // Para actualizar el tipo de cambio desde la consola:
+            // updateExchangeRate(3.8); // Cambiar 3.8 por el nuevo tipo de cambio
         });
     </script>
 </body>
