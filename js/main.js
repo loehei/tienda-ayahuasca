@@ -1,64 +1,52 @@
 // main.js - Código JavaScript optimizado
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Mobile Menu Toggle
+ // Mobile Menu Toggle - Versión corregida
+document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.getElementById('mobile-menu');
   const mainNav = document.getElementById('main-nav');
+  const headerContent = document.querySelector('.header-content');
   
   if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
       mainNav.classList.toggle('active');
+      this.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+      
       const icon = this.querySelector('i');
       icon.classList.toggle('fa-times');
       icon.classList.toggle('fa-bars');
-      
-      // Cerrar menú al hacer clic en un enlace
-      if (mainNav.classList.contains('active')) {
-        const navLinks = mainNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            mainNav.classList.remove('active');
-            icon.classList.replace('fa-times', 'fa-bars');
-          });
-        });
-      }
     });
-  }
-  
-  // Lazy loading para imágenes
-  if ('loading' in HTMLImageElement.prototype) {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    lazyImages.forEach(img => {
-      img.loading = 'lazy';
-    });
-  } else {
-    // Polyfill para lazy loading en navegadores antiguos
-    const lazyLoad = function() {
-      const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
-      
-      if ('IntersectionObserver' in window) {
-        const lazyImageObserver = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              const lazyImage = entry.target;
-              lazyImage.src = lazyImage.dataset.src;
-              lazyImage.classList.remove('lazy');
-              lazyImageObserver.unobserve(lazyImage);
-            }
-          });
-        });
-        
-        lazyImages.forEach(function(lazyImage) {
-          lazyImageObserver.observe(lazyImage);
-        });
-      }
-    };
     
-    document.addEventListener('DOMContentLoaded', lazyLoad);
-    window.addEventListener('load', lazyLoad);
-    window.addEventListener('resize', lazyLoad);
-    window.addEventListener('scroll', lazyLoad);
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', function(e) {
+      if (mainNav.classList.contains('active') && 
+          !e.target.closest('#main-nav') && 
+          !e.target.closest('#mobile-menu')) {
+        closeMenu();
+      }
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+    
+    function closeMenu() {
+      mainNav.classList.remove('active');
+      menuToggle.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+      const icon = menuToggle.querySelector('i');
+      if (icon) {
+        icon.classList.replace('fa-times', 'fa-bars');
+      }
+    }
   }
+});
   
   // Smooth scrolling para anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
