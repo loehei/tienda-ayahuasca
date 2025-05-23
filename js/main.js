@@ -207,29 +207,43 @@ document.addEventListener('DOMContentLoaded', function() {
     current.textContent = current.textContent === 'Soles' ? 'Dólares' : 'Soles';
   });
 });
-// Slider de testimonios
-function initTestimonialSlider() {
+// TESTIMONIOS - Versión corregida
+document.addEventListener('DOMContentLoaded', function() {
+  const testimonios = document.querySelectorAll('.testimonial');
+  
+  if (testimonios.length > 0) {
+    // Fuerza mostrar los testimonios
+    testimonios.forEach(testimonio => {
+      testimonio.style.opacity = '1';
+      testimonio.style.transform = 'translateY(0)';
+    });
+
+    // Slider manual sin animaciones problemáticas
     const slider = document.querySelector('.testimonial-slider');
-    if (!slider) return;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-    const wrapper = slider.querySelector('.testimonial-wrapper');
-    const testimonials = slider.querySelectorAll('.testimonial');
-    
-    if (testimonials.length > 1) {
-        let currentIndex = 0;
-        
-        function updateSlider() {
-            const offset = -currentIndex * 100;
-            wrapper.style.transform = `translateX(${offset}%)`;
-        }
-        
-        // Auto-avance cada 5 segundos
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % testimonials.length;
-            updateSlider();
-        }, 5000);
-    }
-}
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
 
-// Llamar la función al cargar
-document.addEventListener('DOMContentLoaded', initTestimonialSlider);
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  }
+});
