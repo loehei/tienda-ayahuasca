@@ -1,54 +1,91 @@
-// main.js - Código JavaScript optimizado
-
+// main.js - Versión corregida y optimizada
 document.addEventListener('DOMContentLoaded', function() {
- // Mobile Menu Toggle - Versión corregida
-document.addEventListener('DOMContentLoaded', function() {
+  // =============================================
+  // MENÚ MÓVIL CORREGIDO (sin deslizamiento no deseado)
+  // =============================================
   const menuToggle = document.getElementById('mobile-menu');
   const mainNav = document.getElementById('main-nav');
-  const headerContent = document.querySelector('.header-content');
   
   if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', function(e) {
+      e.preventDefault();
       e.stopPropagation();
+      
+      // Alternar estado del menú
       mainNav.classList.toggle('active');
-      this.classList.toggle('active');
       document.body.classList.toggle('no-scroll');
       
+      // Cambiar ícono
       const icon = this.querySelector('i');
-      icon.classList.toggle('fa-times');
-      icon.classList.toggle('fa-bars');
+      if (icon) {
+        icon.classList.toggle('fa-times');
+        icon.classList.toggle('fa-bars');
+      }
     });
-    
+
+    // Cerrar menú al hacer clic en enlaces
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        const icon = menuToggle.querySelector('i');
+        if (icon) icon.classList.replace('fa-times', 'fa-bars');
+      });
+    });
+
     // Cerrar menú al hacer clic fuera
     document.addEventListener('click', function(e) {
       if (mainNav.classList.contains('active') && 
           !e.target.closest('#main-nav') && 
           !e.target.closest('#mobile-menu')) {
-        closeMenu();
+        mainNav.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        const icon = menuToggle.querySelector('i');
+        if (icon) icon.classList.replace('fa-times', 'fa-bars');
       }
     });
-    
-    // Cerrar menú al hacer clic en un enlace
-    const navLinks = mainNav.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        closeMenu();
-      });
-    });
-    
-    function closeMenu() {
-      mainNav.classList.remove('active');
-      menuToggle.classList.remove('active');
-      document.body.classList.remove('no-scroll');
-      const icon = menuToggle.querySelector('i');
-      if (icon) {
-        icon.classList.replace('fa-times', 'fa-bars');
-      }
-    }
   }
-});
-  
-  // Smooth scrolling para anchor links
+
+  // =============================================
+  // LAZY LOADING PARA IMÁGENES
+  // =============================================
+  if ('loading' in HTMLImageElement.prototype) {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    lazyImages.forEach(img => {
+      img.loading = 'lazy';
+    });
+  } else {
+    const lazyLoad = function() {
+      const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+      
+      if ('IntersectionObserver' in window) {
+        const lazyImageObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.classList.remove('lazy');
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+        
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      }
+    };
+    
+    document.addEventListener('DOMContentLoaded', lazyLoad);
+    window.addEventListener('load', lazyLoad);
+    window.addEventListener('resize', lazyLoad);
+    window.addEventListener('scroll', lazyLoad);
+  }
+
+  // =============================================
+  // SCROLL SUAVE PARA ENLACES
+  // =============================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -62,18 +99,13 @@ document.addEventListener('DOMContentLoaded', function() {
           top: targetElement.offsetTop - 100,
           behavior: 'smooth'
         });
-        
-        // Cerrar menú móvil si está abierto
-        if (mainNav && mainNav.classList.contains('active')) {
-          mainNav.classList.remove('active');
-          const icon = menuToggle.querySelector('i');
-          if (icon) icon.classList.replace('fa-times', 'fa-bars');
-        }
       }
     });
   });
-  
-  // Animaciones con IntersectionObserver
+
+  // =============================================
+  // ANIMACIONES CON INTERSECTION OBSERVER
+  // =============================================
   const animateOnScroll = function() {
     const elementsToAnimate = document.querySelectorAll('.fade-in, .feature, .testimonial');
     
@@ -105,74 +137,95 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
   
-  // Iniciar animaciones
   animateOnScroll();
+
+  // =============================================
+  // TESTIMONIOS - VERSIÓN CORREGIDA
+  // =============================================
+  const testimonios = document.querySelectorAll('.testimonial');
   
-  // Eventos de conversión (para analytics)
-  const trackConversion = function(event) {
-    // Aquí iría tu código de seguimiento (Google Analytics, Facebook Pixel, etc.)
-    console.log('Evento de conversión: ' + event.target.textContent.trim());
-  };
-  
-  document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(button => {
-    button.addEventListener('click', trackConversion);
-  });
-  
-  // Actualizar año actual en el footer
-  const currentYearElement = document.getElementById('current-year');
-  if (currentYearElement) {
-    currentYearElement.textContent = new Date().getFullYear();
+  if (testimonios.length > 0) {
+    testimonios.forEach(testimonio => {
+      testimonio.style.opacity = '1';
+      testimonio.style.transform = 'translateY(0)';
+    });
+
+    // Slider táctil mejorado
+    const slider = document.querySelector('.testimonial-slider');
+    if (slider) {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.style.cursor = 'grabbing';
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+      });
+
+      slider.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      // Estilo inicial
+      slider.style.cursor = 'grab';
+    }
   }
-});
-// Añade esta función al main.js
-function actualizarPrecios() {
-  // Obtener el tipo de cambio del localStorage o usar el predeterminado
-  const tipoCambio = localStorage.getItem('tipoCambio') || 3.7;
-  const simboloSol = 'S/';
-  const simboloDolar = '$';
-  
-  document.querySelectorAll('.price[data-price-usd]').forEach(priceEl => {
-    const precioUSD = parseFloat(priceEl.dataset.priceUsd);
-    const precioSOL = precioUSD * tipoCambio;
-    
-    // Formatear números
-    const formatoUSD = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 2
-    }).format(precioUSD).replace('$', simboloDolar);
-    
-    const formatoSOL = new Intl.NumberFormat('es-PE', {
-      style: 'currency',
-      currency: 'PEN',
-      minimumFractionDigits: 2
-    }).format(precioSOL).replace('PEN', simboloSol);
-    
-    // Actualizar los spans
-    if (priceEl.querySelector('.price-sol')) {
-      priceEl.querySelector('.price-sol').textContent = formatoSOL;
-    }
-    if (priceEl.querySelector('.price-usd')) {
-      priceEl.querySelector('.price-usd').textContent = formatoUSD;
-    }
-    
-    // Actualizar la nota del tipo de cambio
-    const noteEl = priceEl.closest('.price-container').querySelector('.price-note');
-    if (noteEl) {
-      noteEl.textContent = `*Precio en dólares convertido a soles (Tipo de cambio: ${tipoCambio})`;
-    }
-  });
-}
 
-// Función para actualizar el tipo de cambio
-function actualizarTipoCambio(nuevoCambio) {
-  localStorage.setItem('tipoCambio', nuevoCambio);
-  actualizarPrecios();
-  alert(`Tipo de cambio actualizado a: ${nuevoCambio}`);
-}
+  // =============================================
+  // ACTUALIZACIÓN DE PRECIOS (opcional)
+  // =============================================
+  function actualizarPrecios() {
+    const tipoCambio = localStorage.getItem('tipoCambio') || 3.7;
+    const simboloSol = 'S/';
+    const simboloDolar = '$';
+    
+    document.querySelectorAll('.price[data-price-usd]').forEach(priceEl => {
+      const precioUSD = parseFloat(priceEl.dataset.priceUsd);
+      const precioSOL = precioUSD * tipoCambio;
+      
+      const formatoUSD = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      }).format(precioUSD).replace('$', simboloDolar);
+      
+      const formatoSOL = new Intl.NumberFormat('es-PE', {
+        style: 'currency',
+        currency: 'PEN',
+        minimumFractionDigits: 2
+      }).format(precioSOL).replace('PEN', simboloSol);
+      
+      if (priceEl.querySelector('.price-sol')) {
+        priceEl.querySelector('.price-sol').textContent = formatoSOL;
+      }
+      if (priceEl.querySelector('.price-usd')) {
+        priceEl.querySelector('.price-usd').textContent = formatoUSD;
+      }
+      
+      const noteEl = priceEl.closest('.price-container').querySelector('.price-note');
+      if (noteEl) {
+        noteEl.textContent = `*Precio en dólares convertido a soles (Tipo de cambio: ${tipoCambio})`;
+      }
+    });
+  }
 
-// Ejecutar al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
+  // Ejecutar al cargar la página
   actualizarPrecios();
   
   // Añadir botón de toggle (opcional)
@@ -184,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('main').insertAdjacentHTML('afterbegin', toggleHTML);
   
   // Toggle entre monedas
-  document.getElementById('toggleCurrency').addEventListener('click', function() {
+  document.getElementById('toggleCurrency')?.addEventListener('click', function() {
     const prices = document.querySelectorAll('.price-sol, .price-usd');
     const current = document.getElementById('currentCurrency');
     
@@ -192,83 +245,16 @@ document.addEventListener('DOMContentLoaded', function() {
       price.style.display = price.style.display === 'none' ? 'inline-block' : 'none';
     });
     
-    current.textContent = current.textContent === 'Soles' ? 'Dólares' : 'Soles';
+    if (current) {
+      current.textContent = current.textContent === 'Soles' ? 'Dólares' : 'Soles';
+    }
   });
-});
-// TESTIMONIOS - Versión corregida
-document.addEventListener('DOMContentLoaded', function() {
-  const testimonios = document.querySelectorAll('.testimonial');
-  
-  if (testimonios.length > 0) {
-    // Fuerza mostrar los testimonios
-    testimonios.forEach(testimonio => {
-      testimonio.style.opacity = '1';
-      testimonio.style.transform = 'translateY(0)';
-    });
 
-    // Slider manual sin animaciones problemáticas
-    const slider = document.querySelector('.testimonial-slider');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-    });
-
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    });
+  // =============================================
+  // AÑO ACTUAL EN EL FOOTER
+  // =============================================
+  const currentYearElement = document.getElementById('current-year');
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
   }
-});
-// Slider de testimonios táctil
-document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.testimonial-slider');
-    if (!slider) return;
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.style.cursor = 'grabbing';
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.style.cursor = 'grab';
-    });
-
-    slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.style.cursor = 'grab';
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-        if(!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2;
-        slider.scrollLeft = scrollLeft - walk;
-    });
-
-    // Estilo inicial
-    slider.style.cursor = 'grab';
 });
