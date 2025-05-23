@@ -769,4 +769,35 @@
     <!-- WhatsApp Button -->
     <a href="https://wa.me/51903051441" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
-    </
+    </a>
+
+    <script>
+        // Mobile Menu Toggle (si decides añadirlo después)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aquí puedes añadir funcionalidad JavaScript si necesitas
+            console.log('Página de productos cargada');
+            
+            // Ejemplo: Animación al hacer scroll
+            const fadeElems = document.querySelectorAll('.product');
+            fadeElems.forEach((elem, index) => {
+                elem.style.opacity = '0';
+                elem.style.transform = 'translateY(20px)';
+                elem.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            });
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElems.forEach(elem => {
+                observer.observe(elem);
+            });
+        });
+    </script>
+</body>
+</html>
