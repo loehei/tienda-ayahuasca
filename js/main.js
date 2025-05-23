@@ -207,3 +207,29 @@ document.addEventListener('DOMContentLoaded', function() {
     current.textContent = current.textContent === 'Soles' ? 'Dólares' : 'Soles';
   });
 });
+// Slider de testimonios
+function initTestimonialSlider() {
+    const slider = document.querySelector('.testimonial-slider');
+    if (!slider) return;
+
+    const wrapper = slider.querySelector('.testimonial-wrapper');
+    const testimonials = slider.querySelectorAll('.testimonial');
+    
+    if (testimonials.length > 1) {
+        let currentIndex = 0;
+        
+        function updateSlider() {
+            const offset = -currentIndex * 100;
+            wrapper.style.transform = `translateX(${offset}%)`;
+        }
+        
+        // Auto-avance cada 5 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateSlider();
+        }, 5000);
+    }
+}
+
+// Llamar la función al cargar
+document.addEventListener('DOMContentLoaded', initTestimonialSlider);

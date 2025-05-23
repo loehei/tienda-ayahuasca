@@ -547,3 +547,44 @@ address p i {
     padding-left: 30px;
   }
 }
+/* TESTIMONIOS */
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.testimonial-slider {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 30px;
+    padding-bottom: 20px; /* Espacio para scroll */
+}
+
+.testimonial {
+    min-width: 100%;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    scroll-snap-align: start;
+    border: 1px solid var(--dark-gray);
+}
+
+@media (min-width: 768px) {
+    .testimonial {
+        min-width: calc(50% - 15px);
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial {
+        min-width: calc(33.333% - 20px);
+    }
+}
