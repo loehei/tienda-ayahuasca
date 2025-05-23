@@ -250,141 +250,109 @@ nav a[aria-current="page"]:after {
   overflow: hidden;
 }
 
-/* Mobile Menu - Versión corregida */
+/* Menú móvil corregido */
 .menu-toggle {
   display: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: var(--primary-dark);
-  z-index: 1001;
   background: none;
   border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  position: relative;
 }
 
-/* Estilos para evitar scroll no deseado */
-body.menu-open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
+.menu-icon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-dark);
+  margin: 5px 0;
+  transition: all 0.3s ease;
 }
 
-/* Mobile Styles */
-@media (max-width: 992px) {
-  .hero {
-    flex-direction: column;
-    padding: 60px 0;
-  }
-  
-  .hero-content {
-    padding-right: 0;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  
-  .hero-cta {
-    justify-content: center;
-  }
-  
-  .hero-image img {
-    max-width: 80%;
-  }
+#main-nav {
+  display: block;
 }
 
+#main-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+#main-nav li {
+  margin-left: 25px;
+}
+
+/* Estilos para móvil */
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .branding {
-    margin-bottom: 15px;
-    width: 100%;
-    padding-right: 40px; /* Espacio para el botón de menú */
-  }
-  
-  nav {
-    display: none;
-    width: 100%;
-  }
-  
-  nav.active {
+  .menu-toggle {
     display: block;
+  }
+  
+  #main-nav {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100vh;
     background-color: var(--white);
-    z-index: 999;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
     padding: 80px 20px 20px;
     overflow-y: auto;
   }
   
-  nav.active ul {
+  #main-nav.active {
+    transform: translateX(0);
+  }
+  
+  #main-nav ul {
     flex-direction: column;
     height: 100%;
   }
   
-  nav.active li {
+  #main-nav li {
     margin: 15px 0;
-    width: 100%;
-    animation: fadeIn 0.3s ease forwards;
     opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
   }
   
-  nav.active li:nth-child(1) { animation-delay: 0.1s; }
-  nav.active li:nth-child(2) { animation-delay: 0.2s; }
-  nav.active li:nth-child(3) { animation-delay: 0.3s; }
-  nav.active li:nth-child(4) { animation-delay: 0.4s; }
-  nav.active li:nth-child(5) { animation-delay: 0.5s; }
+  #main-nav li:nth-child(1) { animation-delay: 0.1s; }
+  #main-nav li:nth-child(2) { animation-delay: 0.2s; }
+  #main-nav li:nth-child(3) { animation-delay: 0.3s; }
+  #main-nav li:nth-child(4) { animation-delay: 0.4s; }
+  #main-nav li:nth-child(5) { animation-delay: 0.5s; }
   
-  nav.active a {
+  #main-nav a {
     display: block;
     padding: 12px 0;
     font-size: 1.2rem;
     border-bottom: 1px solid var(--gray);
-    width: 100%;
   }
   
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+  /* Animación del icono hamburguesa */
+  .menu-toggle.active .menu-icon:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
   }
   
-  .hero h2 {
-    font-size: 2.2rem;
+  .menu-toggle.active .menu-icon:nth-child(2) {
+    opacity: 0;
   }
   
-  .nav-cta {
-    display: inline-block;
-    margin-top: 10px;
+  .menu-toggle.active .menu-icon:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Bloquear scroll cuando el menú está abierto */
+  body.menu-open {
+    overflow: hidden;
   }
 }
 
-@media (max-width: 576px) {
-  .hero h2 {
-    font-size: 2rem;
-  }
-  
-  .hero-cta {
-    flex-direction: column;
-  }
-  
-  .btn {
-    width: 100%;
-  }
-  
-  .branding h1 {
-    font-size: 1.6rem;
-  }
-  
-  .urgency-banner {
-    font-size: 0.8rem;
-    padding: 8px;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Animación para el menú móvil */
