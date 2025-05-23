@@ -1,4 +1,4 @@
-/* non-critical.css - Estilos no bloqueantes para renderizado */
+/* non-critical.css - Estilos completos optimizados */
 :root {
   --primary: #2E7D32;
   --primary-dark: #1B5E20;
@@ -13,16 +13,187 @@
 }
 
 /* =====================
-   SECCIÓN CULTURAL INFO
+   FEATURES SECTION
+   ===================== */
+.features {
+  padding: 80px 0;
+  background-color: var(--gray);
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 20px auto;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.feature {
+  background-color: var(--white);
+  padding: 35px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.feature:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.feature h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.feature p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* =====================
+   TESTIMONIALS SECTION
+   ===================== */
+.testimonials {
+  padding: 80px 0;
+  background-color: var(--white);
+  position: relative;
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 30px 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  min-width: 320px;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  scroll-snap-align: start;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
+}
+
+.testimonial-content {
+  position: relative;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.author-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 3px solid var(--primary-light);
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-details span:first-child {
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.author-details span:last-child {
+  color: var(--accent);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  color: var(--text-light);
+  line-height: 1.7;
+  position: relative;
+  padding-left: 20px;
+}
+
+.testimonial-content p:before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--primary-light);
+  opacity: 0.2;
+  position: absolute;
+  left: -10px;
+  top: -15px;
+  font-family: serif;
+}
+
+/* =====================
+   CULTURAL INFO SECTION
    ===================== */
 .cultural-info {
-  padding: 80px 0;
+  padding: 100px 0;
   background-color: var(--light);
   position: relative;
 }
 
 .cultural-info .container {
   max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .cultural-info h2 {
@@ -48,6 +219,7 @@
   line-height: 1.8;
   text-align: center;
   color: var(--text-light);
+  font-size: 1.1rem;
 }
 
 .cultural-info ul {
@@ -58,27 +230,32 @@
 }
 
 .cultural-info li {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   position: relative;
-  padding-left: 30px;
+  padding-left: 40px;
   font-size: 1.1rem;
   text-align: left;
   display: inline-block;
   width: 100%;
+  color: var(--text);
 }
 
 .cultural-info li:before {
-  content: '•';
-  color: var(--primary);
+  content: '';
   position: absolute;
-  left: 10px;
-  font-size: 1.5rem;
-  line-height: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  background-color: var(--primary-light);
+  border-radius: 50%;
+  opacity: 0.2;
 }
 
-/* ================
-   SECCIÓN CTA
-   ================ */
+/* =====================
+   CTA SECTION
+   ===================== */
 .cta-section {
   padding: 100px 0;
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
@@ -115,6 +292,19 @@
   border-radius: 35px;
   display: inline-block;
   font-weight: 600;
+  background-color: var(--white);
+  color: var(--primary-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-large:hover {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .small-text {
@@ -124,9 +314,9 @@
   display: block;
 }
 
-/* =============
+/* =====================
    FOOTER
-   ============= */
+   ===================== */
 footer {
   background-color: var(--primary-dark);
   color: var(--white);
@@ -139,6 +329,10 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
   margin-bottom: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
 }
 
 .footer-col h3 {
@@ -186,10 +380,22 @@ address p {
   align-items: center;
 }
 
+address p i {
+  margin-right: 10px;
+  color: var(--accent);
+  width: 20px;
+  text-align: center;
+}
+
 .footer-bottom {
   text-align: center;
   padding-top: 40px;
   border-top: 1px solid rgba(255,255,255,0.15);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .footer-bottom p {
@@ -226,11 +432,13 @@ address p {
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
+  text-decoration: none;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background-color: #128C7E;
 }
 
 /* =====================
@@ -243,6 +451,7 @@ address p {
 
 .fade-in {
   animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
 }
 
 .delay-1 {
@@ -260,37 +469,72 @@ address p {
 /* =====================
    MEDIA QUERIES
    ===================== */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .cultural-info {
-    padding: 60px 0;
+    padding: 80px 0;
+  }
+  
+  .cta-section {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .feature {
+    padding: 30px 20px;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
   
   .cultural-info h2 {
     font-size: 2rem;
   }
   
-  .cta-section {
-    padding: 80px 0;
+  .cultural-info li {
+    font-size: 1rem;
+    padding-left: 35px;
   }
   
   .cta-box h2 {
     font-size: 2rem;
   }
   
+  .btn-large {
+    padding: 14px 35px;
+    font-size: 1.1rem;
+  }
+  
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+  
+  .testimonial {
+    min-width: 280px;
+  }
 }
 
 @media (max-width: 576px) {
-  .cultural-info li {
-    font-size: 1rem;
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .feature h3 {
+    font-size: 1.3rem;
   }
   
   .btn-large {
-    padding: 14px 35px;
-    font-size: 1.1rem;
     width: 100%;
   }
   
@@ -300,5 +544,9 @@ address p {
     font-size: 25px;
     bottom: 20px;
     right: 20px;
+  }
+  
+  .cultural-info li {
+    padding-left: 30px;
   }
 }
