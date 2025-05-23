@@ -1,51 +1,42 @@
 // main.js - Versión corregida y optimizada
 document.addEventListener('DOMContentLoaded', function() {
   // =============================================
-  // MENÚ MÓVIL CORREGIDO (sin deslizamiento no deseado)
-  // =============================================
+ // Menú móvil corregido
+document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.getElementById('mobile-menu');
   const mainNav = document.getElementById('main-nav');
   
   if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      // Alternar estado del menú
+    menuToggle.addEventListener('click', function() {
+      // Alternar clases
+      this.classList.toggle('active');
       mainNav.classList.toggle('active');
-      document.body.classList.toggle('no-scroll');
+      document.body.classList.toggle('menu-open');
       
-      // Cambiar ícono
-      const icon = this.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('fa-times');
-        icon.classList.toggle('fa-bars');
-      }
+      // Prevenir el comportamiento por defecto
+      return false;
     });
-
-    // Cerrar menú al hacer clic en enlaces
+    
+    // Cerrar menú al hacer clic en un enlace
     const navLinks = mainNav.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
         mainNav.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-        const icon = menuToggle.querySelector('i');
-        if (icon) icon.classList.replace('fa-times', 'fa-bars');
+        document.body.classList.remove('menu-open');
       });
     });
-
+    
     // Cerrar menú al hacer clic fuera
     document.addEventListener('click', function(e) {
-      if (mainNav.classList.contains('active') && 
-          !e.target.closest('#main-nav') && 
-          !e.target.closest('#mobile-menu')) {
+      if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) {
+        menuToggle.classList.remove('active');
         mainNav.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-        const icon = menuToggle.querySelector('i');
-        if (icon) icon.classList.replace('fa-times', 'fa-bars');
+        document.body.classList.remove('menu-open');
       }
     });
   }
+});
 
   // =============================================
   // LAZY LOADING PARA IMÁGENES
