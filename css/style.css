@@ -1,3 +1,9 @@
+/* Evitar scroll cuando el menú está abierto */
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 /* style.css - Estilos críticos */
 :root {
   --primary: #2E7D32;
