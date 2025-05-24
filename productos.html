@@ -53,6 +53,7 @@
             --gray: #F5F5F5;
             --dark-gray: #E0E0E0;
             --brown: #5E2C04;
+            --urgent: #E53935;
         }
         
         /* Estilos consistentes con index.html */
@@ -192,19 +193,23 @@
             font-family: 'Playfair Display', serif;
         }
         
-        .price {
-            display: block;
-            font-size: 1.8rem;
-            color: var(--primary);
-            font-weight: bold;
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin: 15px 0;
         }
         
-        .price-soles {
-            display: block;
+        .price {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .original-price {
             font-size: 1.2rem;
             color: var(--text-light);
-            margin-bottom: 15px;
+            text-decoration: line-through;
         }
         
         .discount-badge {
@@ -230,14 +235,51 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             width: 100%;
             text-align: center;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn:hover {
             background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
         }
         
         .product-highlight {
@@ -290,11 +332,12 @@
         }
         
         .limited-stock {
-            color: #E53935;
+            color: var(--urgent);
             font-weight: bold;
             font-size: 0.9rem;
             display: block;
             margin-bottom: 10px;
+            animation: pulse 2s infinite;
         }
         
         /* Package Deal */
@@ -305,11 +348,28 @@
             margin: 20px 0;
             text-align: center;
             background-color: #FFFDE7;
+            position: relative;
+            overflow: hidden;
         }
         
         .package-deal h4 {
             color: var(--primary-dark);
             margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .package-deal:before {
+            content: "🔥 OFERTA ESPECIAL 🔥";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--urgent);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg) translate(30%, -50%);
+            transform-origin: center;
         }
         
         /* Shipping Info */
@@ -332,6 +392,18 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 3rem;
+            color: var(--primary-light);
+            opacity: 0.2;
+            font-family: Georgia, serif;
         }
         
         .testimonial-author {
@@ -343,7 +415,7 @@
         
         /* Urgency Banner */
         .urgency-banner {
-            background-color: #E53935;
+            background-color: var(--urgent);
             color: white;
             text-align: center;
             padding: 10px;
@@ -356,6 +428,37 @@
             0% { opacity: 0.8; }
             50% { opacity: 1; }
             100% { opacity: 0.8; }
+        }
+        
+        /* Countdown Timer */
+        .countdown {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .countdown span {
+            color: var(--accent);
+        }
+        
+        /* Guarantee Badge */
+        .guarantee-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--light);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .guarantee-badge img {
+            width: 50px;
         }
         
         /* Responsive Styles */
@@ -385,6 +488,11 @@
             .product {
                 max-width: 350px;
                 margin: 0 auto;
+            }
+            
+            .package-deal:before {
+                font-size: 0.7rem;
+                transform: rotate(45deg) translate(25%, -50%);
             }
         }
         
@@ -417,7 +525,7 @@
 <body>
     <!-- Urgency Banner -->
     <div class="urgency-banner">
-        ⚡ ÚLTIMAS UNIDADES DISPONIBLES - ENVÍO GRATIS A TODO EL MUNDO ⚡
+        ⚡ ¡OFERTA RELÁMPAGO! PRECIOS ESPECIALES POR TIEMPO LIMITADO - ENVÍO GRATIS A TODO EL MUNDO ⚡
     </div>
     
     <header class="header-sticky">
@@ -442,10 +550,22 @@
     <main class="container">
         <h1 style="text-align: center; margin: 40px 0; font-family: 'Playfair Display', serif; color: var(--primary-dark);">Nuestras Preparaciones Sagradas</h1>
         
+        <div class="countdown">
+            ⏳ Esta oferta termina en: <span id="countdown-timer">24:59:59</span>
+        </div>
+        
+        <div class="guarantee-badge">
+            <img src="https://cdn-icons-png.flaticon.com/512/411/411712.png" alt="Garantía de satisfacción" width="50" height="50">
+            <div>
+                <strong>GARANTÍA 100% DE SATISFACCIÓN</strong><br>
+                Si no estás completamente satisfecho, te devolvemos tu dinero
+            </div>
+        </div>
+        
         <div class="products-grid">
             <!-- Producto 1 - 250ml -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
-                <span class="discount-badge">MÁS POPULAR</span>
+                <span class="discount-badge">AHORRA 20%</span>
                 <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 250ml" itemprop="image" width="300" height="250">
                 <div class="product-content">
                     <h3 itemprop="name">Brebaje Ceremonial (250ml)</h3>
@@ -473,25 +593,27 @@
                         <li>Soporte por WhatsApp con nuestro chamán</li>
                     </ul>
                     
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$300.00</span>
-                        </span>
-                        <span class="price-soles">s/1,110.00 soles</span>
-                        <meta itemprop="price" content="300">
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto1">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                    <div class="price-container">
+                        <div>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="priceCurrency" content="USD">$240</span>
+                                <meta itemprop="price" content="240">
+                                <meta itemprop="priceValidUntil" content="2025-12-31">
+                                <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
+                                <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto1">
+                                <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                            </span>
+                            <span class="original-price">$300</span>
+                        </div>
                     </div>
                     <span class="limited-stock">¡SOLO 5 UNIDADES DISPONIBLES!</span>
-                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
+                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA - AHORRA $60</a>
                 </div>
             </div>
             
             <!-- Producto 2 - 500ml -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
-                <span class="discount-badge">OFERTA</span>
+                <span class="discount-badge">AHORRA $80</span>
                 <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 500ml" itemprop="image" width="300" height="250">
                 <div class="product-content">
                     <h3 itemprop="name">Brebaje Ceremonial (500ml)</h3>
@@ -519,23 +641,26 @@
                         <li>Envío prioritario GRATIS</li>
                     </ul>
                     
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$500.00</span>
-                        </span>
-                        <span class="price-soles">s/1,850.00 soles</span>
-                        <meta itemprop="price" content="500">
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/InStock">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto2">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                    <div class="price-container">
+                        <div>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="priceCurrency" content="USD">$420</span>
+                                <meta itemprop="price" content="420">
+                                <meta itemprop="priceValidUntil" content="2025-12-31">
+                                <meta itemprop="availability" content="https://schema.org/InStock">
+                                <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto2">
+                                <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                            </span>
+                            <span class="original-price">$500</span>
+                        </div>
                     </div>
-                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
+                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA - PRECIO ESPECIAL</a>
                 </div>
             </div>
             
             <!-- Producto 3 - 1 Litro -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
+                <span class="discount-badge">AHORRA $150</span>
                 <img src="/tienda-ayahuasca/images/ayahuasca-ml.webp" alt="Botella de Ayahuasca 1 litro" itemprop="image" width="300" height="250">
                 <div class="product-content">
                     <h3 itemprop="name">Brebaje Ceremonial Premium (1 Litro)</h3>
@@ -563,25 +688,27 @@
                         <li>Envío EXPRESS GRATIS</li>
                     </ul>
                     
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$1,000.00</span>
-                        </span>
-                        <span class="price-soles">s/3,700.00 soles</span>
-                        <meta itemprop="price" content="1000">
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto3">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                    <div class="price-container">
+                        <div>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="priceCurrency" content="USD">$850</span>
+                                <meta itemprop="price" content="850">
+                                <meta itemprop="priceValidUntil" content="2025-12-31">
+                                <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
+                                <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto3">
+                                <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                            </span>
+                            <span class="original-price">$1,000</span>
+                        </div>
                     </div>
-                    <span class="limited-stock">EDICIÓN LIMITADA</span>
-                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
+                    <span class="limited-stock">EDICIÓN LIMITADA - ÚLTIMAS UNIDADES</span>
+                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA - OFERTA EXCLUSIVA</a>
                 </div>
             </div>
             
             <!-- Producto 4 - Pasta 500g -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
-                <span class="discount-badge">NUEVO</span>
+                <span class="discount-badge">AHORRA $250</span>
                 <img src="/tienda-ayahuasca/images/ayahuasca-pasta.webp" alt="Pasta de Ayahuasca 500 gramos" itemprop="image" width="300" height="250">
                 <div class="product-content">
                     <h3 itemprop="name">Pasta Pura de Ayahuasca (500g)</h3>
@@ -608,24 +735,26 @@
                         <li>Envío GRATIS y discreto</li>
                     </ul>
                     
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$1,000.00</span>
-                        </span>
-                        <span class="price-soles">s/3,700.00 soles</span>
-                        <meta itemprop="price" content="1000">
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/InStock">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto4">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                    <div class="price-container">
+                        <div>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="priceCurrency" content="USD">$750</span>
+                                <meta itemprop="price" content="750">
+                                <meta itemprop="priceValidUntil" content="2025-12-31">
+                                <meta itemprop="availability" content="https://schema.org/InStock">
+                                <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto4">
+                                <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                            </span>
+                            <span class="original-price">$1,000</span>
+                        </div>
                     </div>
-                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
+                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA - PRECIO INSUPERABLE</a>
                 </div>
             </div>
             
             <!-- Producto 5 - Pasta 1kg -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
-                <span class="discount-badge">PARA CHAMANES</span>
+                <span class="discount-badge">AHORRA $300</span>
                 <img src="/tienda-ayahuasca/images/ayahuasca-pasta.webp" alt="Pasta de Ayahuasca 1 kilo" itemprop="image" width="300" height="250">
                 <div class="product-content">
                     <h3 itemprop="name">Pasta Pura de Ayahuasca (1kg)</h3>
@@ -653,25 +782,27 @@
                         <li>Envío EXPRESS GRATIS</li>
                     </ul>
                     
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$2,000.00</span>
-                        </span>
-                        <span class="price-soles">s/7,400.00 soles</span>
-                        <meta itemprop="price" content="2000">
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto5">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                    <div class="price-container">
+                        <div>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="priceCurrency" content="USD">$1,700</span>
+                                <meta itemprop="price" content="1700">
+                                <meta itemprop="priceValidUntil" content="2025-12-31">
+                                <meta itemprop="availability" content="https://schema.org/LimitedAvailability">
+                                <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto5">
+                                <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                            </span>
+                            <span class="original-price">$2,000</span>
+                        </div>
                     </div>
                     <span class="limited-stock">¡ÚLTIMAS 2 UNIDADES!</span>
-                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
+                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA - OFERTA CHAMÁN</a>
                 </div>
             </div>
             
             <!-- Producto 6 - Kit Completo -->
             <div class="product" itemscope itemtype="https://schema.org/Product">
-                <span class="discount-badge">RECOMENDADO</span>
+                <span class="discount-badge">MEJOR OFERTA</span>
                 <img src="/tienda-ayahuasca/images/combo.webp" alt="Kit completo de Ayahuasca" itemprop="image" width="300" height="250">
                 <div class="product-content">
                     <h3 itemprop="name">Kit del Viajero Espiritual</h3>
@@ -700,28 +831,30 @@
                         <li>Soporte chamánico por 2 meses</li>
                     </ul>
                     
-                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span class="price">
-                            <span itemprop="priceCurrency" content="USD">$600.00</span>
-                        </span>
-                        <span class="price-soles">s/2,220.00 soles</span>
-                        <meta itemprop="price" content="600">
-                        <meta itemprop="priceValidUntil" content="2025-12-31">
-                        <meta itemprop="availability" content="https://schema.org/InStock">
-                        <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto6">
-                        <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                    <div class="price-container">
+                        <div>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="priceCurrency" content="USD">$490</span>
+                                <meta itemprop="price" content="490">
+                                <meta itemprop="priceValidUntil" content="2025-12-31">
+                                <meta itemprop="availability" content="https://schema.org/InStock">
+                                <meta itemprop="url" content="https://loehei.github.io/tienda-ayahuasca/productos.html#producto6">
+                                <link itemprop="itemCondition" href="https://schema.org/NewCondition"/>
+                            </span>
+                            <span class="original-price">$600</span>
+                        </div>
                     </div>
-                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA</a>
+                    <a href="#" class="btn" itemprop="url">COMPRAR AHORA - LO MÁS VENDIDO</a>
                 </div>
             </div>
         </div>
         
         <div class="package-deal">
-            <h4>✨ OFERTA ESPECIAL: KIT DEL CHAMÁN ✨</h4>
+            <h4>✨ KIT DEL CHAMÁN - OFERTA ESPECIAL ✨</h4>
             <p>1kg de Pasta + 1L de Brebaje + Manto ceremonial grande + Vasija sagrada + Guía Digital + Soporte chamánico VIP por 3 meses</p>
-            <p><strong>Precio normal: $3,000.00 → <span style="color: #E53935; font-weight: bold;">Precio especial: $2,500.00</span> (Ahorras $500)</strong></p>
-            <p><span style="background-color: var(--accent); padding: 5px 10px; border-radius: 20px;">+ ENVÍO EXPRESS GRATIS</span></p>
-            <p><strong>s/9,250.00 soles</strong></p>
+            <p><strong>Precio normal: $3,000 → <span style="color: var(--urgent); font-weight: bold;">Precio especial: $2,100</span> (Ahorras $900)</strong></p>
+            <p><span style="background-color: var(--accent); padding: 5px 10px; border-radius: 20px; font-weight: bold;">+ ENVÍO EXPRESS GRATIS</span></p>
+            <p><strong style="font-size: 1.2rem;">SOLO PARA LOS PRIMEROS 10 CLIENTES</strong></p>
             <a href="#" class="btn" style="max-width: 300px; margin: 20px auto 0; display: block;">OBTENER OFERTA ESPECIAL</a>
         </div>
         
@@ -741,7 +874,7 @@
         </section>
         
         <section class="testimonials">
-            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 30px;">Testimonios de Nuestros Clientes</h2>
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 30px;">Lo que dicen nuestros clientes</h2>
             
             <div class="testimonial" itemscope itemtype="https://schema.org/Review">
                 <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
@@ -804,12 +937,32 @@
     </a>
 
     <script>
-        // Mobile Menu Toggle (si decides añadirlo después)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Aquí puedes añadir funcionalidad JavaScript si necesitas
-            console.log('Página de productos cargada');
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const end = new Date();
+            end.setHours(23, 59, 59, 0); // Set to end of today
             
-            // Ejemplo: Animación al hacer scroll
+            const diff = end - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-timer').innerHTML = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (diff <= 0) {
+                document.getElementById('countdown-timer').innerHTML = "00:00:00";
+                document.querySelector('.urgency-banner').innerHTML = "⚡ ¡ÚLTIMA OPORTUNIDAD! OFERTA TERMINANDO EN ESTOS MOMENTOS ⚡";
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Product animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
             const fadeElems = document.querySelectorAll('.product');
             fadeElems.forEach((elem, index) => {
                 elem.style.opacity = '0';
@@ -828,6 +981,19 @@
             
             fadeElems.forEach(elem => {
                 observer.observe(elem);
+            });
+            
+            // Add click animation to buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.classList.add('clicked');
+                    setTimeout(() => {
+                        this.classList.remove('clicked');
+                        // Here you would normally redirect to checkout
+                        alert('¡Gracias por tu interés! Serás redirigido al checkout.');
+                    }, 300);
+                });
             });
         });
     </script>
