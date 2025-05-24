@@ -99,7 +99,7 @@
             --primary-light: #4CAF50;
             --accent: #FFC107;
             --text: #333333;
-            --text-light: #666666;
+            --text-light: #f0f0f0;
             --light: #F1F8E9;
             --white: #FFFFFF;
             --gray: #F5F5F5;
@@ -115,18 +115,11 @@
             background-color: var(--white);
         }
         
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
         .header-sticky {
             position: sticky;
             top: 0;
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: var(--primary-dark);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             z-index: 1000;
             padding: 15px 0;
         }
@@ -135,7 +128,8 @@
             max-width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 3px solid var(--accent);
         }
     </style>
 </head>
@@ -147,29 +141,23 @@
     
     <!-- Header -->
     <header class="header-sticky">
-  <div class="container header-content">
-    <div class="branding">
-      <h1 itemprop="name">Ayahuasca Ancestral <span class="certified-badge">Certificada</span></h1>
-      <p class="tagline">Medicina Sagrada de la Amazonía Peruana</p>
-    </div>
-    
-    <button class="menu-toggle" id="mobile-menu" aria-label="Menú móvil">
-      <span class="menu-icon"></span>
-      <span class="menu-icon"></span>
-      <span class="menu-icon"></span>
-    </button>
-    
-    <nav aria-label="Navegación principal" id="main-nav">
-      <ul>
-        <li><a href="/tienda-ayahuasca/" aria-current="page">Inicio</a></li>
-        <li><a href="/tienda-ayahuasca/productos.html">Nuestras Preparaciones</a></li>
-        <li><a href="/tienda-ayahuasca/ceremonias.html">Ceremonias</a></li>
-        <li><a href="/tienda-ayahuasca/about.html">Tradición Shipibo</a></li>
-        <li><a href="/tienda-ayahuasca/contact.html" class="nav-cta">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        <div class="container header-content">
+            <div class="branding">
+                <h1 itemprop="name">Ayahuasca Ancestral <span class="certified-badge">Certificada</span></h1>
+                <p class="tagline">Medicina Sagrada de la Amazonía Peruana</p>
+            </div>
+            
+            <nav aria-label="Navegación principal" id="main-nav">
+                <ul>
+                    <li><a href="/tienda-ayahuasca/" aria-current="page">Inicio</a></li>
+                    <li><a href="/tienda-ayahuasca/productos.html">Nuestras Preparaciones</a></li>
+                    <li><a href="/tienda-ayahuasca/ceremonias.html">Ceremonias</a></li>
+                    <li><a href="/tienda-ayahuasca/about.html">Tradición Shipibo</a></li>
+                    <li><a href="/tienda-ayahuasca/contact.html" class="nav-cta">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main class="container">
         <!-- Hero Section -->
@@ -219,75 +207,73 @@
             </div>
         </section>
 
-<section class="testimonials">
-    <div class="container">
-        <h2 class="section-title">Testimonios Reales</h2>
-        <div class="testimonial-slider">
-            <!-- Testimonio 1 -->
-            <div class="testimonial">
-                <div class="testimonial-content" itemscope itemtype="https://schema.org/Review">
-                    <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
-                        <meta itemprop="name" content="Ayahuasca Certificada"/>
-                    </div>
-                    <div class="author-info" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                        <img src="images/testimonial-1.webp" alt="María G. de España" class="author-photo" itemprop="image" loading="lazy">
-                        <div class="author-details">
-                            <span itemprop="name">María G., España</span>
-                            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5"/>
-                                <span class="stars">★★★★★</span>
+        <section class="testimonials">
+            <h2 class="section-title">Testimonios Reales</h2>
+            <div class="testimonial-slider">
+                <!-- Testimonio 1 -->
+                <div class="testimonial">
+                    <div class="testimonial-content" itemscope itemtype="https://schema.org/Review">
+                        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
+                            <meta itemprop="name" content="Ayahuasca Certificada"/>
+                        </div>
+                        <div class="author-info" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <img src="images/testimonial-1.webp" alt="María G. de España" class="author-photo" itemprop="image" loading="lazy">
+                            <div class="author-details">
+                                <span itemprop="name">María G., España</span>
+                                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                    <meta itemprop="ratingValue" content="5"/>
+                                    <span class="stars">★★★★★</span>
+                                </div>
                             </div>
                         </div>
+                        <p itemprop="reviewBody">"La autenticidad de esta ayahuasca se nota desde el primer contacto. El maestro shipibo que me atendió me explicó todo el proceso. ¡Transformador!"</p>
+                        <meta itemprop="datePublished" content="2025-05-10"/>
                     </div>
-                    <p itemprop="reviewBody">"La autenticidad de esta ayahuasca se nota desde el primer contacto. El maestro shipibo que me atendió me explicó todo el proceso. ¡Transformador!"</p>
-                    <meta itemprop="datePublished" content="2025-05-10"/>
                 </div>
-            </div>
 
-            <!-- Testimonio 2 -->
-            <div class="testimonial">
-                <div class="testimonial-content" itemscope itemtype="https://schema.org/Review">
-                    <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
-                        <meta itemprop="name" content="Ayahuasca Certificada"/>
-                    </div>
-                    <div class="author-info" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                        <img src="images/testimonial-2.webp" alt="Juan P. de México" class="author-photo" itemprop="image" loading="lazy">
-                        <div class="author-details">
-                            <span itemprop="name">Juan P., México</span>
-                            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5"/>
-                                <span class="stars">★★★★★</span>
+                <!-- Testimonio 2 -->
+                <div class="testimonial">
+                    <div class="testimonial-content" itemscope itemtype="https://schema.org/Review">
+                        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
+                            <meta itemprop="name" content="Ayahuasca Certificada"/>
+                        </div>
+                        <div class="author-info" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <img src="images/testimonial-2.webp" alt="Juan P. de México" class="author-photo" itemprop="image" loading="lazy">
+                            <div class="author-details">
+                                <span itemprop="name">Juan P., México</span>
+                                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                    <meta itemprop="ratingValue" content="5"/>
+                                    <span class="stars">★★★★★</span>
+                                </div>
                             </div>
                         </div>
+                        <p itemprop="reviewBody">"El envío llegó en perfectas condiciones y discretamente empaquetado. La calidad es excepcional, muy diferente a otras que probé antes."</p>
+                        <meta itemprop="datePublished" content="2025-04-28"/>
                     </div>
-                    <p itemprop="reviewBody">"El envío llegó en perfectas condiciones y discretamente empaquetado. La calidad es excepcional, muy diferente a otras que probé antes."</p>
-                    <meta itemprop="datePublished" content="2025-04-28"/>
                 </div>
-            </div>
 
-            <!-- Testimonio 3 -->
-            <div class="testimonial">
-                <div class="testimonial-content" itemscope itemtype="https://schema.org/Review">
-                    <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
-                        <meta itemprop="name" content="Ayahuasca Certificada"/>
-                    </div>
-                    <div class="author-info" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                        <img src="images/testimonial-3.webp" alt="Laura M. de Argentina" class="author-photo" itemprop="image" loading="lazy">
-                        <div class="author-details">
-                            <span itemprop="name">Laura M., Argentina</span>
-                            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="4"/>
-                                <span class="stars">★★★★☆</span>
+                <!-- Testimonio 3 -->
+                <div class="testimonial">
+                    <div class="testimonial-content" itemscope itemtype="https://schema.org/Review">
+                        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Product">
+                            <meta itemprop="name" content="Ayahuasca Certificada"/>
+                        </div>
+                        <div class="author-info" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <img src="images/testimonial-3.webp" alt="Laura M. de Argentina" class="author-photo" itemprop="image" loading="lazy">
+                            <div class="author-details">
+                                <span itemprop="name">Laura M., Argentina</span>
+                                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                    <meta itemprop="ratingValue" content="4"/>
+                                    <span class="stars">★★★★☆</span>
+                                </div>
                             </div>
                         </div>
+                        <p itemprop="reviewBody">"La ceremonia guiada online fue increíble. El chamán supo guiarme en cada momento. Recomiendo totalmente esta experiencia."</p>
+                        <meta itemprop="datePublished" content="2025-05-05"/>
                     </div>
-                    <p itemprop="reviewBody">"La ceremonia guiada online fue increíble. El chamán supo guiarme en cada momento. Recomiendo totalmente esta experiencia."</p>
-                    <meta itemprop="datePublished" content="2025-05-05"/>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- Cultural Info Section -->
         <section class="cultural-info fade-in">
@@ -365,13 +351,6 @@
     <script>
         // Año actual en el footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Menú móvil
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            const nav = document.getElementById('main-nav');
-            nav.classList.toggle('active');
-            this.querySelector('i').classList.toggle('fa-times');
-        });
     </script>
 </body>
 </html>
