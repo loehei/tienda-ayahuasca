@@ -1,329 +1,128 @@
-/* Features Section */
-.features {
-  padding: 80px 0;
-  background-color: var(--light);
-  text-align: center;
+/* ============== ELEMENTOS PERSUASIVOS ============== */
+/* Testimonios con efecto tarjeta flotante */
+.testimonial {
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transform: perspective(1000px) rotateY(0deg);
 }
 
-.section-title {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  color: var(--primary-dark);
-  margin-bottom: 50px;
-  position: relative;
+.testimonial:hover {
+  transform: perspective(1000px) rotateY(5deg);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-.section-title:after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 3px;
-  background-color: var(--accent);
-  margin: 20px auto;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Efecto de levitación */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
 .feature {
-  background-color: var(--white);
-  padding: 35px 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: all 0.4s ease;
-  border: 1px solid rgba(0,0,0,0.05);
+  animation: float 6s ease-in-out infinite;
 }
 
-.feature:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.feature-icon {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: var(--primary);
-}
-
-.feature h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  color: var(--primary-dark);
-}
-
-.feature p {
-  color: var(--text-light);
-  line-height: 1.7;
-  font-size: 1.05rem;
-}
-
-/* Testimonials Section */
-.testimonials {
-  padding: 80px 0;
-  background-color: var(--white);
-}
-
-.testimonial-slider {
-  display: flex;
-  overflow-x: auto;
-  gap: 30px;
-  padding: 30px 20px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.testimonial {
-  min-width: 320px;
-  background-color: var(--white);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-  scroll-snap-align: start;
-  border: 1px solid var(--dark-gray);
-}
-
-.testimonial-content {
-  position: relative;
-}
-
-.author-info {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.author-photo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 15px;
-  border: 3px solid var(--primary-light);
-}
-
-.author-details {
-  display: flex;
-  flex-direction: column;
-}
-
-.author-details span:first-child {
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 3px;
-}
-
-.stars {
-  color: var(--accent);
-}
-
-.testimonial-content p {
-  font-style: italic;
-  color: var(--text-light);
-  line-height: 1.7;
-  position: relative;
-  padding-left: 20px;
-}
-
-.testimonial-content p:before {
-  content: '"';
-  font-size: 3rem;
-  color: var(--primary-light);
-  opacity: 0.2;
-  position: absolute;
-  left: -10px;
-  top: -15px;
-  font-family: serif;
-}
-
-/* Cultural Info */
-.cultural-info {
-  padding: 100px 0;
-  background-color: var(--light);
-}
-
-.cultural-info h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.3rem;
-  color: var(--primary-dark);
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.cultural-info p {
-  margin-bottom: 25px;
-  line-height: 1.8;
-  text-align: center;
-  color: var(--text-light);
-  font-size: 1.1rem;
-}
-
-.cultural-info ul {
-  text-align: center;
-  margin: 40px auto;
-  max-width: 600px;
-  list-style: none;
-}
-
-.cultural-info li {
-  margin-bottom: 20px;
-  position: relative;
-  padding-left: 40px;
-  font-size: 1.1rem;
-  text-align: left;
-  display: inline-block;
-  width: 100%;
-  color: var(--text);
-}
-
-.cultural-info li:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25px;
-  height: 25px;
-  background-color: var(--primary-light);
-  border-radius: 50%;
-  opacity: 0.2;
-}
-
-/* CTA Section */
-.cta-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-  color: var(--white);
-  text-align: center;
-}
-
-.cta-box h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.cta-box p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
-}
-
-.btn-large {
-  padding: 16px 45px;
-  font-size: 1.2rem;
-  border-radius: 35px;
-  display: inline-block;
-  font-weight: 600;
-  background-color: var(--white);
-  color: var(--primary-dark);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-large:hover {
-  background-color: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
-}
-
-/* Footer */
-footer {
-  background-color: var(--primary-dark);
-  color: var(--white);
-  padding: 70px 0 30px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 50px;
-}
-
-.footer-col h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  margin-bottom: 25px;
-  position: relative;
-  display: inline-block;
-}
-
-.footer-col h3:after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background-color: var(--accent);
-}
-
-.footer-col ul {
-  list-style: none;
-}
-
-.footer-col li {
-  margin-bottom: 12px;
-}
-
-.footer-col a {
-  color: var(--white);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-col a:hover {
-  color: var(--accent);
-}
-
-/* WhatsApp Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #25D366;
+/* Precio con destaque */
+.price-tag {
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
   color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 100;
+  padding: 1rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-tag:after {
+  content: 'OFERTA';
+  position: absolute;
+  top: -10px;
+  right: -30px;
+  background: var(--accent);
+  color: white;
+  padding: 5px 30px;
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* ============== SECCIONES ESPECIALES ============== */
+/* Efecto de revelación progresiva */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Galería con efecto zoom */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* ============== ELEMENTOS DE CONFIANZA ============== */
+.trust-badges {
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: all 0.3s;
-  text-decoration: none;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .feature-grid {
-    grid-template-columns: 1fr;
+/* ============== ANIMACIONES ============== */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
   }
-  
-  .testimonial {
-    min-width: 280px;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+/* ============== FOOTER PREMIUM ============== */
+footer {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark) 100%);
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+footer:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/pattern.png') repeat;
+  opacity: 0.05;
+}
+
+/* WhatsApp flotante con efecto */
+.whatsapp-float {
+  animation: pulse 1.5s infinite, wiggle 2s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
 }
