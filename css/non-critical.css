@@ -157,7 +157,7 @@ footer {
   .feature-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .testimonial {
     min-width: 80%;
   }
@@ -167,11 +167,11 @@ footer {
   .hero h2 {
     font-size: 2rem;
   }
-  
+
   .section-title {
     font-size: 1.8rem;
   }
-  
+
   .btn, .btn-secondary {
     width: 100%;
   }
