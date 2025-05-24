@@ -1,112 +1,393 @@
-/* ============== ELEMENTOS PERSUASIVOS ============== */
-/* Testimonios con efecto tarjeta flotante */
-.testimonial {
-  transition: all 0.4s ease;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transform: perspective(1000px) rotateY(0deg);
-}
+/* non-critical.css - Estilos Persuasivos No Críticos */
 
-.testimonial:hover {
-  transform: perspective(1000px) rotateY(5deg);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-/* Efecto de levitación */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.feature {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Precio con destaque */
-.price-tag {
-  background: linear-gradient(to right, var(--primary), var(--primary-dark));
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-}
-
-.price-tag:after {
-  content: 'OFERTA';
-  position: absolute;
-  top: -10px;
-  right: -30px;
-  background: var(--accent);
-  color: white;
-  padding: 5px 30px;
-  transform: rotate(45deg);
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-/* ============== SECCIONES ESPECIALES ============== */
-/* Efecto de revelación progresiva */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.5, 0, 0, 1);
-}
-
-.scroll-reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Galería con efecto zoom */
-.gallery-item {
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.gallery-item img {
-  transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-/* ============== ELEMENTOS DE CONFIANZA ============== */
+/* ============ ELEMENTOS DE CONFIANZA ============ */
 .trust-badges {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 1.5rem;
+  flex-wrap: wrap;
   padding: 2rem;
   background: rgba(255,255,255,0.1);
   border-radius: 12px;
   backdrop-filter: blur(10px);
+  margin: 2rem 0;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* ============== ANIMACIONES ============== */
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.badge {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  background: rgba(0,0,0,0.2);
+  color: var(--pure-white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-fast);
 }
 
-/* ============== FOOTER PREMIUM ============== */
-footer {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark) 100%);
-  color: var(--text-light);
+.badge:hover {
+  background: rgba(0,0,0,0.3);
+  transform: translateY(-3px);
+}
+
+.badge span {
+  color: var(--action-orange);
+  font-weight: 700;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* ============ TESTIMONIOS CON EFECTO 3D ============ */
+.testimonials {
+  padding: 5rem 0;
+  background-color: var(--light-bg);
   position: relative;
   overflow: hidden;
 }
 
-footer:before {
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/pattern.png') repeat;
+  opacity: 0.03;
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 2rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial {
+  min-width: 320px;
+  scroll-snap-align: start;
+  background: var(--pure-white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.testimonial:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.testimonial::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--action-orange), var(--action-orange-dark));
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.author-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 3px solid var(--action-orange);
+}
+
+.author-details {
+  flex: 1;
+}
+
+.author-name {
+  font-weight: 700;
+  color: var(--trust-blue-dark);
+  margin-bottom: 0.3rem;
+}
+
+.author-location {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  opacity: 0.7;
+}
+
+.stars {
+  color: var(--action-orange);
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+}
+
+.testimonial-content {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.8;
+  position: relative;
+}
+
+.testimonial-content p::before {
+  content: '"';
+  position: absolute;
+  left: -1rem;
+  top: -0.8rem;
+  font-size: 4rem;
+  color: var(--action-orange);
+  opacity: 0.2;
+  font-family: serif;
+  line-height: 1;
+}
+
+/* ============ SECCIÓN DE CARACTERÍSTICAS ============ */
+.features {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, var(--pure-white) 0%, var(--light-bg) 100%);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  color: var(--trust-blue-dark);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--action-orange), var(--action-orange-dark));
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  background: var(--pure-white);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--action-orange), var(--action-orange-dark));
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--action-orange);
+  display: inline-block;
+  transition: var(--transition-fast);
+}
+
+.feature:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.feature h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--trust-blue-dark);
+}
+
+.feature p {
+  color: var(--text-dark);
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+/* ============ SECCIÓN CULTURAL ============ */
+.cultural-info {
+  padding: 5rem 0;
+  background: url('../images/amazon-pattern.jpg') center/cover fixed;
+  color: var(--pure-white);
+  position: relative;
+}
+
+.cultural-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(21,67,96,0.9), rgba(26,82,118,0.9)));
+}
+
+.cultural-info .container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.cultural-info h2 {
+  color: var(--pure-white);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cultural-info p {
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.cultural-info ul {
+  max-width: 600px;
+  margin: 3rem auto;
+  list-style: none;
+}
+
+.cultural-info li {
+  margin-bottom: 1.5rem;
+  padding-left: 3rem;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.cultural-info li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 25px;
+  height: 25px;
+  background-color: var(--action-orange);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+/* ============ SECCIÓN CTA PREMIUM ============ */
+.cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--trust-blue-dark) 0%, var(--trust-blue) 100%);
+  color: var(--pure-white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.cta-box {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.cta-box h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--pure-white);
+}
+
+.cta-box p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.btn-large {
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--action-orange), var(--action-orange-dark));
+  color: var(--pure-white);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-md);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-large:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(230, 126, 34, 0.4);
+}
+
+.small-text {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 1.5rem;
+  display: block;
+}
+
+/* ============ FOOTER PREMIUM ============ */
+footer {
+  background: linear-gradient(135deg, var(--trust-blue-dark) 0%, var(--dark-bg) 100%);
+  color: var(--text-light);
+  padding: 5rem 0 2rem;
+  position: relative;
+}
+
+footer::before {
   content: '';
   position: absolute;
   top: 0;
@@ -117,12 +398,213 @@ footer:before {
   opacity: 0.05;
 }
 
-/* WhatsApp flotante con efecto */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-col h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--pure-white);
+  position: relative;
+  display: inline-block;
+}
+
+.footer-col h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--action-orange);
+}
+
+.footer-col p {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  line-height: 1.8;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 1rem;
+}
+
+.footer-col a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  display: inline-block;
+  padding: 0.3rem 0;
+  opacity: 0.8;
+}
+
+.footer-col a:hover {
+  color: var(--action-orange);
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-bottom p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  max-width: 800px;
+  margin: 1rem auto 0;
+  line-height: 1.6;
+  opacity: 0.6;
+}
+
+/* ============ WHATSAPP FLOTANTE ============ */
 .whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 70px;
+  height: 70px;
+  background-color: #25D366;
+  color: var(--pure-white);
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
   animation: pulse 1.5s infinite, wiggle 2s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
 
 @keyframes wiggle {
   0%, 100% { transform: rotate(-5deg); }
   50% { transform: rotate(5deg); }
+}
+
+/* ============ ANIMACIONES ============ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* ============ MEDIA QUERIES ============ */
+@media (max-width: 992px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cultural-info {
+    padding: 4rem 0;
+  }
+  
+  .cta-section {
+    padding: 5rem 0;
+  }
+  
+  .cta-box h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .feature {
+    padding: 2rem 1.5rem;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .testimonial {
+    min-width: 280px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .whatsapp-float {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .trust-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .badge {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cultural-info li {
+    padding-left: 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .btn-large {
+    width: 100%;
+    padding: 1.2rem;
+  }
 }
