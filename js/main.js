@@ -1,81 +1,98 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Lazy loading para imágenes
-  if ('loading' in HTMLImageElement.prototype) {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    lazyImages.forEach(img => {
-      img.loading = 'lazy';
+  // Animaciones de scroll
+  const scrollReveals = document.querySelectorAll('.scroll-reveal');
+  
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-  } else {
-    const lazyLoad = function() {
-      const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
-      
-      if ('IntersectionObserver' in window) {
-        const lazyImageObserver = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              const lazyImage = entry.target;
-              lazyImage.src = lazyImage.dataset.src;
-              lazyImage.classList.remove('lazy');
-              lazyImageObserver.unobserve(lazyImage);
-            }
-          });
-        });
-        
-        lazyImages.forEach(function(lazyImage) {
-          lazyImageObserver.observe(lazyImage);
-        });
-      }
-    };
-    
-    document.addEventListener('DOMContentLoaded', lazyLoad);
-    window.addEventListener('load', lazyLoad);
-    window.addEventListener('resize', lazyLoad);
-    window.addEventListener('scroll', lazyLoad);
-  }
+  }, { threshold: 0.1 });
 
-  // Scroll suave
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 100,
-          behavior: 'smooth'
-        });
+  scrollReveals.forEach(el => scrollObserver.observe(el));
+
+  // Contador de urgencia
+  const urgencyCounter = document.createElement('div');
+  urgencyCounter.className = 'urgency-counter';
+  urgencyCounter.innerHTML = `
+    <span class="counter">5</span> kits disponibles - 
+    <span id="timer">15:00</span> para reservar
+  `;
+  document.querySelector('.urgency-banner').appendChild(urgencyCounter);
+
+  // Temporizador psicológico
+  let minutes = 15;
+  let seconds = 0;
+  
+  const timer = setInterval(() => {
+    if (seconds === 0) {
+      if (minutes === 0) {
+        clearInterval(timer);
+        return;
       }
+      minutes--;
+      seconds = 59;
+    } else {
+      seconds--;
+    }
+    
+    document.getElementById('timer').textContent = 
+      `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    
+    // Cambiar color cuando quedan 5 minutos
+    if (minutes < 5) {
+      document.querySelector('.urgency-banner').style.background = 
+        'linear-gradient(to right, #e74c3c, #922b21)';
+    }
+  }, 1000);
+
+  // Efecto de seguimiento para imágenes
+  const images = document.querySelectorAll('.product-image');
+  
+  images.forEach(image => {
+    image.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      image.style.transform = `perspective(1000px) rotateX(${(y - 0.5) * 10}deg) rotateY(${(x - 0.5) * 10}deg)`;
+    });
+    
+    image.addEventListener('mouseleave', () => {
+      image.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
     });
   });
 
-  // Animaciones
-  const animateOnScroll = function() {
-    const elementsToAnimate = document.querySelectorAll('.fade-in');
-    
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      elementsToAnimate.forEach(element => {
-        observer.observe(element);
-      });
-    } else {
-      elementsToAnimate.forEach(element => {
-        element.classList.add('animate');
+  // Tracking de conversiones
+  const trackConversion = (event, label) => {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        'event_category': 'engagement',
+        'event_label': label
       });
     }
+    console.log('Event tracked:', label);
   };
-  
-  animateOnScroll();
 
-  // Actualizar año en footer
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.btn, .nav-cta').forEach(button => {
+    button.addEventListener('click', () => {
+      trackConversion(event, button.textContent.trim());
+    });
+  });
+
+  // Mostrar precio dinámico
+  function updatePrices() {
+    document.querySelectorAll('.price').forEach(priceEl => {
+      const originalPrice = parseFloat(priceEl.dataset.price);
+      const discount = 0.15; // 15% de descuento
+      const finalPrice = originalPrice * (1 - discount);
+      
+      priceEl.innerHTML = `
+        <span class="old-price">$${originalPrice.toFixed(2)}</span>
+        <span class="new-price">$${finalPrice.toFixed(2)}</span>
+        <span class="discount-badge">15% OFF</span>
+      `;
+    });
+  }
+  
+  updatePrices();
 });
