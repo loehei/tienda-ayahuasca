@@ -867,13 +867,7 @@
                 observer.observe(testimonio);
             });
             
-            // Form submission
-            const form = document.querySelector('#reservar form');
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Gracias por tu reserva. Hemos recibido tu solicitud y nos contactaremos contigo en menos de 24 horas para confirmar disponibilidad, guiarte en el proceso de pago y coordinar el envío de la medicina ceremonial.');
-                form.reset();
-            });
+           
             
             // Highlight best value option
             const bestValueCard = document.querySelector('.best-value').closest('.ceremony-card');
