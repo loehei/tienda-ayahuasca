@@ -492,23 +492,23 @@
                             
                             <div class="form-group">
                                 <label for="card-number">Número de Tarjeta *</label>
-                                <input type="text" id="card-number" name="card-number" class="form-control" placeholder="1234 5678 9012 3456">
+                                <input type="text" id="card-number" name="card-number" class="form-control" placeholder="1234 5678 9012 3456" data-payment-field>
                             </div>
                             
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="card-expiry">Fecha de Expiración *</label>
-                                    <input type="text" id="card-expiry" name="card-expiry" class="form-control" placeholder="MM/AA">
+                                    <input type="text" id="card-expiry" name="card-expiry" class="form-control" placeholder="MM/AA" data-payment-field>
                                 </div>
                                 <div class="form-group">
                                     <label for="card-cvc">Código CVC *</label>
-                                    <input type="text" id="card-cvc" name="card-cvc" class="form-control" placeholder="123">
+                                    <input type="text" id="card-cvc" name="card-cvc" class="form-control" placeholder="123" data-payment-field>
                                 </div>
                             </div>
                             
                             <div class="form-group">
                                 <label for="card-name">Nombre en la Tarjeta *</label>
-                                <input type="text" id="card-name" name="card-name" class="form-control">
+                                <input type="text" id="card-name" name="card-name" class="form-control" data-payment-field>
                             </div>
                             
                             <input type="hidden" name="payment_method" value="tarjeta">
@@ -547,7 +547,7 @@
                             
                             <div class="form-group">
                                 <label for="mtcn">Código MTCN *</label>
-                                <input type="text" id="mtcn" name="mtcn" class="form-control" required>
+                                <input type="text" id="mtcn" name="mtcn" class="form-control" data-payment-field>
                             </div>
                             
                             <input type="hidden" name="payment_method" value="western_union">
@@ -573,12 +573,12 @@
                             
                             <div class="form-group">
                                 <label for="paypal-email">Correo de PayPal usado *</label>
-                                <input type="email" id="paypal-email" name="paypal-email" class="form-control" required>
+                                <input type="email" id="paypal-email" name="paypal-email" class="form-control" data-payment-field>
                             </div>
                             
                             <div class="form-group">
                                 <label for="paypal-transaction">ID de Transacción *</label>
-                                <input type="text" id="paypal-transaction" name="paypal-transaction" class="form-control" required>
+                                <input type="text" id="paypal-transaction" name="paypal-transaction" class="form-control" data-payment-field>
                             </div>
                             
                             <input type="hidden" name="payment_method" value="paypal">
@@ -679,6 +679,38 @@
             paymentForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
+                // Validar solo los campos del método de pago activo
+                const activeMethod = document.querySelector('.payment-method.active');
+                if (!activeMethod) {
+                    alert('Por favor, seleccione un método de pago');
+                    return;
+                }
+                
+                // Desactivar temporalmente los campos de otros métodos de pago
+                const allPaymentFields = document.querySelectorAll('[data-payment-field]');
+                allPaymentFields.forEach(field => {
+                    field.required = false;
+                });
+                
+                // Activar solo los campos del método de pago seleccionado
+                const activeFields = activeMethod.querySelectorAll('[data-payment-field]');
+                let isValid = true;
+                
+                activeFields.forEach(field => {
+                    field.required = true;
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = 'var(--urgent)';
+                    } else {
+                        field.style.borderColor = '';
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Por favor, complete todos los campos requeridos para el método de pago seleccionado');
+                    return;
+                }
+                
                 // Simular envío del formulario
                 fetch(paymentForm.action, {
                     method: 'POST',
@@ -715,9 +747,10 @@
             });
         }
         
-        // Activar el primer método de pago por defecto
+        // Inicialmente no mostrar ningún método de pago desplegado
         window.onload = function() {
-            document.getElementById('credit-card-method').classList.add('active');
+            // No activar ningún método por defecto
+            // document.getElementById('credit-card-method').classList.remove('active');
         };
     </script>
 </body>
