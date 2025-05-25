@@ -3,42 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ceremonias de Ayahuasca guiadas por maestros Shipibo en la Amazonía Peruana. Vive una experiencia auténtica de sanación espiritual en nuestro centro sagrado.">
-    <meta name="keywords" content="ceremonia ayahuasca Perú, retiro espiritual Amazonas, sanación con ayahuasca, maestro shipibo, experiencia chamánica, medicina ancestral, ritual ayahuasca, retiro Perú">
+    <meta name="description" content="Ceremonias virtuales de Ayahuasca guiadas por maestros Shipibo desde la Amazonía Peruana. Experiencia transformadora desde la comodidad de tu hogar.">
+    <meta name="keywords" content="ceremonia ayahuasca online, retiro espiritual virtual, sanación con ayahuasca, maestro shipibo, experiencia chamánica, medicina ancestral, ritual ayahuasca, ayahuasca a domicilio">
     
     <!-- Etiqueta canonical para evitar duplicados -->
     <link rel="canonical" href="https://loehei.github.io/tienda-ayahuasca/ceremonias.html" />
     
-    <title>Ceremonias de Ayahuasca Guiadas | Centro de Sanación Ancestral Shipibo</title>
+    <title>Ceremonias Virtuales de Ayahuasca | Experiencia Chamánica Online</title>
     
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "Ceremonia de Ayahuasca con Maestros Shipibo",
-  "description": "Experiencia transformadora guiada por chamanes con más de 25 años de experiencia en la Amazonía peruana",
+  "name": "Ceremonia Virtual de Ayahuasca con Maestros Shipibo",
+  "description": "Experiencia transformadora guiada por chamanes desde la Amazonía peruana directamente a tu hogar",
   "image": "https://loehei.github.io/tienda-ayahuasca/images/templo.webp",
   "startDate": "2025-06-15T20:00",
-  "endDate": "2025-06-20T12:00",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "endDate": "2025-06-15T22:00",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
   "location": {
-    "@type": "Place",
-    "name": "Centro de Sanación Ancestral Shipibo",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Camino a la Selva Km 12",
-      "addressLocality": "Iquitos",
-      "addressRegion": "Loreto",
-      "postalCode": "16000",
-      "addressCountry": "PE"
-    }
+    "@type": "VirtualLocation",
+    "name": "Ceremonia Virtual Ayahuasca Ancestral",
+    "url": "https://loehei.github.io/tienda-ayahuasca/ceremonias.html"
   },
   "offers": {
     "@type": "Offer",
     "url": "https://loehei.github.io/tienda-ayahuasca/ceremonias.html",
-    "price": "1200",
+    "price": "440",
     "priceCurrency": "USD",
     "availability": "https://schema.org/LimitedAvailability",
     "validFrom": "2025-01-01",
@@ -74,6 +67,7 @@
             --gray: #F5F5F5;
             --dark-gray: #E0E0E0;
             --brown: #5E2C04;
+            --purple: #6A1B9A;
         }
         
         body {
@@ -343,8 +337,20 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #E53935;
+            background-color: var(--purple);
             color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        .best-value {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--accent);
+            color: var(--text);
             padding: 5px 10px;
             border-radius: 20px;
             font-weight: bold;
@@ -517,6 +523,40 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         
+        /* Bonuses Section */
+        .bonuses-section {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .bonus-item {
+            background-color: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .bonus-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .bonus-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
         /* Responsive Styles */
         @media (max-width: 768px) {
             .header-content {
@@ -579,96 +619,112 @@
 
     <section class="ceremony-hero">
         <div class="container">
-            <div class="hero-badge">PRÓXIMA CEREMONIA: 15 DE JUNIO - ÚLTIMOS 3 CUPOS</div>
-            <h1>Ceremonia de Ayahuasca en el Corazón de la Amazonía</h1>
-            <p>Vive una experiencia transformadora guiada por maestros Shipibo con más de 25 años de práctica chamánica</p>
+            <div class="hero-badge">PRÓXIMA CEREMONIA: 15 DE JUNIO - ÚLTIMOS 5 CUPOS</div>
+            <h1>Ceremonia Virtual de Ayahuasca con Maestros Shipibo</h1>
+            <p>Experiencia transformadora desde tu hogar con medicina auténtica y guía chamánica en vivo. Incluye envío de ayahuasca ceremonial y regalos sagrados.</p>
             <a href="#reservar" class="btn" style="max-width: 300px; margin: 0 auto;">Reservar Mi Cupo</a>
         </div>
     </section>
 
     <main class="container">
         <section class="ceremony-intro">
-            <h2>Una Experiencia que Trasciende</h2>
-            <p>En nuestro <strong>Centro de Sanación Ancestral</strong> cerca de Iquitos, ofrecemos ceremonias auténticas que siguen los protocolos sagrados de los Shipibo-Conibo. Cada sesión es guiada personalmente por nuestro maestro principal <strong>Ricardo Mahua</strong> y su equipo de chamanes.</p>
-            <p style="font-style: italic; color: var(--primary);">"No vendemos ayahuasca, compartimos un legado espiritual"</p>
+            <h2>Sanación Ancestral en el Mundo Moderno</h2>
+            <p>Ahora puedes recibir la <strong>sabiduría de los maestros Shipibo</strong> directamente en tu espacio sagrado. Nuestras ceremonias virtuales mantienen toda la autenticidad de la tradición amazónica, adaptada para el mundo actual.</p>
+            <p style="font-style: italic; color: var(--primary);">"La medicina viaja más allá de la distancia cuando el corazón está preparado" - Maestro Ricardo Mahua</p>
         </section>
         
         <section class="ceremony-grid">
             <div class="ceremony-card">
-                <span class="limited-spots">SOLO 5 CUPOS</span>
-                <img src="/tienda-ayahuasca/images/chaman.webp" alt="Ceremonia de Iniciación">
+                <span class="limited-spots">SOLO 10 CUPOS</span>
+                <img src="/tienda-ayahuasca/images/chaman.webp" alt="Ceremonia Virtual Individual">
                 <div class="ceremony-card-content">
-                    <h3>Ceremonia de Iniciación</h3>
-                    <p>Ideal para tu primera experiencia con la medicina sagrada. Incluye evaluación espiritual previa y sesión de integración.</p>
+                    <h3>Experiencia Individual</h3>
+                    <p>Viaje personalizado de 2 horas con un chamán Shipibo dedicado exclusivamente a tu proceso.</p>
                     
                     <ul class="ceremony-features">
-                        <li>1 noche de ceremonia</li>
-                        <li>Evaluación espiritual previa</li>
-                        <li>Sesión de integración al día siguiente</li>
-                        <li>Dieta guiada por 3 días antes</li>
-                        <li>Alojamiento básico incluido</li>
+                        <li>Sesión privada por videollamada (2 horas)</li>
+                        <li>Envío de Ayahuasca ceremonial (250ml)</li>
+                        <li>Kit de iniciación espiritual (valorado en $80 USD)</li>
+                        <li>Guía de preparación y dieta ancestral</li>
+                        <li>Sesión de integración posterior (30 min)</li>
+                        <li>Ícaros personalizados grabados</li>
+                        <li>Certificado de participación</li>
                     </ul>
                     
-                    <span class="ceremony-price">$400 USD</span>
-                    <a href="#reservar" class="btn">Quiero Esta Experiencia</a>
+                    <span class="ceremony-price">$440 USD</span>
+                    <a href="#reservar" class="btn">Iniciar Mi Transformación</a>
                 </div>
             </div>
             
             <div class="ceremony-card">
                 <span class="limited-spots">MÁS POPULAR</span>
-                <img src="/tienda-ayahuasca/images/chaman2.webp" alt="Retiro de 3 Días">
+                <span class="best-value">MEJOR VALOR</span>
+                <img src="/tienda-ayahuasca/images/chaman2.webp" alt="Ceremonia Virtual para Parejas">
                 <div class="ceremony-card-content">
-                    <h3>Retiro de Transformación (3 Días)</h3>
-                    <p>Experiencia profunda con 2 ceremonias nocturnas y terapias complementarias de sanación.</p>
+                    <h3>Experiencia para Parejas</h3>
+                    <p>Ceremonia compartida para sanación de relaciones y conexión espiritual profunda.</p>
                     
                     <ul class="ceremony-features">
-                        <li>2 ceremonias de ayahuasca</li>
-                        <li>Terapia con plantas maestras</li>
-                        <li>Baños de florecimiento</li>
-                        <li>Alimentación dieta incluida</li>
-                        <li>Sesión de ícaros personalizados</li>
+                        <li>Sesión para 2 personas (2.5 horas)</li>
+                        <li>2 envíos de Ayahuasca ceremonial (250ml c/u)</li>
+                        <li>Kit de parejas espirituales (valorado en $120 USD)</li>
+                        <li>Ritual de unión energética</li>
+                        <li>Guía de preparación y dieta ancestral</li>
+                        <li>2 sesiones de integración posteriores</li>
+                        <li>Ícaros para armonización de relaciones</li>
+                        <li>Certificado de participación doble</li>
                     </ul>
                     
-                    <span class="ceremony-price">$900 USD</span>
-                    <a href="#reservar" class="btn">Reservar Ahora</a>
+                    <span class="ceremony-price">$780 USD</span>
+                    <a href="#reservar" class="btn">Sanar Nuestra Relación</a>
                 </div>
             </div>
+        </section>
+        
+        <section class="bonuses-section">
+            <h2 style="font-family: 'Playfair Display', serif; color: white;">Regalos Sagrados Incluidos</h2>
+            <p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;">Cada ceremonia incluye estos poderosos regalos para profundizar tu experiencia y mantener la conexión después del ritual.</p>
             
-            <div class="ceremony-card">
-                <img src="/tienda-ayahuasca/images/chaman3.webp" alt="Retiro de 7 Días">
-                <div class="ceremony-card-content">
-                    <h3>Retiro Chamánico (7 Días)</h3>
-                    <p>Inmersión completa en la medicina ancestral con 4 ceremonias y seguimiento personalizado.</p>
-                    
-                    <ul class="ceremony-features">
-                        <li>4 ceremonias de ayahuasca</li>
-                        <li>Dieta con plantas maestras</li>
-                        <li>Sesión de sanación con vapores</li>
-                        <li>Taller de kené (arte shipibo)</li>
-                        <li>Cabaña privada incluida</li>
-                        <li>Seguimiento por 1 mes después</li>
-                    </ul>
-                    
-                    <span class="ceremony-price">$1,800 USD</span>
-                    <a href="#reservar" class="btn">Transformación Completa</a>
+            <div class="bonus-grid">
+                <div class="bonus-item">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>Pluma Sagrada</h3>
+                    <p>Pluma de guacamayo consagrada para limpieza energética antes de la ceremonia.</p>
+                </div>
+                
+                <div class="bonus-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Mapacho Sagrado</h3>
+                    <p>Tabaco ceremonial para purificación del espacio ritual.</p>
+                </div>
+                
+                <div class="bonus-item">
+                    <i class="fas fa-music"></i>
+                    <h3>Ícaros Grabados</h3>
+                    <p>Grabación de los ícaros cantados en tu ceremonia para continuar el trabajo energético.</p>
+                </div>
+                
+                <div class="bonus-item">
+                    <i class="fas fa-book"></i>
+                    <h3>Guía de Integración</h3>
+                    <p>Manual completo para procesar las enseñanzas recibidas durante 30 días después.</p>
                 </div>
             </div>
         </section>
         
         <section class="video-section">
-            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-dark);">Vive la Experiencia Antes de Venir</h2>
-            <p>Conoce nuestro centro y a los maestros chamanes que guiarán tu proceso</p>
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-dark);">Conoce a Nuestros Guardianes de la Tradición</h2>
+            <p>El maestro Ricardo Mahua y su equipo te guiarán en esta experiencia transformadora</p>
             
             <div class="video-container">
-                <!-- Video de placeholder - reemplazar con tu video real -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/NQOf8s_v4qM?si=or387p-VbgZh7PC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/NQOf8s_v4qM?si=or387p-VbgZh7PC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             
-            <p style="max-width: 700px; margin: 20px auto; font-style: italic;">"Cada ceremonia en nuestro centro es un renacer espiritual. Los cantos ícaros que escucharás han sido transmitidos por generaciones en mi familia." - Maestro Ricardo Mahua</p>
+            <p style="max-width: 700px; margin: 20px auto; font-style: italic;">"En la virtualidad mantenemos la esencia sagrada. La medicina sabe llegar a tu corazón sin importar la distancia cuando hay respeto y preparación." - Maestro Ricardo Mahua</p>
         </section>
         
         <section class="testimonial-section">
-            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 40px;">Historias de Transformación</h2>
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 40px;">Voces de Transformación</h2>
             
             <div class="testimonial-slider">
                 <div class="testimonial">
@@ -681,7 +737,7 @@
                                 <span>★★★★★</span>
                             </div>
                         </div>
-                        <p>"El retiro de 7 días cambió mi vida. El maestro Mahua detectó en la primera ceremonia bloqueos que ni siquiera yo sabía que tenía. Hoy, 6 meses después, sigo aplicando las enseñanzas recibidas."</p>
+                        <p>"La ceremonia virtual superó todas mis expectativas. Recibí el kit con la medicina y los regalos sagrados, y cuando comenzó la videollamada sentí que el chamán estaba realmente en mi sala. La experiencia fue tan intensa como en persona."</p>
                     </div>
                 </div>
                 
@@ -695,7 +751,7 @@
                                 <span>★★★★★</span>
                             </div>
                         </div>
-                        <p>"Comparado con otros centros, aquí sentí la autenticidad de verdad. No es turismo espiritual, es medicina ancestral con toda su potencia. Volveré el próximo año."</p>
+                        <p>"Mi esposa y yo hicimos la ceremonia para parejas. Fue increíble cómo el maestro pudo guiarnos simultáneamente en nuestra experiencia compartida. Los ícaros para la relación siguen resonando en nosotros meses después."</p>
                     </div>
                 </div>
                 
@@ -709,64 +765,63 @@
                                 <span>★★★★☆</span>
                             </div>
                         </div>
-                        <p>"Mi ceremonia de iniciación fue intensa pero el equipo estuvo pendiente en todo momento. Me encantó que realmente siguen la tradición shipibo, no es un show para turistas."</p>
+                        <p>"No podía viajar a Perú por trabajo, pero esta opción virtual me permitió acceder a la medicina con toda la seriedad y tradición. El seguimiento posterior fue excepcional - sentí que realmente les importaba mi proceso."</p>
                     </div>
                 </div>
             </div>
         </section>
         
         <section class="preparation-section">
-            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: white; margin-bottom: 40px;">Preparación para tu Ceremonia</h2>
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: white; margin-bottom: 40px;">Preparando tu Espacio Sagrado</h2>
             
             <div class="preparation-grid">
                 <div class="preparation-card">
-                    <h3>Antes de Venir</h3>
-                    <p>Sigue la dieta recomendada por 3 días antes (sin alcohol, azúcar, carnes rojas o relaciones sexuales). Te enviaremos una guía completa al reservar.</p>
+                    <h3>Antes de la Ceremonia</h3>
+                    <p>Sigue la dieta recomendada por 3 días antes (sin alcohol, azúcar, carnes rojas o relaciones sexuales). Prepara tu espacio con los elementos del kit sagrado que te enviaremos.</p>
                 </div>
                 
                 <div class="preparation-card">
-                    <h3>Qué Traer</h3>
-                    <p>Ropa cómoda, repelente natural, linterna, cuaderno para notas, toalla y una manta ligera. Evita objetos electrónicos.</p>
+                    <h3>Tu Espacio Ritual</h3>
+                    <p>Elige un lugar tranquilo, coloca una manta o cojín en el suelo, enciende velas (incluidas en el kit) y usa ropa cómoda. Ten agua purificada cerca y un balde por precaución.</p>
                 </div>
                 
                 <div class="preparation-card">
-                    <h3>Seguridad</h3>
-                    <p>Contamos con asistente médico permanente, áreas designadas para descanso y protocolos de emergencia. La seguridad es nuestra prioridad.</p>
+                    <h3>Seguridad y Soporte</h3>
+                    <p>Tendrás asistencia permanente durante la ceremonia. Te enviaremos protocolos de seguridad y un contacto de emergencia disponible 24/7 para cualquier consulta.</p>
                 </div>
             </div>
         </section>
         
         <section id="reservar" class="cta-section">
-            <h2>¿Listo para tu Viaje Espiritual?</h2>
-            <p style="max-width: 700px; margin: 0 auto 30px;">Completa este breve formulario y nos contactaremos contigo en menos de 24 horas para confirmar tu participación y guiarte en los preparativos.</p>
+            <h2>Reserva Tu Viaje Sagrado</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px;">Completa este formulario y te enviaremos toda la información para prepararte, junto con los detalles de envío de la medicina y acceso a la ceremonia virtual.</p>
             
             <form style="max-width: 500px; margin: 0 auto;">
                 <div style="margin-bottom: 20px;">
-                    <input type="text" placeholder="Nombre Completo" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="text" placeholder="Nombre Completo" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required>
                 </div>
                 
                 <div style="margin-bottom: 20px;">
-                    <input type="email" placeholder="Correo Electrónico" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="email" placeholder="Correo Electrónico" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required>
                 </div>
                 
                 <div style="margin-bottom: 20px;">
-                    <select style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-                        <option value="">Selecciona tu retiro</option>
-                        <option value="iniciacion">Ceremonia de Iniciación ($400)</option>
-                        <option value="3dias">Retiro de 3 Días ($900)</option>
-                        <option value="7dias">Retiro de 7 Días ($1,800)</option>
+                    <select style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required>
+                        <option value="">Selecciona tu experiencia</option>
+                        <option value="individual">Experiencia Individual ($440 USD)</option>
+                        <option value="parejas">Experiencia para Parejas ($780 USD)</option>
                     </select>
                 </div>
                 
                 <div style="margin-bottom: 20px;">
-                    <input type="text" placeholder="Fecha preferida" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="text" placeholder="País de envío" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required>
                 </div>
                 
-                <button type="submit" class="btn" style="max-width: 300px; margin: 0 auto;">Solicitar Reserva</button>
+                <button type="submit" class="btn" style="max-width: 300px; margin: 0 auto;">Reservar Ahora</button>
             </form>
             
             <div style="margin-top: 40px; background-color: var(--light); padding: 20px; border-radius: 10px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <p style="text-align: center; margin: 0;"><strong>¿No puedes viajar a Perú?</strong> También ofrecemos <a href="/tienda-ayahuasca/productos.html" style="color: var(--primary); font-weight: bold;">kits ceremoniales</a> para experiencias guiadas a distancia con nuestro maestro chamán.</p>
+                <p style="text-align: center; margin: 0;"><strong>Garantía de Satisfacción:</strong> Si por razones logísticas no podemos enviarte la medicina, te devolvemos el 100% de tu inversión. Tu seguridad y satisfacción son nuestra prioridad.</p>
             </div>
         </section>
     </main>
@@ -776,7 +831,7 @@
             <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
                 <div style="text-align: left; max-width: 300px;">
                     <h3 style="font-family: 'Playfair Display', serif;">Ayahuasca Ancestral</h3>
-                    <p>Preservando la medicina tradicional Shipibo-Conibo desde 2012</p>
+                    <p>Llevando la medicina sagrada Shipibo-Conibo al mundo desde 2012</p>
                 </div>
                 
                 <div style="text-align: left; max-width: 250px;">
@@ -792,13 +847,13 @@
                 </div>
             </div>
             
-            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país.</p>
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">La ayahuasca es legal en Perú para uso tradicional y ceremonial. Verifica las regulaciones de tu país antes de solicitar el envío.</p>
             <p style="font-size: 0.8rem; opacity: 0.7;">© 2025 Ayahuasca Ancestral. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/51903051441?text=Hola,%20estoy%20interesado%20en%20las%20ceremonias%20de%20ayahuasca" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/51903051441?text=Hola,%20estoy%20interesado%20en%20las%20ceremonias%20virtuales%20de%20ayahuasca" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -807,7 +862,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Contador de cupos disponibles
             const cuposElement = document.querySelector('.hero-badge');
-            let cupos = 3;
+            let cupos = 5;
             
             // Actualizar cada 30 segundos para crear urgencia
             setInterval(() => {
@@ -847,9 +902,14 @@
             const form = document.querySelector('#reservar form');
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                alert('Gracias por tu interés. Nos contactaremos contigo en menos de 24 horas para confirmar disponibilidad y guiarte en el proceso.');
+                alert('Gracias por tu reserva. Hemos recibido tu solicitud y nos contactaremos contigo en menos de 24 horas para confirmar disponibilidad, guiarte en el proceso de pago y coordinar el envío de la medicina ceremonial.');
                 form.reset();
             });
+            
+            // Highlight best value option
+            const bestValueCard = document.querySelector('.best-value').closest('.ceremony-card');
+            bestValueCard.style.border = '2px solid var(--accent)';
+            bestValueCard.style.boxShadow = '0 5px 20px rgba(255,193,7,0.3)';
         });
     </script>
 </body>
