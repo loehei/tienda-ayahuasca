@@ -1005,18 +1005,7 @@
                 observer.observe(elem);
             });
             
-            // Add click animation to buttons
-            document.querySelectorAll('.btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    this.classList.add('clicked');
-                    setTimeout(() => {
-                        this.classList.remove('clicked');
-                        // Here you would normally redirect to checkout
-                        alert('¡Gracias por tu interés! Serás redirigido al checkout.');
-                    }, 300);
-                });
-            });
+           
         });
     </script>
 </body>
