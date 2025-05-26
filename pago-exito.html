@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Confirmado - Ayahuasca Ancestral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --primary-light: #4CAF50;
+            --accent: #FFC107;
+            --text: #333333;
+            --text-light: #666666;
+            --light: #F1F8E9;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --dark-gray: #E0E0E0;
+            --brown: #5E2C04;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .success-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .success-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .success-icon {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            animation: bounce 1s ease infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+        
+        .highlight {
+            color: var(--primary-dark);
+            font-weight: bold;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--dark-gray);
+            z-index: 1;
+        }
+        
+        .timeline-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2;
+            width: 25%;
+        }
+        
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-text {
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+        
+        .active-step .timeline-icon {
+            background: var(--primary-dark);
+            box-shadow: 0 0 0 5px rgba(46, 125, 50, 0.2);
+        }
+        
+        .active-step .timeline-text {
+            color: var(--primary-dark);
+            font-weight: bold;
+        }
+        
+        .order-details {
+            background: var(--gray);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .order-details h3 {
+            margin-top: 0;
+            color: var(--primary-dark);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .detail-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            width: 150px;
+            color: var(--text);
+        }
+        
+        .detail-value {
+            flex: 1;
+            color: var(--text-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .trust-badge i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .success-card {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline-text {
+                font-size: 0.8rem;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            
+            <h1>¡Pedido Confirmado con Éxito!</h1>
+            
+            <p>Gracias por confiar en <span class="highlight">Ayahuasca Ancestral</span>. Tu pedido ha sido recibido y está siendo procesado con el mayor cuidado y respeto.</p>
+            
+            <div class="timeline">
+                <div class="timeline-step active-step">
+                    <div class="timeline-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="timeline-text">Pedido Recibido</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="timeline-text">En Preparación</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="timeline-text">En Camino</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="timeline-text">Entregado</div>
+                </div>
+            </div>
+            
+            <div class="order-details">
+                <h3>Detalles de tu pedido:</h3>
+                
+                <div class="detail-row">
+                    <div class="detail-label">Número de pedido:</div>
+                    <div class="detail-value" id="order-number">AYA-<script>document.write(new Date().getTime())</script></div>
+                </div>
+                
+                <div class="detail-row">
+                    <div class="detail-label">Fecha:</div>
+                    <div class="detail-value" id="order-date"><script>
+                        const now = new Date();
+                        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                        document.write(now.toLocaleDateString('es-ES', options));
+                    </script></div>
+                </div>
+                
+                <div class="detail-row">
+                    <div class="detail-label">Producto:</div>
+                    <div class="detail-value" id="order-product">
+                        <script>
+                            const urlParams = new URLSearchParams(window.location.search);
+                            const producto = urlParams.get('producto') || 'Brebaje Ceremonial (250ml)';
+                            document.write(producto);
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="detail-row">
+                    <div class="detail-label">Total:</div>
+                    <div class="detail-value" id="order-total">
+                        <script>
+                            const monto = urlParams.get('monto') || '240.00';
+                            document.write('$' + parseFloat(monto).toFixed(2) + ' USD');
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="detail-row">
+                    <div class="detail-label">Estado:</div>
+                    <div class="detail-value"><span style="color: var(--primary); font-weight: bold;">En Proceso</span> (se completará en 24 horas)</div>
+                </div>
+            </div>
+            
+            <p><strong>¿Qué sucede ahora?</strong></p>
+            <p>Nuestro equipo de chamanes está preparando tu medicina con las más estrictas normas de calidad. Recibirás un correo electrónico con los detalles de envío en las próximas <span class="highlight">24 horas</span>.</p>
+            
+            <p>Para cualquier pregunta, nuestro equipo de soporte está disponible para ayudarte.</p>
+            
+            <div style="margin-top: 40px;">
+                <a href="https://wa.me/51903051441" class="btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+                <a href="/tienda-ayahuasca/" class="btn btn-secondary">Volver al Inicio</a>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-clock"></i>
+                    <div>Procesamiento en<br><strong>24 horas</strong></div>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>Pedido<br><strong>100% Seguro</strong></div>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-leaf"></i>
+                    <div>Producto<br><strong>100% Natural</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/51903051441" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mostrar animación de progreso
+        setTimeout(() => {
+            document.querySelectorAll('.timeline-step')[1].classList.add('active-step');
+        }, 2000);
+        
+        setTimeout(() => {
+            document.querySelectorAll('.timeline-step')[2].classList.add('active-step');
+        }, 4000);
+        
+        // Mostrar notificación de correo enviado
+        setTimeout(() => {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.left = '20px';
+            notification.style.backgroundColor = 'var(--primary)';
+            notification.style.color = 'white';
+            notification.style.padding = '15px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '1000';
+            notification.style.animation = 'fadeIn 0.5s ease-out';
+            notification.innerHTML = '<i class="fas fa-envelope" style="margin-right: 10px;"></i> ¡Hemos enviado los detalles a tu correo electrónico!';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'fadeOut 0.5s ease-out';
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }, 5000);
+        }, 3000);
+        
+        // Crear estilos para la animación
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(20px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
