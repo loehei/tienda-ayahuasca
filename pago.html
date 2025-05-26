@@ -429,7 +429,12 @@
             <div class="checkout-form">
                 <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-top: 0;">Información del Cliente</h2>
                 
-                <form id="payment-form" action="https://formspree.io/f/manozqzy" method="POST">
+                <form id="payment-form" action="https://formsubmit.co/mor.zinho.2.3heiner@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo pedido de Ayahuasca Ancestral">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://loehei.github.io/tienda-ayahuasca/pago-exito.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    
                     <input type="hidden" name="producto" id="producto" value="">
                     <input type="hidden" name="monto_total" id="monto_total" value="">
                     
@@ -711,7 +716,7 @@
                     return;
                 }
                 
-                // Simular envío del formulario
+                // Enviar formulario a FormSubmit.co
                 fetch(paymentForm.action, {
                     method: 'POST',
                     body: new FormData(paymentForm),
@@ -721,10 +726,8 @@
                 })
                 .then(response => {
                     if(response.ok) {
-                        // Mostrar mensaje de éxito
-                        document.getElementById('checkout-form').classList.add('hidden');
-                        document.getElementById('success-message').classList.remove('hidden');
-                        window.scrollTo(0, 0);
+                        // Redirigir a la página de éxito configurada en _next
+                        window.location.href = paymentForm.querySelector('[name="_next"]').value;
                     } else {
                         throw new Error('Error en el envío del formulario');
                     }
@@ -746,12 +749,6 @@
                 }
             });
         }
-        
-        // Inicialmente no mostrar ningún método de pago desplegado
-        window.onload = function() {
-            // No activar ningún método por defecto
-            // document.getElementById('credit-card-method').classList.remove('active');
-        };
     </script>
 </body>
 </html>
