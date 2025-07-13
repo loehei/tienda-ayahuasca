@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
@@ -483,7 +483,52 @@
                     
                     <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-dark); margin: 30px 0 20px;">Método de Pago</h2>
                     
-                    
+                    <div class="payment-method" id="credit-card-method">
+                        <div class="payment-method-header" onclick="togglePaymentMethod('credit-card')">
+                            <span><i class="far fa-credit-card payment-icon"></i> Tarjeta de Crédito/Débito</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="payment-method-content">
+                            <div class="card-icons">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" width="50" height="20">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" width="50" height="20">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="American Express" width="50" height="20">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="card-number">Número de Tarjeta *</label>
+                                <input type="text" id="card-number" name="card-number" class="form-control" placeholder="1234 5678 9012 3456" data-payment-field>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">Fecha de Expiración *</label>
+                                    <input type="text" id="card-expiry" name="card-expiry" class="form-control" placeholder="MM/AA" data-payment-field>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvc">Código CVC *</label>
+                                    <input type="text" id="card-cvc" name="card-cvc" class="form-control" placeholder="123" data-payment-field>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="card-name">Nombre en la Tarjeta *</label>
+                                <input type="text" id="card-name" name="card-name" class="form-control" data-payment-field>
+                            </div>
+                            
+                            <input type="hidden" name="payment_method" value="tarjeta">
+                            
+                            <button type="submit" class="btn">CONFIRMAR PAGO</button>
+                            
+                            <div class="security-badge">
+                                <i class="fas fa-lock"></i>
+                                <div>
+                                    <strong>Pago 100% Seguro</strong><br>
+                                    Todos los datos están encriptados con tecnología SSL
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="payment-method" id="western-union-method">
                         <div class="payment-method-header" onclick="togglePaymentMethod('western-union')">
