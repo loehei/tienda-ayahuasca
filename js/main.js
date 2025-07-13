@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // 1. Favicon dinámico (se agrega al inicio para priorizar carga)
   const favicon = document.createElement('link');
   favicon.rel = 'icon';
-  favicon.href = 'images/favicon.ico';  // Ajusta la ruta según tu estructura
+  favicon.href = 'https://loehei.github.io/tienda-ayahuasca/images/favicon.ico';  // Ajusta la ruta según tu estructura
   favicon.type = 'image/x-icon';
   document.head.appendChild(favicon);
 
