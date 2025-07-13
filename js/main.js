@@ -1,12 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // 1. Favicon dinámico (se agrega al inicio para priorizar carga)
-  const favicon = document.createElement('link');
-  favicon.rel = 'icon';
-  favicon.href = 'https://loehei.github.io/tienda-ayahuasca/images/favicon.ico';  // Ajusta la ruta según tu estructura
-  favicon.type = 'image/x-icon';
-  document.head.appendChild(favicon);
-
-  // 2. Menú móvil
+  // Menú móvil
   const menuToggle = document.getElementById('mobile-menu');
   const nav = document.getElementById('main-nav');
   if (menuToggle && nav) {
@@ -15,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 3. Lazy loading manual fallback
+  // Lazy loading manual fallback (para navegadores antiguos)
   if ('loading' in HTMLImageElement.prototype) {
     document.querySelectorAll('img[loading="lazy"]').forEach(img => {
       img.loading = 'lazy';
     });
   }
 
-  // 4. Scroll suave
+  // Scroll suave
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
@@ -33,9 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // 5. Carrito de compras (productos.html)
+  // Carrito de compras (productos.html)
   if (document.querySelector('.products-grid')) {
     const cart = [];
+
     document.querySelectorAll('.product .btn').forEach(button => {
       button.addEventListener('click', function () {
         const product = this.closest('.product');
@@ -47,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 6. Animaciones con IntersectionObserver
+  // Animaciones con IntersectionObserver
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -57,4 +51,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-observe').forEach(el => observer.observe(el));
-});
+}); 
